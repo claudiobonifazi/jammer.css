@@ -1,0 +1,45 @@
+
+body:not(.dark-mode){
+	--background-base: #fff;
+	--background-base-darker: #f9f9f9;
+	--text-base: #080808;
+
+	--info: dodgerblue;
+	--info-lighter: #f0f0f0;
+	--success: #158724;
+	--success-lighter: #d4edda;
+	--warning: darkorange;
+	--warning-lighter: #fff3cd;
+	--alert: #a21c24;
+	--alert-lighter: #f8d7da;
+
+	--main-color: #065661;
+	--main-color-lighter: #7FC7AF;
+	--button-fg: #fff;
+	--button-fg-darker: #ddd;
+	--button-disabled: #bbb;
+	--button-disabled-lighter: #ccc;
+}
+
+body.dark-mode{
+	--background-base: #181818;
+	--background-base-darker: #0a0a0a;
+	--text-base: #fcfcfc;
+
+	--info: dodgerblue;
+	--info-lighter: #f0f0f0;
+	--success: #25b734;
+	--success-lighter: #d4edda;
+	--warning: orange;
+	--warning-lighter: #fff3cd;
+	--alert: #f23c44;
+	--alert-lighter: #f8d7da;
+
+	--main-color: #065661;
+	--main-color-lighter: #7FC7AF;
+	--button-fg: #fff;
+	--button-fg-darker: #ddd;
+	--button-disabled: #bbb;
+	--button-disabled-lighter: #ccc;
+
+}

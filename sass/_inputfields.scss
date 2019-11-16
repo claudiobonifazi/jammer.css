@@ -1,0 +1,251 @@
+input,optgroup,select,textarea{
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+}
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+select,
+textarea{
+	overflow: auto;
+	border-color: transparent;
+	background: rgba(0,0,0,0.05);
+	padding: 0 1rem;
+	line-height: 2;
+	border-radius: 2px;
+	width: 100%;
+	box-sizing: border-box;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	transition: 0.2s all;
+}
+select{
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	box-shadow: inset -2rem 0 0 #ddd;
+	cursor: pointer;
+
+	option{
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
+	}
+	option:checked{
+		background: var(--button-fg-darker);
+	}
+	option:hover{
+		box-shadow: inset 0 0 100px var(--main-color);
+	}
+}
+
+
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="datetime-local"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus{
+	outline: none;
+}
+input[type="text"]:not([readonly]):focus,
+input[type="number"]:not([readonly]):focus,
+input[type="date"]:not([readonly]):focus,
+input[type="datetime-local"]:not([readonly]):focus,
+input[type="email"]:not([readonly]):focus,
+input[type="url"]:not([readonly]):focus,
+input[type="password"]:not([readonly]):focus,
+input[type="search"]:not([readonly]):focus,
+input[type="tel"]:not([readonly]):focus,
+select:not([readonly]):focus,
+textarea:not([readonly]):focus{
+	border-bottom-color: var(--main-color);
+}
+input::placeholder,
+textarea::placeholder{
+	transition: 0.2s all;
+}
+input:not([readonly]):focus::placeholder,
+textarea:not([readonly]):focus::placeholder{
+	opacity: 0;
+}
+label{
+	display: block;
+	position: relative;
+	padding: 0.85em 0;
+	cursor:pointer;
+}
+label.required .inputLabel::after{
+	content: '*';
+}
+input+.inputLabel,
+select+.inputLabel,
+textarea+.inputLabel{
+	position: absolute;
+	left: 1rem;
+	top: 1rem;
+	line-height: 2;
+	transition:  0.2s all;
+}
+input:not([readonly]):not(:focus):placeholder-shown+.inputLabel,
+select:not([readonly]):not(:focus):placeholder-shown+.inputLabel,
+textarea:not([readonly]):not(:focus):placeholder-shown+.inputLabel{
+	opacity: 0;
+}
+input:not([readonly]):focus+.inputLabel,
+select:not([readonly]):focus+.inputLabel,
+textarea:not([readonly]):focus+.inputLabel,
+input:not([readonly]):not(:focus):not(:placeholder-shown)+.inputLabel,
+select:not([readonly]):not(:focus):not(:placeholder-shown)+.inputLabel,
+textarea:not([readonly]):not(:focus):not(:placeholder-shown)+.inputLabel{
+	left: 0;
+	top: -0.5rem;
+	font-size: 80%;
+	color: var(--main-color);
+}
+
+input[type="checkbox"],
+input[type="radio"]{
+	box-sizing: border-box;
+	display: inline;
+	float: left;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	opacity: 0.001;
+}
+input[type="checkbox"]+.check,
+input[type="radio"]+.radio{
+	display: inline-block;
+	height: 1em;
+	width:  1em;
+	border: 2px solid rgba(0,0,0,0.33);
+	vertical-align: middle;
+}
+input[type="checkbox"]+.switch{
+	display: inline-block;
+	line-height:1;
+	height: 1em;
+	width:  2em;
+	outline: 2px solid var(--main-color);
+	background: var(--button-fg);
+	vertical-align: middle;
+}
+input[type="radio"]+.radio{
+	border-radius: 50%;
+}
+input[type="checkbox"]+.check::after,
+input[type="radio"]+.radio::after{
+	display: inline-block;
+	content: "\2713\0020";
+	font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
+	font-weight: bold;
+	text-align: center;
+	color:  var(--button-fg);
+	width: 1em;
+	height: 1em;
+	line-height: 1;
+	vertical-align: super;
+	transition:  0.1s all ease-out;
+}
+input[type="checkbox"]+.switch::after{
+	display: inline-block;
+	content: "";
+	line-height: 1;
+	width: 0.666em;
+	height:1em;
+	background: var(--main-color);
+	outline: 0.1em solid var(--button-disabled);
+	transition: 0.1s transform ease-out;
+}
+
+input[type="checkbox"]:checked+.switch::after{
+	transform: translate(1.334em,0);
+}
+input[type="radio"]+.radio::after{
+	content: "";
+}
+input[type="checkbox"]:checked+.check{
+	background: var(--main-color);
+	border-color: var(--main-color);
+}
+input[type="radio"]:checked+.radio{
+	background: var(--main-color-lighter);
+	border-color: var(--main-color);
+}
+input[type="checkbox"]:not(:checked)+.check::after,
+input[type="radio"]:not(:checked)+.radio::after{
+	opacity: 0;
+}
+input[type="checkbox"]:focus+.check{
+	outline: 3px solid var(--button-disabled-lighter);
+}
+input[type="radio"]:focus+.radio{
+	border: 3px solid var(--button-disabled-lighter);
+}
+input[type="checkbox"][disabled]+.check,
+input[type="radio"][disabled]+.radio,
+input[type="checkbox"][disabled]+.switch{
+	filter:grayscale(0.75) opacity(0.5);
+}
+
+input[type="range"]{
+	-webkit-appearance: none;
+	appearance: none;
+	outline: none;
+	width: 100%;
+	height: 1rem;
+	background: var(--button-disabled);
+	opacity: 0.85;
+	transition: opacity 0.2s ease-out;
+}
+input[type="range"]:hover{
+	opacity: 1;
+}
+input[type="range"]::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	appearance: none;
+	width: 1rem;
+	height: 1.5rem;
+	background: var(--main-color);
+	border-radius: 2px;
+	cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb{
+  width: 1rem;
+  height: 1.5rem;
+  background: var(--main-color);
+  cursor: pointer;
+}
+input[type="number"]:not(.no-buttons)::-webkit-inner-spin-button,
+input[type="number"]:not(.no-buttons)::-webkit-outer-spin-button{
+	height: auto;
+}
+input[type="number"].no-buttons{
+	-moz-appearance: textfield;
+}
+input[type="number"].no-buttons::-webkit-inner-spin-button,
+input[type="number"].no-buttons::-webkit-outer-spin-button{
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type="search"]{
+	-webkit-appearance: textfield;
+	outline-offset: -2px;
+}
+input[type="search"]::-webkit-search-decoration{
+	-webkit-appearance: none;
+}
