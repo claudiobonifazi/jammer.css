@@ -26,7 +26,7 @@ input[type="submit"],
 	text-transform: uppercase;
 	border-radius: 2px;
 	background: var(--main-color);
-	color: var(--button-fg);
+	color: var(--main-text-cl);
 	cursor: pointer;
 }
 button:focus,
@@ -34,7 +34,7 @@ input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
 ::-webkit-file-upload-button:focus{
-	outline: 1px solid var(--button-disabled);
+	outline: 1px solid var(--button-greyedout);
 	outline-offset: 1px;
 }
 button:not([disabled]):active,
@@ -47,7 +47,7 @@ button.secondary,
 input[type="button"].secondary,
 input[type="reset"].secondary,
 input[type="submit"].secondary{
-	background: var(--button-fg);
+	background: var(--main-text-cl);
 	color: var(--main-color);
 	border: 1px solid var(--main-color);
 }

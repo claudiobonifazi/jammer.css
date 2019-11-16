@@ -39,7 +39,7 @@ select{
 		appearance: none;
 	}
 	option:checked{
-		background: var(--button-fg-darker);
+		background: var(--main-text-cl-darker);
 	}
 	option:hover{
 		box-shadow: inset 0 0 100px var(--main-color);
@@ -141,7 +141,7 @@ input[type="checkbox"]+.switch{
 	height: 1em;
 	width:  2em;
 	outline: 2px solid var(--main-color);
-	background: var(--button-fg);
+	background: var(--main-text-cl);
 	vertical-align: middle;
 }
 input[type="radio"]+.radio{
@@ -154,7 +154,7 @@ input[type="radio"]+.radio::after{
 	font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
 	font-weight: bold;
 	text-align: center;
-	color:  var(--button-fg);
+	color:  var(--main-text-cl);
 	width: 1em;
 	height: 1em;
 	line-height: 1;
@@ -168,7 +168,7 @@ input[type="checkbox"]+.switch::after{
 	width: 0.666em;
 	height:1em;
 	background: var(--main-color);
-	outline: 0.1em solid var(--button-disabled);
+	outline: 0.1em solid var(--button-greyedout);
 	transition: 0.1s transform ease-out;
 }
 
@@ -191,10 +191,10 @@ input[type="radio"]:not(:checked)+.radio::after{
 	opacity: 0;
 }
 input[type="checkbox"]:focus+.check{
-	outline: 3px solid var(--button-disabled-lighter);
+	outline: 3px solid var(--button-greyedout-lighter);
 }
 input[type="radio"]:focus+.radio{
-	border: 3px solid var(--button-disabled-lighter);
+	border: 3px solid var(--button-greyedout-lighter);
 }
 input[type="checkbox"][disabled]+.check,
 input[type="radio"][disabled]+.radio,
@@ -208,7 +208,7 @@ input[type="range"]{
 	outline: none;
 	width: 100%;
 	height: 1rem;
-	background: var(--button-disabled);
+	background: var(--button-greyedout);
 	opacity: 0.85;
 	transition: opacity 0.2s ease-out;
 }

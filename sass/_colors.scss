@@ -1,4 +1,3 @@
-
 body:not(.dark-mode){
 	--background-base: #fff;
 	--background-base-darker: #f9f9f9;
@@ -15,9 +14,9 @@ body:not(.dark-mode){
 
 	--main-color: #065661;
 	--main-color-lighter: #7FC7AF;
-	--button-fg: #fff;
-	--button-fg-darker: #ddd;
-	--button-disabled: #bbb;
+	--main-text-cl: #fff;
+	--main-text-cl-darker: #ddd;
+	--button-greyedout: #bbb;
 	--button-disabled-lighter: #ccc;
 }
 
