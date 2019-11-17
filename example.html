@@ -2,9 +2,21 @@
 <html lan="en" dir="ltr">
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="jammer.css">
 	</head>
 	<body>
+		<div class="app_header">
+			<div></div>
+			<div>
+				<h1 class="text-center">
+					Example one page website
+				</h1>
+			</div>
+			<div>
+				<span class="app-menu-btn"></span>
+			</div>
+		</div>
 		<article>
 			<h1>h1 header</h1>
 			<h2>h2 header</h2>
@@ -19,23 +31,164 @@
 			<sub>sub</sub>
 		</article>
 		<hr>
-		<form class="w6">
-			<fieldset class="cols2">
+		<form>
+			<fieldset>
 				<legend>A form</legend>
-
-				<label>
-					<input type="text" placeholder="Text field">
-					<span class="inputLabel">Text field</span>
-				</label>
-				<label>
-					<input type="email" placeholder="Email field">
-					<span class="inputLabel">Email field</span>
-				</label>
-				<label>
-					<input type="tel" placeholder="Phone field">
-					<span class="inputLabel">Phone field</span>
-				</label>
+				<div class="cols2">
+					<label>
+						<input type="text" placeholder="Text field">
+						<span class="inputLabel">Text field</span>
+					</label>
+					<label>
+						<input type="email" placeholder="Email field">
+						<span class="inputLabel">Email field</span>
+					</label>
+					<label>
+						<input type="tel" placeholder="Phone field">
+						<span class="inputLabel">Phone field</span>
+					</label>
+					<label>
+						<input type="number" placeholder="Number field">
+						<span class="inputLabel">Number field</span>
+					</label>
+					<label>
+						<input type="number" class="no-buttons" placeholder="Number field without spin buttons">
+						<span class="inputLabel">Number field without spin buttons</span>
+					</label>
+					<label>
+						<input type="password" placeholder="Password field">
+						<span class="inputLabel">Password field</span>
+					</label>
+					<label>
+						<input type="search" placeholder="Search field">
+						<span class="inputLabel">Search field</span>
+					</label>
+					<label>
+						<input type="url" placeholder="Url field">
+						<span class="inputLabel">Url field</span>
+					</label>
+					<label>
+						<input type="date" placeholder="Date field">
+						<span class="inputLabel">Date field</span>
+					</label>
+					<label>
+						<input type="datetime-local" placeholder="Date&time field">
+						<span class="inputLabel">Date&time field</span>
+					</label>
+					<label>
+						<input type="file">
+						<span class="inputLabel">File input</span>
+					</label>
+					<label>
+						<select>
+							<optgroup label="Opt. group 1">
+								<option>Option 1</option>
+								<option>Option 2</option>
+								<option>Option 3</option>
+							</optgroup>
+							<optgroup label="Opt. group 2">
+								<option>Option 1</option>
+								<option>Option 2</option>
+								<option>Option 3</option>
+							</optgroup>
+						</select>
+						<span class="inputLabel">Date&time field</span>
+					</label>
+				</div>
 			</fieldset>
 		</form>
+		<hr>
+		<form class="w6 m3 shadow7">
+			<fieldset>
+				<legend>Login form</legend>
+				<label>
+					<input type="text" placeholder="Username">
+					<span class="inputLabel">Username</span>
+				</label>
+				<label>
+					<input type="password" placeholder="Password">
+					<span class="inputLabel">Password</span>
+				</label>
+				<div class="text-right">
+					<a href="#">
+						forgot password
+					</a>
+				</div>
+				<div class="cols2">
+					<button>
+						login
+					</button>
+					<a class="button secondary">
+						back
+					</a>
+				</div>
+			</fieldset>
+		</form>
+		<div class="p10">
+			<button>
+				standard
+			</button>
+		</div>
+		<div class="p10">
+			<button class="secondary">
+				secondary
+			</button>
+		</div>
+		<div class="p10">
+			<button class="main">
+				full width
+			</button>
+		</div>
+		<div class="p10">
+			<button class="success">
+				success
+			</button>
+		</div>
+		<div class="p10">
+			<button class="warning">
+				warning
+			</button>
+		</div>
+		<div class="p10">
+			<button class="alert">
+				alert
+			</button>
+		</div>
+		<hr>
+		<div class="p10">
+			<table>
+				<caption>
+					The table caption
+				</caption>
+				<thead>
+					<tr>
+						<th>Column 1</th>
+						<th>Column 2</th>
+						<th>Column 3</th>
+						<th>Column 4</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td contenteditable="true">data1</td>
+						<td contenteditable="true">data2</td>
+						<td contenteditable="true">data3</td>
+						<td contenteditable="true">data4</td>
+					</tr>
+					<tr>
+						<td contenteditable="true">data1</td>
+						<td contenteditable="true">data2</td>
+						<td contenteditable="true">data3</td>
+						<td contenteditable="true">data4</td>
+					</tr>
+					<tr>
+						<td contenteditable="true">data1</td>
+						<td contenteditable="true">data2</td>
+						<td contenteditable="true">data3</td>
+						<td contenteditable="true">data4</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</body>
 </html>

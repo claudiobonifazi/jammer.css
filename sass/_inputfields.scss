@@ -13,6 +13,7 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 input[type="tel"],
+input[type="file"],
 select,
 textarea{
 	overflow: auto;
@@ -25,6 +26,9 @@ textarea{
 	box-sizing: border-box;
 	border-bottom: 1px solid rgba(0,0,0,0.1);
 	transition: 0.2s all;
+}
+input[type="search"]{
+	-webkit-appearance: none;
 }
 select{
 	-moz-appearance: none;
@@ -248,4 +252,34 @@ input[type="search"]{
 }
 input[type="search"]::-webkit-search-decoration{
 	-webkit-appearance: none;
+}
+
+
+input[type="date"],
+input[type="datetime-local"],
+input[type="file"],
+select{
+	height: 3em;
+}
+input[type="file"]{
+	cursor:pointer;
+}
+input[type="date"]::-webkit-clear-button,
+input[type="date"]::-webkit-inner-spin-button,
+input[type="datetime-local"]::-webkit-clear-button,
+input[type="datetime-local"]::-webkit-inner-spin-button{
+	display: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator{
+	padding:0.5rem;
+	border-radius: 50%;
+	font-size: 15px;
+	color: var(--main-color);
+	background: var(--main-text-cl);
+	transition: 0.15s opacity ease-out;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:active,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:active{
+	filter: brightness(0.85);
 }
