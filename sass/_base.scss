@@ -75,9 +75,13 @@ table{
 
 	caption{
 		font-size: 115%;
-		background: var(--background-base-darker);
 		font-weight:bold;
 		text-align:left;
+		background: var(--main-color);
+		color: var(--main-text-cl);
+		line-height: 1;
+		border-radius: 2px 2px 0 0;
+		filter: saturate(0.5);
 	}
 	tr{
 		border-spacing: 0;
@@ -91,7 +95,22 @@ table{
 	}
 	tbody>tr:nth-child(2n)>td{
 		background: var(--background-base-darker);
-		border-top: 1px solid #ccc;
+
+	}
+	td[contenteditable]:active,
+	td[contenteditable]:focus{
+		outline-color: var(--info);
+	}
+}
+table.pivot{
+	tbody{
+		tr{
+			td:first-child{
+				font-weight:bold;
+				background: var(--background-base-darker);
+				text-align: left;
+			}
+		}
 	}
 }
 

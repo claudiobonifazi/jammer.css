@@ -24,8 +24,8 @@ textarea{
 	border-radius: 2px;
 	width: 100%;
 	box-sizing: border-box;
-	border-bottom: 1px solid rgba(0,0,0,0.1);
-	transition: 0.2s all;
+	border-bottom: var(--input-border-bottom) solid rgba(0,0,0,0.1);
+	transition: 0.2s border-bottom-color;
 }
 input[type="search"]{
 	-webkit-appearance: none;
@@ -34,7 +34,6 @@ select{
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;
-	box-shadow: inset -2rem 0 0 #ddd;
 	cursor: pointer;
 
 	option{
@@ -263,6 +262,7 @@ select{
 }
 input[type="file"]{
 	cursor:pointer;
+	padding-top:6px;
 }
 input[type="date"]::-webkit-clear-button,
 input[type="date"]::-webkit-inner-spin-button,
@@ -282,4 +282,13 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator{
 input[type="date"]::-webkit-calendar-picker-indicator:active,
 input[type="datetime-local"]::-webkit-calendar-picker-indicator:active{
 	filter: brightness(0.85);
+}
+
+select+.selectHint,
+select+.inputLabel+.selectHint{
+	display:inline-block;
+	position:relative;
+	height: 34px;
+	width: 34px;
+	background:red;
 }

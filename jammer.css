@@ -57,6 +57,11 @@ body.dark-mode {
   --button-disabled-lighter: #ccc;
 }
 
+body {
+  /*- other variables -*/
+  --input-border-bottom: 2px;
+}
+
 :root {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -217,9 +222,13 @@ template {
 
 table caption {
   font-size: 115%;
-  background: var(--background-base-darker);
   font-weight: bold;
   text-align: left;
+  background: var(--main-color);
+  color: var(--main-text-cl);
+  line-height: 1;
+  border-radius: 2px 2px 0 0;
+  filter: saturate(0.5);
 }
 table tr {
   border-spacing: 0;
@@ -233,7 +242,16 @@ table th {
 }
 table tbody > tr:nth-child(2n) > td {
   background: var(--background-base-darker);
-  border-top: 1px solid #ccc;
+}
+table td[contenteditable]:active,
+table td[contenteditable]:focus {
+  outline-color: var(--info);
+}
+
+table.pivot tbody tr td:first-child {
+  font-weight: bold;
+  background: var(--background-base-darker);
+  text-align: left;
 }
 
 form {
@@ -397,8 +415,8 @@ textarea {
   border-radius: 2px;
   width: 100%;
   box-sizing: border-box;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  transition: 0.2s all;
+  border-bottom: var(--input-border-bottom) solid rgba(0, 0, 0, 0.1);
+  transition: 0.2s border-bottom-color;
 }
 
 input[type=search] {
@@ -409,7 +427,6 @@ select {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  box-shadow: inset -2rem 0 0 #ddd;
   cursor: pointer;
 }
 select option {
@@ -663,6 +680,7 @@ select {
 
 input[type=file] {
   cursor: pointer;
+  padding-top: 6px;
 }
 
 input[type=date]::-webkit-clear-button,
@@ -685,6 +703,15 @@ input[type=datetime-local]::-webkit-calendar-picker-indicator {
 input[type=date]::-webkit-calendar-picker-indicator:active,
 input[type=datetime-local]::-webkit-calendar-picker-indicator:active {
   filter: brightness(0.85);
+}
+
+select + .selectHint,
+select + .inputLabel + .selectHint {
+  display: inline-block;
+  position: relative;
+  height: 34px;
+  width: 34px;
+  background: red;
 }
 
 [hidden], .hidden {
