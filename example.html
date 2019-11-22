@@ -62,6 +62,7 @@
 					<label>
 						<input type="search" placeholder="Search field">
 						<span class="inputLabel">Search field</span>
+						<span class="emptyInput" onclick="this.parentElement.children[0].value=''"></span>
 					</label>
 					<label>
 						<input type="url" placeholder="Url field">
@@ -95,6 +96,52 @@
 						<span class="inputLabel">select field</span>
 						<span class="selectHint"></span>
 					</label>
+					<label>
+						<input type="color">
+						<span class="inputLabel">Color input</span>
+					</label>
+					<label>
+						<input type="range" placeholder="slider field" min="0" max="100" value="70">
+						<span class="inputLabel">Slider field</span>
+					</label>
+				</div>
+				<div class="cols3">
+					<div>
+						<label>
+							<input type="radio" name="radio" checked>
+							<span class="radio"></span>
+							<span class="inputLabel">Radio opt</span>
+						</label>
+						<label>
+							<input type="radio" name="radio">
+							<span class="radio"></span>
+							<span class="inputLabel">Radio opt</span>
+						</label>
+					</div>
+					<div>
+						<label>
+							<input type="checkbox" checked>
+							<span class="switch"></span>
+							<span class="inputLabel">Switch opt</span>
+						</label>
+						<label>
+							<input type="checkbox">
+							<span class="switch"></span>
+							<span class="inputLabel">Switch opt</span>
+						</label>
+					</div>
+					<div>
+						<label>
+							<input type="checkbox" checked>
+							<span class="check"></span>
+							<span class="inputLabel">Radio opt</span>
+						</label>
+						<label>
+							<input type="checkbox">
+							<span class="check"></span>
+							<span class="inputLabel">Radio opt</span>
+						</label>
+					</div>
 				</div>
 			</fieldset>
 		</form>

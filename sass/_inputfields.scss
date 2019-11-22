@@ -14,6 +14,7 @@ input[type="password"],
 input[type="search"],
 input[type="tel"],
 input[type="file"],
+input[type="color"],
 select,
 textarea{
 	overflow: auto;
@@ -60,6 +61,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus,
+input[type="color"]:focus,
 select:focus,
 textarea:focus{
 	outline: none;
@@ -73,12 +75,15 @@ input[type="url"]:not([readonly]):focus,
 input[type="password"]:not([readonly]):focus,
 input[type="search"]:not([readonly]):focus,
 input[type="tel"]:not([readonly]):focus,
+input[type="file"]:not([readonly]):focus,
+input[type="color"]:not([readonly]):focus,
 select:not([readonly]):focus,
 textarea:not([readonly]):focus{
 	border-bottom-color: var(--main-color);
 }
 input::placeholder,
 textarea::placeholder{
+	font-weight:bold;
 	transition: 0.2s all;
 }
 input:not([readonly]):focus::placeholder,
@@ -101,6 +106,7 @@ textarea+.inputLabel{
 	left: 1rem;
 	top: 1rem;
 	line-height: 2;
+	font-weight:bold;
 	transition:  0.2s all;
 }
 input:not([readonly]):not(:focus):placeholder-shown+.inputLabel,
@@ -204,16 +210,44 @@ input[type="radio"][disabled]+.radio,
 input[type="checkbox"][disabled]+.switch{
 	filter:grayscale(0.75) opacity(0.5);
 }
+input[type="radio"]+.radio+.inputLabel,
+input[type="checkbox"]+.switch+.inputLabel,
+input[type="checkbox"]+.check+.inputLabel{
+	font-weight:bold;
+	border-bottom:2px solid transparent;
+	transition: color 0.2s ease-out, border-bottom-color 0.2s ease-out;
+}
+input[type="radio"]:checked+.radio+.inputLabel,
+input[type="checkbox"]:checked+.switch+.inputLabel,
+input[type="checkbox"]:checked+.check+.inputLabel{
+	color:var(--main-color);
+	border-bottom-color:var(--main-color)
+}
 
 input[type="range"]{
 	-webkit-appearance: none;
 	appearance: none;
 	outline: none;
 	width: 100%;
+	margin-top:1em;
 	height: 1rem;
 	background: var(--button-greyedout);
 	opacity: 0.85;
 	transition: opacity 0.2s ease-out;
+}
+input[type="range"]::before{
+	color: var(--text-base);
+	margin-left:0.5em;
+	float:left;
+	z-index:2;
+	content: attr(min);
+}
+input[type="range"]::after{
+	color: var(--text-base);
+	margin-right:0.5em;
+	float:right;
+	z-index:2;
+	content: attr(max);
 }
 input[type="range"]:hover{
 	opacity: 1;
@@ -261,8 +295,9 @@ select{
 	height: 3em;
 }
 input[type="file"]{
+	font-weight:bold;
 	cursor:pointer;
-	padding-top:6px;
+	padding-left:0
 }
 input[type="date"]::-webkit-clear-button,
 input[type="date"]::-webkit-inner-spin-button,
@@ -275,9 +310,14 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator{
 	padding:0.5rem;
 	border-radius: 50%;
 	font-size: 15px;
-	color: var(--main-color);
-	background: var(--main-text-cl);
-	transition: 0.15s opacity ease-out;
+	color: rgba(0,0,0,0.1);
+	background:transparent;
+	opacity:1;
+	transition: 0.15s background-color ease-out;
+}
+input[type="date"]:hover::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]:hover::-webkit-calendar-picker-indicator{
+	background: rgba(0,0,0,0.1);
 }
 input[type="date"]::-webkit-calendar-picker-indicator:active,
 input[type="datetime-local"]::-webkit-calendar-picker-indicator:active{
@@ -287,8 +327,82 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator:active{
 select+.selectHint,
 select+.inputLabel+.selectHint{
 	display:inline-block;
+	height: 26px;
+	width: 26px;
+	background:transparent;
+	border-radius: 50%;
+	float: right;
+	margin-top: -34px;
+	margin-right: 20px;
 	position:relative;
-	height: 34px;
-	width: 34px;
-	background:red;
+	z-index:-1;
+	transition: 0.15s background-color ease-out;
 }
+select:hover+.selectHint,
+select:hover+.inputLabel+.selectHint{
+	background: rgba(0,0,0,0.1);	
+}
+select:active+.selectHint,
+select:active+.inputLabel+.selectHint{
+	background-color: rgba(0,0,0,0.2);
+}
+select+.selectHint::after,
+select+.inputLabel+.selectHint::after{
+	content: "";
+	background: transparent;
+	width: 0;
+	height: 0;
+	position: absolute;
+	right: 8px;
+	top: 5px;
+	border-style: solid;
+	border-width: 9px 5px 9px 5px;
+	border-color: rgba(0, 0, 0, 0.1) transparent transparent transparent;
+	margin-top: 4px;
+}
+
+input+.emptyInput,
+input+.inputLabel+.emptyInput{
+    display: inline-block;
+    height: 26px;
+    width: 26px;
+    background: transparent;
+    border-radius: 50%;
+    float: right;
+    margin-top: -37px;
+    margin-right: 20px;
+    z-index:2;
+    position: relative;
+    transition: 0.15s background-color ease-out;
+    color:var(--text-base);
+	text-align: center;
+	line-height: 26px;
+	font-size: 24px;
+	cursor:pointer;
+}
+input+.emptyInput::after,
+input+.inputLabel+.emptyInput::after{
+	content: '×';
+}
+input+.emptyInput:hover,
+input+.inputLabel+.emptyInput:hover{
+	background: rgba(0,0,0,0.1);	
+}
+
+input[type="color"]{
+	height:3em;
+	cursor:pointer;
+}
+/*currently not supported*/
+/*input[type="color"]::after{
+	content: attr(value);
+    display: block;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 0;
+    top: 8px;
+    z-index: 2;
+    color: var(--text-base);
+	content: attr(value);
+}*/

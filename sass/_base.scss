@@ -1,6 +1,8 @@
 :root{
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
+	width:100%;
+	height:100%;
 	text-spacing:trim-start allow-end trim-adjacent ideograph-alpha ideograph-numeric;
 	line-sizing: normal;
 }
@@ -9,7 +11,11 @@ body{
 	margin:0;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1.5vh;
+	width:100%;
+	height:100%;
 	-webkit-font-smoothing: antialiased;
+	background: var(--background-base);
+	color: var(--text-base);
 }
 *,
 ::before,

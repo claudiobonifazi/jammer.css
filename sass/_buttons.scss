@@ -22,7 +22,7 @@ input[type="submit"],
 	font-size: 100%;
 	margin: 0;
 	border: 0;
-	line-height: 1;
+	line-height: 2;
 	padding: 0.5em 1em;
 	text-transform: uppercase;
 	text-align:center;
@@ -30,7 +30,12 @@ input[type="submit"],
 	border-radius: 2px;
 	background: var(--main-color);
 	color: var(--main-text-cl);
+	font-weight:bold;
+	letter-spacing: 1px;
 	cursor: pointer;
+}
+::-webkit-file-upload-button{
+	line-height: 1.85
 }
 button:focus,
 input[type="button"]:focus,
