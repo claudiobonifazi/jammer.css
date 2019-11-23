@@ -425,10 +425,12 @@ textarea {
   background: rgba(0, 0, 0, 0.05);
   padding: 0 1rem;
   line-height: 2;
-  border-radius: 2px;
+  border-radius: 2px 2px 0 0;
   width: 100%;
   box-sizing: border-box;
-  border-bottom: var(--input-border-bottom) solid rgba(0, 0, 0, 0.1);
+  border-width: 0 0 var(--input-border-bottom) 0;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
   transition: 0.2s border-bottom-color;
 }
 
@@ -487,7 +489,7 @@ textarea:not([readonly]):focus {
 
 input::placeholder,
 textarea::placeholder {
-  font-weight: bold;
+  font-weight: 500;
   transition: 0.2s all;
 }
 
@@ -500,7 +502,7 @@ label {
   display: block;
   position: relative;
   padding: 0.85em 0;
-  cursor: pointer;
+  cursor: text;
 }
 
 label.required .inputLabel::after {
@@ -514,7 +516,7 @@ textarea + .inputLabel {
   left: 1rem;
   top: 1rem;
   line-height: 2;
-  font-weight: bold;
+  font-weight: 500;
   transition: 0.2s all;
 }
 
@@ -575,7 +577,7 @@ input[type=radio] + .radio::after {
   display: inline-block;
   content: "✓ ";
   font-family: "Lucida Sans Unicode", "Arial Unicode MS", Arial;
-  font-weight: bold;
+  font-weight: 500;
   text-align: center;
   color: var(--main-text-cl);
   width: 1em;
@@ -636,7 +638,7 @@ input[type=checkbox][disabled] + .switch {
 input[type=radio] + .radio + .inputLabel,
 input[type=checkbox] + .switch + .inputLabel,
 input[type=checkbox] + .check + .inputLabel {
-  font-weight: bold;
+  font-weight: 500;
   border-bottom: 2px solid transparent;
   transition: color 0.2s ease-out, border-bottom-color 0.2s ease-out;
 }
@@ -721,6 +723,10 @@ input[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
+input[type=search]::-webkit-search-cancel-button {
+  display: none;
+}
+
 input[type=date],
 input[type=datetime-local],
 input[type=file],
@@ -729,7 +735,7 @@ select {
 }
 
 input[type=file] {
-  font-weight: bold;
+  font-weight: 500;
   cursor: pointer;
   padding-left: 0;
 }
@@ -850,6 +856,25 @@ input[type=color] {
     color: var(--text-base);
 	content: attr(value);
 }*/
+.tagLeft {
+  display: grid;
+  grid-template-columns: min-content auto;
+}
+.tagLeft :first-child {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.05);
+  line-height: 2em;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 0.5em;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.5em;
+}
+.tagLeft:focus-within :first-child {
+  border-bottom-color: var(--main-color);
+  color: var(--main-color);
+}
+
 [hidden], .hidden {
   display: none !important;
 }
