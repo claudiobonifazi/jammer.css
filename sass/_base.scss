@@ -10,7 +10,7 @@
 body{
 	margin:0;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 1.5vh;
+	font-size: 14px;
 	width:100%;
 	height:100%;
 	-webkit-font-smoothing: antialiased;
@@ -23,6 +23,11 @@ body{
 	box-sizing: border-box;
 	text-transform: none;
 }
+::selection{
+	background: var(--main-color);
+	color: var(--main-text-cl);
+	opacity:0.85;
+}
 @media(prefers-reduced-motion: reduce){ 
 	*{
 		animation-duration: 0.001s !important;
@@ -31,27 +36,21 @@ body{
 }
 
 h2,h3,h4,h5,h6{line-height: 1;}
-/*h1{font-size: 2rem;margin: 0.67rem 0;}
+h1{font-size: 2rem;margin: 0.67rem 0;}
 h2{font-size: 1.5rem;}
 h3{font-size: 1.17rem;}
 h4{font-size: 1.00rem;}
 h5{font-size: 0.83rem;}
-h6{font-size: 0.67rem;}*/
-h1{font-size:200%;margin:0.5rem 0;}
-h2{font-size:150%;}
-h3{font-size:116.667%;}
-h4{font-size:100%;}
-h5{font-size:83.333%;}
-h6{font-size:66.667%;}
-pre{font-family: monospace, monospace;font-size: 1em;white-space:pre-wrap;}
+h6{font-size: 0.67rem;}
+pre{font-family: monospace, monospace;font-size: 1rem;white-space:pre-wrap;}
 p,ul,ol,dl,address{line-height: 1.5;}
-code,kbd,samp{font-family: monospace, monospace;font-size: 1em;}
+code,kbd,samp{font-family: monospace, monospace;font-size: 1rem;}
 sub,sup{font-size: 75%;line-height: 0;position: relative;vertical-align: baseline;}
 abbr[title]{border-bottom: none;text-decoration: underline;text-decoration: underline dotted;}
 b,strong{font-weight: bolder;}
 small {font-size: 80%;}
-sub{bottom: -0.25em;}
-sup{top: -0.5em;}
+sub{bottom: -0.25rem;}
+sup{top: -0.5rem;}
 
 a{
 	background-color: transparent;
@@ -66,8 +65,7 @@ hr{
 	box-sizing: content-box;
 	height: 0;
 	overflow: visible; 
-	border: 0.5px solid;
-	border: 1px solid rgba(0,0,0,0.1);
+	border: 0.5px solid rgba(0,0,0,0.1);
 }
 img,video,canvas,audio,iframe,embed,object,main,details{display: block;vertical-align: middle;}
 img,video{max-width:100%;height:auto;}
@@ -128,10 +126,10 @@ form{
 	outline:0;
 
 	fieldset{
-		padding: 0.35em 0.75em 0.625em;
+		padding: 0.35rem 0.75rem 0.625rem;
 		border-color: transparent;
-		padding-left:1em;
-		padding-right:1em;
+		padding-left:1rem;
+		padding-right:1rem;
 
 		legend{
 			box-sizing: border-box;
@@ -143,7 +141,7 @@ form{
 			font-size: 120%;
 			line-height: 1.5;
 			border-bottom: 1px solid rgba(0,0,0,0.1);
-			margin: 1em 0 22px 0.5rem;
+			margin: 1rem 0 1.5rem 0.5rem;
 		}
 	}
 }

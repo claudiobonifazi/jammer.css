@@ -74,7 +74,7 @@ body {
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.5vh;
+  font-size: 14px;
   width: 100%;
   height: 100%;
   -webkit-font-smoothing: antialiased;
@@ -89,6 +89,12 @@ body {
   text-transform: none;
 }
 
+::selection {
+  background: var(--main-color);
+  color: var(--main-text-cl);
+  opacity: 0.85;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001s !important;
@@ -99,40 +105,34 @@ h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
-/*h1{font-size: 2rem;margin: 0.67rem 0;}
-h2{font-size: 1.5rem;}
-h3{font-size: 1.17rem;}
-h4{font-size: 1.00rem;}
-h5{font-size: 0.83rem;}
-h6{font-size: 0.67rem;}*/
 h1 {
-  font-size: 200%;
-  margin: 0.5rem 0;
+  font-size: 2rem;
+  margin: 0.67rem 0;
 }
 
 h2 {
-  font-size: 150%;
+  font-size: 1.5rem;
 }
 
 h3 {
-  font-size: 116.667%;
+  font-size: 1.17rem;
 }
 
 h4 {
-  font-size: 100%;
+  font-size: 1rem;
 }
 
 h5 {
-  font-size: 83.333%;
+  font-size: 0.83rem;
 }
 
 h6 {
-  font-size: 66.667%;
+  font-size: 0.67rem;
 }
 
 pre {
   font-family: monospace, monospace;
-  font-size: 1em;
+  font-size: 1rem;
   white-space: pre-wrap;
 }
 
@@ -142,7 +142,7 @@ p, ul, ol, dl, address {
 
 code, kbd, samp {
   font-family: monospace, monospace;
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 sub, sup {
@@ -167,11 +167,11 @@ small {
 }
 
 sub {
-  bottom: -0.25em;
+  bottom: -0.25rem;
 }
 
 sup {
-  top: -0.5em;
+  top: -0.5rem;
 }
 
 a {
@@ -196,8 +196,7 @@ hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
-  border: 0.5px solid;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
 }
 
 img, video, canvas, audio, iframe, embed, object, main, details {
@@ -267,10 +266,10 @@ form {
   outline: 0;
 }
 form fieldset {
-  padding: 0.35em 0.75em 0.625em;
+  padding: 0.35rem 0.75rem 0.625rem;
   border-color: transparent;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 form fieldset legend {
   box-sizing: border-box;
@@ -282,7 +281,7 @@ form fieldset legend {
   font-size: 120%;
   line-height: 1.5;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 1em 0 22px 0.5rem;
+  margin: 1rem 0 1.5rem 0.5rem;
 }
 
 button::-moz-focus-inner,
@@ -405,6 +404,7 @@ input, optgroup, select, textarea {
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
+  height: 2.5rem;
 }
 
 input[type=text],
@@ -552,8 +552,8 @@ input[type=radio] {
 input[type=checkbox] + .check,
 input[type=radio] + .radio {
   display: inline-block;
-  height: 1em;
-  width: 1em;
+  height: 1rem;
+  width: 1rem;
   border: 2px solid rgba(0, 0, 0, 0.33);
   vertical-align: middle;
 }
@@ -561,8 +561,8 @@ input[type=radio] + .radio {
 input[type=checkbox] + .switch {
   display: inline-block;
   line-height: 1;
-  height: 1em;
-  width: 2em;
+  height: 1rem;
+  width: 2rem;
   outline: 2px solid var(--main-color);
   background: var(--main-text-cl);
   vertical-align: middle;
@@ -580,8 +580,8 @@ input[type=radio] + .radio::after {
   font-weight: 500;
   text-align: center;
   color: var(--main-text-cl);
-  width: 1em;
-  height: 1em;
+  width: 1rem;
+  height: 1rem;
   line-height: 1;
   vertical-align: super;
   transition: 0.1s all ease-out;
@@ -591,10 +591,10 @@ input[type=checkbox] + .switch::after {
   display: inline-block;
   content: "";
   line-height: 1;
-  width: 0.666em;
-  height: 1em;
+  width: 0.666rem;
+  height: 1rem;
   background: var(--main-color);
-  outline: 0.1em solid var(--button-greyedout);
+  outline: 0.1rem solid var(--button-greyedout);
   transition: 0.1s transform ease-out;
 }
 
@@ -655,7 +655,7 @@ input[type=range] {
   appearance: none;
   outline: none;
   width: 100%;
-  margin-top: 1em;
+  margin-top: 1rem;
   height: 1rem;
   background: var(--button-greyedout);
   opacity: 0.85;
@@ -664,7 +664,7 @@ input[type=range] {
 
 input[type=range]::before {
   color: var(--text-base);
-  margin-left: 0.5em;
+  margin-left: 0.5rem;
   float: left;
   z-index: 2;
   content: attr(min);
@@ -672,7 +672,7 @@ input[type=range]::before {
 
 input[type=range]::after {
   color: var(--text-base);
-  margin-right: 0.5em;
+  margin-right: 0.5rem;
   float: right;
   z-index: 2;
   content: attr(max);
@@ -731,7 +731,7 @@ input[type=date],
 input[type=datetime-local],
 input[type=file],
 select {
-  height: 3em;
+  height: 3rem;
 }
 
 input[type=file] {
@@ -771,13 +771,13 @@ input[type=datetime-local]::-webkit-calendar-picker-indicator:active {
 select + .selectHint,
 select + .inputLabel + .selectHint {
   display: inline-block;
-  height: 26px;
-  width: 26px;
+  height: 1.857em;
+  width: 1.857em;
   background: transparent;
   border-radius: 50%;
   float: right;
-  margin-top: -34px;
-  margin-right: 20px;
+  margin-top: -2.357rem;
+  margin-right: 1.5rem;
   position: relative;
   z-index: -1;
   transition: 0.15s background-color ease-out;
@@ -811,13 +811,13 @@ select + .inputLabel + .selectHint::after {
 input + .emptyInput,
 input + .inputLabel + .emptyInput {
   display: inline-block;
-  height: 26px;
-  width: 26px;
+  height: 1.625rem;
+  width: 1.625rem;
   background: transparent;
   border-radius: 50%;
   float: right;
-  margin-top: -37px;
-  margin-right: 20px;
+  margin-top: -2rem;
+  margin-right: 1rem;
   z-index: 2;
   position: relative;
   transition: 0.15s background-color ease-out;
@@ -840,6 +840,8 @@ input + .inputLabel + .emptyInput:hover {
 
 input[type=color] {
   height: 3em;
+  padding-left: 10%;
+  padding-right: 80%;
   cursor: pointer;
 }
 
@@ -863,14 +865,37 @@ input[type=color] {
 .tagLeft :first-child {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   background: rgba(0, 0, 0, 0.05);
-  line-height: 2em;
+  height: 2.5rem;
+  line-height: 2rem;
   vertical-align: middle;
   text-align: center;
-  padding: 0 0.5em;
+  padding: 0 0.5rem;
   color: rgba(0, 0, 0, 0.5);
-  font-size: 1.5em;
+  font-size: 1.5rem;
+  transition: 0.2s border-bottom-color;
 }
 .tagLeft:focus-within :first-child {
+  border-bottom-color: var(--main-color);
+  color: var(--main-color);
+}
+
+.tagRight {
+  display: grid;
+  grid-template-columns: auto min-content;
+}
+.tagRight :last-child {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.05);
+  height: 2.5rem;
+  line-height: 2rem;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 0.5rem;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+  transition: 0.2s border-bottom-color;
+}
+.tagRight:focus-within :last-child {
   border-bottom-color: var(--main-color);
   color: var(--main-color);
 }
@@ -1009,8 +1034,8 @@ input[type=color] {
 
 .cols2, .cols3, .cols4, .cols5, .cols6 {
   display: grid;
-  grid-gap: 10px;
-  padding: 10px;
+  grid-gap: 0.715rem;
+  padding: 0.715rem;
 }
 
 .cols2 {
@@ -1066,23 +1091,34 @@ input[type=color] {
   z-index: 9999999;
   top: 0;
   width: 100%;
-  height: 5vh;
+  height: 4rem;
   background: var(--main-color);
   color: var(--main-text-cl);
   display: grid;
-  grid-template-columns: 5vh auto 5vh;
-  padding: 0 1vh;
+  grid-template-columns: 4rem auto 4rem;
+  padding: 0 1rem;
 }
 
 .app-menu-btn {
-  -webkit-appearance: button;
   cursor: pointer;
   display: block;
   position: relative;
   width: 100%;
   height: 100%;
+}
+
+.app-menu-btn::after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
   background: var(--main-text-cl);
-  clip-path: polygon(10% 30%, 90% 30%, 90% 35%, 10% 35%, 10% 45%, 90% 45%, 90% 50%, 10% 50%, 10% 60%, 90% 60%, 90% 65%, 10% 65%);
+  clip-path: polygon(10% 30%, 90% 30%, 90% 35%, 10% 35%, 10% 50%, 90% 50%, 90% 55%, 10% 55%, 10% 70%, 90% 70%, 90% 75%, 10% 75%);
+}
+
+.app-menu-btn:active::after {
+  opacity: 0.5;
 }
 
 .box-info,
@@ -1090,11 +1126,11 @@ input[type=color] {
 .box-warning,
 .box-alert {
   display: block;
-  margin: 0.5em 1em 0.5em 1em;
-  padding: 0 1em 0.75em 1em;
+  margin: 0.5rem 1rem 0.5rem 1rem;
+  padding: 0 1rem 0.75rem 1rem;
   border: 1px solid transparent;
   border-radius: 2px;
-  min-height: 30px;
+  min-height: 2.15rem;
   cursor: default;
 }
 
