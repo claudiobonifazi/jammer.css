@@ -97,7 +97,6 @@ label{
 	display: block;
 	position: relative;
 	padding: 0.85em 0;
-	cursor:text;
 }
 label.required{
 
@@ -145,10 +144,11 @@ input[type="radio"]{
 input[type="checkbox"]+.check,
 input[type="radio"]+.radio{
 	display: inline-block;
-	height: 1rem;
-	width:  1rem;
+	height: 1.15rem;
+	width:  1.15rem;
 	border: 2px solid rgba(0,0,0,0.33);
 	vertical-align: middle;
+	position: relative;
 }
 input[type="checkbox"]+.switch{
 	display: inline-block;
@@ -162,7 +162,7 @@ input[type="checkbox"]+.switch{
 input[type="radio"]+.radio{
 	border-radius: 50%;
 }
-input[type="checkbox"]+.check::after,
+
 input[type="radio"]+.radio::after{
 	display: inline-block;
 	content: "\2713\0020";
@@ -176,11 +176,23 @@ input[type="radio"]+.radio::after{
 	vertical-align: super;
 	transition:  0.1s all ease-out;
 }
+input[type="checkbox"]+.check::after{
+	content: '';
+	display: inline-block;
+	height: 0.4rem;
+	width: 0.7rem;
+	border-left: 0.2rem solid var(--main-text-cl);
+	border-bottom: 0.2rem solid var(--main-text-cl);
+	transform: rotate(-45deg);
+	top: 0.15rem;
+	left:0.1rem;
+	position: absolute;
+}
 input[type="checkbox"]+.switch::after{
 	display: inline-block;
 	content: "";
 	line-height: 1;
-	width: 0.666rem;
+	width: 0.7rem;
 	height:1rem;
 	background: var(--main-color);
 	outline: 0.1rem solid var(--button-greyedout);
@@ -188,7 +200,7 @@ input[type="checkbox"]+.switch::after{
 }
 
 input[type="checkbox"]:checked+.switch::after{
-	transform: translate(1.334em,0);
+	transform: translate(1.3rem,0);
 }
 input[type="radio"]+.radio::after{
 	content: "";
@@ -237,11 +249,17 @@ input[type="range"]{
 	width: 100%;
 	margin-top:1rem;
 	height: 1rem;
-	background: var(--button-greyedout);
+	/*background: var(--button-greyedout);*/
+	background: repeating-linear-gradient( 90deg, 
+						rgba(0,0,0,0.15), rgba(0,0,0,0.15) 10px, 
+						rgba(0,0,0,0.25) 10px, rgba(0,0,0,0.25) 11px );
+	border-radius: 2px;
 	opacity: 0.85;
+	cursor:pointer;
 	transition: opacity 0.2s ease-out;
 }
-input[type="range"]::before{
+/* still not supported */
+/*input[type="range"]::before{
 	color: var(--text-base);
 	margin-left: 0.5rem;
 	float:left;
@@ -254,25 +272,34 @@ input[type="range"]::after{
 	float:right;
 	z-index:2;
 	content: attr(max);
-}
+}*/
 input[type="range"]:hover{
 	opacity: 1;
 }
-input[type="range"]::-webkit-slider-thumb{
+
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb{
 	-webkit-appearance: none;
 	appearance: none;
 	width: 1rem;
 	height: 1.5rem;
 	background: var(--main-color);
+	border: 1px solid var(--main-color);
 	border-radius: 2px;
 	cursor: pointer;
+	position: relative;
 }
-input[type="range"]::-moz-range-thumb{
-  width: 1rem;
-  height: 1.5rem;
-  background: var(--main-color);
-  cursor: pointer;
+input[type="range"]::-webkit-slider-thumb::after,
+input[type="range"]::-moz-range-thumb::after{
+	content: "ciao";
+	position:absolute;
+	left: 0;
+	top: 0;
+	width: 1rem;
+	height: 1.5rem;
+	text-align: center;
 }
+
 input[type="number"]:not(.no-buttons)::-webkit-inner-spin-button,
 input[type="number"]:not(.no-buttons)::-webkit-outer-spin-button{
 	height: auto;
@@ -300,12 +327,12 @@ input[type="date"],
 input[type="datetime-local"],
 input[type="file"],
 select{
-	height: 3rem;
+	height: 2.5rem;
 }
 input[type="file"]{
 	font-weight:500;
 	cursor:pointer;
-	padding-left:0
+	padding-left:0;
 }
 input[type="date"]::-webkit-clear-button,
 input[type="date"]::-webkit-inner-spin-button,
@@ -340,7 +367,7 @@ select+.inputLabel+.selectHint{
 	background:transparent;
 	border-radius: 50%;
 	float: right;
-	margin-top: -2.357rem;
+	margin-top: -2.057rem;
 	margin-right: 1.5rem;
 	position:relative;
 	z-index:-1;
@@ -398,9 +425,8 @@ input+.inputLabel+.emptyInput:hover{
 }
 
 input[type="color"]{
-	height:3em;
-	padding-left: 10%;
-	padding-right:80%;
+	height: 2.5rem;
+	padding: 0.5rem 1rem;
 	cursor:pointer;
 }
 /*currently not supported*/
@@ -422,11 +448,14 @@ input[type="color"]{
 	display: grid;
 	grid-template-columns: min-content auto;
 
+	input{
+		border-top-left-radius:0;
+	}
 	:first-child{
 		border-bottom: 2px solid rgba(0,0,0,0.1);
 		background: rgba(0,0,0,0.05);
 		height:2.5rem;
-		line-height: 2rem;
+		line-height: 2.5rem;
 		vertical-align: middle;
 		text-align: center;
 		padding: 0 0.5rem;
@@ -444,11 +473,14 @@ input[type="color"]{
 	display: grid;
 	grid-template-columns: auto min-content;
 
+	input{
+		border-top-right-radius: 0;
+	}
 	:last-child{
 		border-bottom: 2px solid rgba(0,0,0,0.1);
 		background: rgba(0,0,0,0.05);
 		height:2.5rem;
-		line-height: 2rem;
+		line-height: 2.5rem;
 		vertical-align: middle;
 		text-align: center;
 		padding: 0 0.5rem;
@@ -460,4 +492,47 @@ input[type="color"]{
 		border-bottom-color: var(--main-color);
 		color: var(--main-color);
 	}
+}
+
+
+
+
+input[type="password"]{
+	color: var(--main-color);
+}
+input[type="password"]::placeholder{
+	color:var(--text-base);
+}
+
+input[type="password"]+.showPwd,
+input[type="password"]+.inputLabel+.showPwd,
+input[type="text"]+.showPwd,
+input[type="text"]+.inputLabel+.showPwd{
+    display: inline-block;
+    height: 1.625rem;
+    width: 1.625rem;
+    background: transparent;
+    border-radius: 50%;
+    float: right;
+    margin-top: -2rem;
+    margin-right: 1rem;
+    z-index:2;
+    position: relative;
+    transition: 0.15s background-color ease-out;
+    color: rgba(0,0,0,0.5);
+	text-align: center;
+	line-height: 26px;
+	font-size: 1rem;
+	cursor:pointer;
+}
+input[type="text"]+.showPwd,
+input[type="text"]+.inputLabel+.showPwd{
+	background: var(--main-color);
+	color: var(--main-text-cl);
+}
+input[type="password"]+.showPwd::after,
+input[type="password"]+.inputLabel+.showPwd::after,
+input[type="text"]+.showPwd::after,
+input[type="text"]+.inputLabel+.showPwd::after{
+	content: '👁';
 }

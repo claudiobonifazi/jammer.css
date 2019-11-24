@@ -10,6 +10,9 @@
 	grid-template-columns: 4rem auto 4rem;
 	padding: 0 1rem;
 }
+.app_header>*{
+	overflow:hidden;
+}
 .app-menu-btn{
 	cursor:pointer;
 	display: block;

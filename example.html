@@ -4,220 +4,223 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="jammer.css">
+		<title>jammer.css example</title>
 	</head>
 	<body>
-		<div class="app_header">
-			<div></div>
-			<div>
-				<h1 class="text-center">
-					Example one page website
-				</h1>
+		<div style="width:415px;height:725px;display:inline-block;overflow:auto">
+			<div class="app_header">
+				<div></div>
+				<div>
+					<h1 class="text-center">
+						Example
+					</h1>
+				</div>
+				<div>
+					<span class="app-menu-btn"></span>
+				</div>
 			</div>
-			<div>
-				<span class="app-menu-btn"></span>
+			<article>
+				<h1>h1 header</h1>
+				<h2>h2 header</h2>
+				<h3>h3 header</h3>
+				<h4>h4 header</h4>
+				<h5>h5 header</h5>
+				<h6>h6 header</h6>
+				<span>Normal text</span>
+				<strong>Strong text</strong>
+				<i>Italic text</i>
+				<small>small text</small>
+				<code>code</code>
+				<sup>sup</sup>
+				<sub>sub</sub>
+			</article>
+			<hr>
+			<form>
+				<fieldset>
+					<legend>A form</legend>
+					<div>
+						<label>
+							<input type="text" placeholder="Text field">
+							<span class="inputLabel">Text field</span>
+						</label>
+						<label class="tagLeft">
+							<div>@</div>
+							<input type="email" placeholder="Email field">
+							<span class="inputLabel">Email field</span>
+						</label>
+						<label class="tagLeft">
+							<div>📞</div>
+							<input type="tel" placeholder="Phone field">
+							<span class="inputLabel">Phone field</span>
+						</label>
+						<label>
+							<input type="number" placeholder="Number field">
+							<span class="inputLabel">Number field</span>
+						</label>
+						<label class="tagRight">
+							<input type="number" class="no-buttons" placeholder="Number field without spin buttons">
+							<span class="inputLabel">Number field without spin buttons</span>
+							<div>#</div>
+						</label>
+						<label>
+							<input type="password" placeholder="Password field">
+							<span class="inputLabel">Password field</span>
+							<span class="showPwd" onclick="let f=this.parentElement.querySelector('input');f.type=f.type=='text'?'password':'text'"></span>
+						</label>
+						<label>
+							<input type="search" placeholder="Search field">
+							<span class="inputLabel">Search field</span>
+							<span class="emptyInput" onclick="this.parentElement.children[0].value=''"></span>
+						</label>
+						<label>
+							<input type="url" placeholder="Url field">
+							<span class="inputLabel">Url field</span>
+						</label>
+						<label>
+							<input type="date" placeholder="Date field">
+							<span class="inputLabel">Date field</span>
+						</label>
+						<label>
+							<input type="datetime-local" placeholder="Date&time field">
+							<span class="inputLabel">Date&time field</span>
+						</label>
+						<label>
+							<input type="file">
+							<span class="inputLabel">File input</span>
+						</label>
+						<label>
+							<select>
+								<optgroup label="Opt. group 1">
+									<option>Option 1</option>
+									<option>Option 2</option>
+									<option>Option 3</option>
+								</optgroup>
+								<optgroup label="Opt. group 2">
+									<option>Option 4</option>
+									<option>Option 5</option>
+									<option>Option 6</option>
+								</optgroup>
+							</select>
+							<span class="inputLabel">select field</span>
+							<span class="selectHint"></span>
+						</label>
+						<label>
+							<input type="color">
+							<span class="inputLabel">Color input</span>
+						</label>
+						<label>
+							<input type="range" placeholder="slider field" min="0" max="100" value="70" onchange="this.innerText=this.value">
+							<span class="inputLabel">Slider field</span>
+						</label>
+					</div>
+					<div class="cols3">
+						<div>
+							<label>
+								<input type="radio" name="radio" checked>
+								<span class="radio"></span>
+								<span class="inputLabel">Radio opt</span>
+							</label>
+							<label>
+								<input type="radio" name="radio">
+								<span class="radio"></span>
+								<span class="inputLabel">Radio opt</span>
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="checkbox" checked>
+								<span class="check"></span>
+								<span class="inputLabel">Radio opt</span>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="check"></span>
+								<span class="inputLabel">Radio opt</span>
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="checkbox" checked>
+								<span class="switch"></span>
+								<span class="inputLabel">Switch1</span>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="switch"></span>
+								<span class="inputLabel">Switch2</span>
+							</label>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<hr>
+			<form class="w10 m1 shadow6">
+				<fieldset>
+					<legend>Login form</legend>
+					<label>
+						<input type="text" placeholder="Username" required>
+						<span class="inputLabel">Username</span>
+					</label>
+					<label>
+						<input type="password" placeholder="Password" required>
+						<span class="inputLabel">Password</span>
+					</label>
+					<div class="text-right">
+						<a href="#">
+							forgot password
+						</a>
+					</div>
+					<div class="cols2">
+						<button>
+							login
+						</button>
+						<a class="button secondary">
+							back
+						</a>
+					</div>
+				</fieldset>
+			</form>
+			<div class="p10">
+				<button>
+					standard
+				</button>
 			</div>
-		</div>
-		<article>
-			<h1>h1 header</h1>
-			<h2>h2 header</h2>
-			<h3>h3 header</h3>
-			<h4>h4 header</h4>
-			<h5>h5 header</h5>
-			<h6>h6 header</h6>
-			<strong>Strong text</strong>
-			<i>Italic text</i>
-			<small>small text</small>
-			<sup>sup</sup>
-			<sub>sub</sub>
-			<code>code</code>
-		</article>
-		<hr>
-		<form>
-			<fieldset>
-				<legend>A form</legend>
-				<div class="cols2">
-					<label>
-						<input type="text" placeholder="Text field">
-						<span class="inputLabel">Text field</span>
-					</label>
-					<label class="tagLeft">
-						<div>✉</div>
-						<input type="email" placeholder="Email field">
-						<span class="inputLabel">Email field</span>
-					</label>
-					<label class="tagLeft">
-						<div>☎</div>
-						<input type="tel" placeholder="Phone field">
-						<span class="inputLabel">Phone field</span>
-					</label>
-					<label class="tagRight">
-						<input type="number" placeholder="Number field">
-						<span class="inputLabel">Number field</span>
-						<div>#</div>
-					</label>
-					<label>
-						<input type="number" class="no-buttons" placeholder="Number field without spin buttons">
-						<span class="inputLabel">Number field without spin buttons</span>
-					</label>
-					<label>
-						<input type="password" placeholder="Password field">
-						<span class="inputLabel">Password field</span>
-					</label>
-					<label>
-						<input type="search" placeholder="Search field">
-						<span class="inputLabel">Search field</span>
-						<span class="emptyInput" onclick="this.parentElement.children[0].value=''"></span>
-					</label>
-					<label>
-						<input type="url" placeholder="Url field">
-						<span class="inputLabel">Url field</span>
-					</label>
-					<label>
-						<input type="date" placeholder="Date field">
-						<span class="inputLabel">Date field</span>
-					</label>
-					<label>
-						<input type="datetime-local" placeholder="Date&time field">
-						<span class="inputLabel">Date&time field</span>
-					</label>
-					<label>
-						<input type="file">
-						<span class="inputLabel">File input</span>
-					</label>
-					<label>
-						<select>
-							<optgroup label="Opt. group 1">
-								<option>Option 1</option>
-								<option>Option 2</option>
-								<option>Option 3</option>
-							</optgroup>
-							<optgroup label="Opt. group 2">
-								<option>Option 1</option>
-								<option>Option 2</option>
-								<option>Option 3</option>
-							</optgroup>
-						</select>
-						<span class="inputLabel">select field</span>
-						<span class="selectHint"></span>
-					</label>
-					<label>
-						<input type="color">
-						<span class="inputLabel">Color input</span>
-					</label>
-					<label>
-						<input type="range" placeholder="slider field" min="0" max="100" value="70">
-						<span class="inputLabel">Slider field</span>
-					</label>
-				</div>
-				<div class="cols3">
-					<div>
-						<label>
-							<input type="radio" name="radio" checked>
-							<span class="radio"></span>
-							<span class="inputLabel">Radio opt</span>
-						</label>
-						<label>
-							<input type="radio" name="radio">
-							<span class="radio"></span>
-							<span class="inputLabel">Radio opt</span>
-						</label>
-					</div>
-					<div>
-						<label>
-							<input type="checkbox" checked>
-							<span class="switch"></span>
-							<span class="inputLabel">Switch opt</span>
-						</label>
-						<label>
-							<input type="checkbox">
-							<span class="switch"></span>
-							<span class="inputLabel">Switch opt</span>
-						</label>
-					</div>
-					<div>
-						<label>
-							<input type="checkbox" checked>
-							<span class="check"></span>
-							<span class="inputLabel">Radio opt</span>
-						</label>
-						<label>
-							<input type="checkbox">
-							<span class="check"></span>
-							<span class="inputLabel">Radio opt</span>
-						</label>
-					</div>
-				</div>
-			</fieldset>
-		</form>
-		<hr>
-		<form class="w6 m3 shadow7">
-			<fieldset>
-				<legend>Login form</legend>
-				<label>
-					<input type="text" placeholder="Username" required>
-					<span class="inputLabel">Username</span>
-				</label>
-				<label>
-					<input type="password" placeholder="Password" required>
-					<span class="inputLabel">Password</span>
-				</label>
-				<div class="text-right">
-					<a href="#">
-						forgot password
-					</a>
-				</div>
-				<div class="cols2">
-					<button>
-						login
-					</button>
-					<a class="button secondary">
-						back
-					</a>
-				</div>
-			</fieldset>
-		</form>
-		<div class="p10">
-			<button>
-				standard
-			</button>
-		</div>
-		<div class="p10">
-			<button class="secondary">
-				secondary
-			</button>
-		</div>
-		<div class="p10">
-			<button class="main">
-				full width
-			</button>
-		</div>
-		<div class="p10">
-			<button class="success">
-				success
-			</button>
-		</div>
-		<div class="p10">
-			<button class="warning">
-				warning
-			</button>
-		</div>
-		<div class="p10">
-			<button class="alert">
-				alert
-			</button>
-		</div>
-		<hr>
-		<div class="p10 cols2">
-			<table class="shadow4">
+			<div class="p10">
+				<button class="secondary">
+					secondary
+				</button>
+			</div>
+			<div class="p10">
+				<button class="main">
+					full width
+				</button>
+			</div>
+			<div class="p10">
+				<button class="success">
+					success
+				</button>
+			</div>
+			<div class="p10">
+				<button class="warning">
+					warning
+				</button>
+			</div>
+			<div class="p10">
+				<button class="alert">
+					alert
+				</button>
+			</div>
+			<hr>
+			<table class="w10 m1 shadow4">
 				<caption>
 					Normal table
 				</caption>
 				<thead>
 					<tr>
-						<th>Column 1</th>
-						<th>Column 2</th>
-						<th>Column 3</th>
-						<th>Column 4</th>
+						<th>Col1</th>
+						<th>Col2</th>
+						<th>Col3</th>
+						<th>Col4</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -247,43 +250,43 @@
 					</tr>
 				</tbody>
 			</table>
-			<table class="pivot shadow4">
+			<table class="pivot w10 m1 shadow4">
 				<caption>
 					Pivot table
 				</caption>
 				<thead>
 					<tr>
 						<th></th>
-						<th>Column 1</th>
-						<th>Column 2</th>
-						<th>Column 3</th>
-						<th>Column 4</th>
+						<th>Col1</th>
+						<th>Col2</th>
+						<th>Col3</th>
+						<th>Col4</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td>Row 1</td>
+						<td>Row1</td>
 						<td contenteditable="true">data1</td>
 						<td contenteditable="true">data2</td>
 						<td contenteditable="true">data3</td>
 						<td contenteditable="true">data4</td>
 					</tr>
 					<tr>
-						<td>Row 2</td>
+						<td>Row2</td>
 						<td contenteditable="true">data1</td>
 						<td contenteditable="true">data2</td>
 						<td contenteditable="true">data3</td>
 						<td contenteditable="true">data4</td>
 					</tr>
 					<tr>
-						<td>Row 3</td>
+						<td>Row3</td>
 						<td contenteditable="true">data1</td>
 						<td contenteditable="true">data2</td>
 						<td contenteditable="true">data3</td>
 						<td contenteditable="true">data4</td>
 					</tr>
 					<tr>
-						<td>Row 4</td>
+						<td>Row4</td>
 						<td contenteditable="true">data1</td>
 						<td contenteditable="true">data2</td>
 						<td contenteditable="true">data3</td>

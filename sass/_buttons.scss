@@ -15,8 +15,8 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-.button,
-::-webkit-file-upload-button{
+.button/*,
+::-webkit-file-upload-button*/{
 	-webkit-appearance: button;
 	font-family: inherit;
 	font-size: 100%;
@@ -34,8 +34,11 @@ input[type="submit"],
 	letter-spacing: 1px;
 	cursor: pointer;
 }
-::-webkit-file-upload-button{
+/*::-webkit-file-upload-button{
 	line-height: 1.85
+}*/
+::-webkit-file-upload-button{
+	display:none;
 }
 button:focus,
 input[type="button"]:focus,

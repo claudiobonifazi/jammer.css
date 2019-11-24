@@ -85,6 +85,7 @@ table{
 		color: var(--main-text-cl);
 		line-height: 1;
 		border-radius: 2px 2px 0 0;
+		padding: 0.5rem 0.25rem;
 		filter: saturate(0.5);
 	}
 	tr{
@@ -141,7 +142,9 @@ form{
 			font-size: 120%;
 			line-height: 1.5;
 			border-bottom: 1px solid rgba(0,0,0,0.1);
-			margin: 1rem 0 1.5rem 0.5rem;
+			margin: 1rem 0 1.5rem 0;
+			width: 100%;
+			text-indent: 1rem;
 		}
 	}
 }
