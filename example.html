@@ -35,9 +35,9 @@
 				<sub>sub</sub>
 			</article>
 			<hr>
+			<h2>Input fields</h2>
 			<form>
 				<fieldset>
-					<legend>A form</legend>
 					<div>
 						<label>
 							<input type="text" placeholder="Text field">
@@ -109,8 +109,12 @@
 							<span class="inputLabel">Color input</span>
 						</label>
 						<label>
-							<input type="range" placeholder="slider field" min="0" max="100" value="70" onchange="this.innerText=this.value">
+							<input type="range" placeholder="slider field" min="0" max="100" value="70">
 							<span class="inputLabel">Slider field</span>
+						</label>
+						<label>
+							<textarea rows="5" placeholder="Textarea"></textarea>
+							<span class="inputLabel">Textarea</span>
 						</label>
 					</div>
 					<div class="cols3">
@@ -156,7 +160,7 @@
 			<hr>
 			<form class="w10 m1 shadow6">
 				<fieldset>
-					<legend>Login form</legend>
+					<legend>Example Login form</legend>
 					<label>
 						<input type="text" placeholder="Username" required>
 						<span class="inputLabel">Username</span>
@@ -180,6 +184,7 @@
 					</div>
 				</fieldset>
 			</form>
+			<h2>Buttons</h2>
 			<div class="p10">
 				<button>
 					standard
@@ -210,7 +215,17 @@
 					alert
 				</button>
 			</div>
+			<div class="p10 tagRight">
+				<label>
+					<input type="text" placeholder="Input with button">
+					<span class="inputLabel">Input with button</span>
+				</label>
+				<button>
+					&rtrif;
+				</button>
+			</div>
 			<hr>
+			<h2>Tables</h2>
 			<table class="w10 m1 shadow4">
 				<caption>
 					Normal table
@@ -294,6 +309,112 @@
 					</tr>
 				</tbody>
 			</table>
+			<br>
+			<hr>
+			<h2>Column grid</h2>
+			<div class="p10">
+				<div class="cols2" style="background:rgba(0,0,0,0.1)">
+					<div>
+						<small>.cols2</small> 
+					</div>
+					<div>
+						<small>.cols2</small>
+					</div>
+				</div>
+				<br>
+				<div class="cols3" style="background:rgba(0,0,0,0.1)">
+					<div>
+						<small>.cols3</small> 
+					</div>
+					<div>
+						<small>.cols3</small>
+					</div>
+					<div>
+						<small>.cols3</small>
+					</div>
+				</div>
+				<br>
+				<div class="cols4" style="background:rgba(0,0,0,0.1)">
+					<div>
+						<small>.cols4</small> 
+					</div>
+					<div>
+						<small>.cols4</small>
+					</div>
+					<div>
+						<small>.cols4</small>
+					</div>
+					<div>
+						<small>.cols4</small>
+					</div>
+				</div>
+				<br>
+				<div class="cols5" style="background:rgba(0,0,0,0.1)">
+					<div>
+						<small>.cols5</small> 
+					</div>
+					<div>
+						<small>.cols5</small>
+					</div>
+					<div>
+						<small>.cols5</small>
+					</div>
+					<div>
+						<small>.cols5</small>
+					</div>
+					<div>
+						<small>.cols5</small>
+					</div>
+				</div>
+				<br>
+				<div class="cols6" style="background:rgba(0,0,0,0.1)">
+					<div>
+						<small>.cols6</small> 
+					</div>
+					<div>
+						<small>.cols6</small>
+					</div>
+					<div>
+						<small>.cols6</small>
+					</div>
+					<div>
+						<small>.cols6</small>
+					</div>
+					<div>
+						<small>.cols6</small>
+					</div>
+					<div>
+						<small>.cols6</small>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<h2>Grid system</h2>
+			<div>
+				<div class="m11 w1" style="background:rgba(0,0,0,0.1)">.w1</div>
+				<br>
+				<div class="m10 w2" style="background:rgba(0,0,0,0.1)">.w2</div>
+				<br>
+				<div class="m9 w3" style="background:rgba(0,0,0,0.1)">.w3</div>
+				<br>
+				<div class="m8 w4" style="background:rgba(0,0,0,0.1)">.w4</div>
+				<br>
+				<div class="m7 w5" style="background:rgba(0,0,0,0.1)">.w5</div>
+				<br>
+				<div class="m6 w6" style="background:rgba(0,0,0,0.1)">.w6</div>
+				<br>
+				<div class="m5 w7" style="background:rgba(0,0,0,0.1)">.w7</div>
+				<br>
+				<div class="m4 w8" style="background:rgba(0,0,0,0.1)">.w8</div>
+				<br>
+				<div class="m3 w9" style="background:rgba(0,0,0,0.1)">.w9</div>
+				<br>
+				<div class="m2 w10" style="background:rgba(0,0,0,0.1)">.w10</div>
+				<br>
+				<div class="m1 w11" style="background:rgba(0,0,0,0.1)">.w11</div>
+				<br>
+				<div class="w12" style="background:rgba(0,0,0,0.1)">.w12</div>
+			</div>
 		</div>
 	</body>
 </html>

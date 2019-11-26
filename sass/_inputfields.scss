@@ -1,9 +1,15 @@
-input,optgroup,select,textarea{
+input,optgroup,select{
 	font-family: inherit;
 	font-size: 100%;
 	line-height: 1.15;
 	margin: 0;
 	height: 2.5rem;
+}
+textarea{
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
 }
 input[type="text"],
 input[type="number"],
@@ -96,7 +102,7 @@ textarea:not([readonly]):focus::placeholder{
 label{
 	display: block;
 	position: relative;
-	padding: 0.85em 0;
+	padding: 0.75rem 0;
 }
 label.required{
 
@@ -451,7 +457,7 @@ input[type="color"]{
 	input{
 		border-top-left-radius:0;
 	}
-	:first-child{
+	:first-child:not(button):not(input[type="button"]):not(input[type="reset"]):not(input[type="submit"]):not(.button):not(.inputLabel){
 		border-bottom: 2px solid rgba(0,0,0,0.1);
 		background: rgba(0,0,0,0.05);
 		height:2.5rem;
@@ -463,7 +469,17 @@ input[type="color"]{
 		font-size: 1.5rem;
 		transition: 0.2s border-bottom-color;
 	}
-	&:focus-within :first-child{
+	button:first-child,
+	input[type="button"]:first-child,
+	input[type="reset"]:first-child,
+	input[type="submit"]:first-child,
+	.button:first-child{
+		margin-top: 0.75rem;
+		height:2.5rem;
+		border-top-left-radius:0;
+		border-bottom-left-radius:0;
+	}
+	&:focus-within :last-child:not(button):not(.inputLabel){
 		border-bottom-color: var(--main-color);
 		color: var(--main-color);
 	}
@@ -476,7 +492,7 @@ input[type="color"]{
 	input{
 		border-top-right-radius: 0;
 	}
-	:last-child{
+	:last-child:not(button):not(input[type="button"]):not(input[type="reset"]):not(input[type="submit"]):not(.button):not(.inputLabel){
 		border-bottom: 2px solid rgba(0,0,0,0.1);
 		background: rgba(0,0,0,0.05);
 		height:2.5rem;
@@ -488,7 +504,17 @@ input[type="color"]{
 		font-size: 1.5rem;
 		transition: 0.2s border-bottom-color;
 	}
-	&:focus-within :last-child{
+	button:last-child,
+	input[type="button"]:last-child,
+	input[type="reset"]:last-child,
+	input[type="submit"]:last-child,
+	.button:last-child{
+		margin-top: 0.75rem;
+		height:2.5rem;
+		border-top-left-radius:0;
+		border-bottom-left-radius:0;
+	}
+	&:focus-within :last-child:not(button):not(.inputLabel){
 		border-bottom-color: var(--main-color);
 		color: var(--main-color);
 	}

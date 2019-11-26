@@ -404,12 +404,19 @@ input[type=submit].alert,
   color: var(--alert-lighter);
 }
 
-input, optgroup, select, textarea {
+input, optgroup, select {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
   height: 2.5rem;
+}
+
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
 }
 
 input[type=text],
@@ -506,7 +513,7 @@ textarea:not([readonly]):focus::placeholder {
 label {
   display: block;
   position: relative;
-  padding: 0.85em 0;
+  padding: 0.75rem 0;
 }
 
 label.required .inputLabel::after {
@@ -890,7 +897,7 @@ input[type=color] {
 .tagLeft input {
   border-top-left-radius: 0;
 }
-.tagLeft :first-child {
+.tagLeft :first-child:not(button):not(input[type=button]):not(input[type=reset]):not(input[type=submit]):not(.button):not(.inputLabel) {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   background: rgba(0, 0, 0, 0.05);
   height: 2.5rem;
@@ -902,7 +909,17 @@ input[type=color] {
   font-size: 1.5rem;
   transition: 0.2s border-bottom-color;
 }
-.tagLeft:focus-within :first-child {
+.tagLeft button:first-child,
+.tagLeft input[type=button]:first-child,
+.tagLeft input[type=reset]:first-child,
+.tagLeft input[type=submit]:first-child,
+.tagLeft .button:first-child {
+  margin-top: 0.75rem;
+  height: 2.5rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.tagLeft:focus-within :last-child:not(button):not(.inputLabel) {
   border-bottom-color: var(--main-color);
   color: var(--main-color);
 }
@@ -914,7 +931,7 @@ input[type=color] {
 .tagRight input {
   border-top-right-radius: 0;
 }
-.tagRight :last-child {
+.tagRight :last-child:not(button):not(input[type=button]):not(input[type=reset]):not(input[type=submit]):not(.button):not(.inputLabel) {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   background: rgba(0, 0, 0, 0.05);
   height: 2.5rem;
@@ -926,7 +943,17 @@ input[type=color] {
   font-size: 1.5rem;
   transition: 0.2s border-bottom-color;
 }
-.tagRight:focus-within :last-child {
+.tagRight button:last-child,
+.tagRight input[type=button]:last-child,
+.tagRight input[type=reset]:last-child,
+.tagRight input[type=submit]:last-child,
+.tagRight .button:last-child {
+  margin-top: 0.75rem;
+  height: 2.5rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.tagRight:focus-within :last-child:not(button):not(.inputLabel) {
   border-bottom-color: var(--main-color);
   color: var(--main-color);
 }
@@ -1043,7 +1070,7 @@ input[type=text] + .inputLabel + .showPwd::after {
 }
 
 .m2 {
-  margin-left: 100%/6;
+  margin-left: 16.666667%;
 }
 
 .m3 {
@@ -1051,7 +1078,7 @@ input[type=text] + .inputLabel + .showPwd::after {
 }
 
 .m4 {
-  margin-left: 100%/3;
+  margin-left: 33.333333%;
 }
 
 .m5 {
@@ -1130,6 +1157,10 @@ input[type=text] + .inputLabel + .showPwd::after {
 
 .cols6 {
   grid-template-columns: repeat(6, 1fr);
+}
+
+.cols2 > *, .cols3 > *, .cols4 > *, .cols5 > *, .cols6 > * {
+  overflow: hidden;
 }
 
 .shadow1 {

@@ -15,9 +15,9 @@
 .w11{ width: 100% * 11 / 12 }
 .w12{ width: 100% }
 .m1{ margin-left: 8.333333% }
-.m2{ margin-left: 100% / 6 }
+.m2{ margin-left: 16.666667% }
 .m3{ margin-left: 25% }
-.m4{ margin-left: 100% / 3 }
+.m4{ margin-left: 33.333333% }
 .m5{ margin-left: 100% * 5 / 12 }
 .m6{ margin-left: 50% }
 .m7{ margin-left: 100% * 7 / 12 }
@@ -41,6 +41,9 @@
 .cols4{grid-template-columns: repeat(4,1fr);}
 .cols5{grid-template-columns: repeat(5,1fr);}
 .cols6{grid-template-columns: repeat(6,1fr);}
+.cols2>*,.cols3>*,.cols4>*,.cols5>*,.cols6>*{
+	overflow: hidden;
+}
 .shadow1{ box-shadow: 0 1px 1px rgba(0,0,0,0.1);  }
 .shadow2{ box-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 2px 2px rgba(0,0,0,0.1);  }
 .shadow3{ box-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 2px 2px rgba(0,0,0,0.1), 0 4px 4px rgba(0,0,0,0.1);  }
