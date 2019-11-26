@@ -17,7 +17,6 @@ body:not(.dark-mode){
 	--main-text-cl: #fff;
 	--main-text-cl-darker: #ddd;
 	--button-greyedout: #bbb;
-	--button-disabled-lighter: #ccc;
 }
 
 body.dark-mode{
@@ -39,8 +38,6 @@ body.dark-mode{
 	--button-fg: #fff;
 	--button-fg-darker: #ddd;
 	--button-disabled: #bbb;
-	--button-disabled-lighter: #ccc;
-
 }
 
 body{

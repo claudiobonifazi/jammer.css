@@ -81,10 +81,6 @@
 							<span class="inputLabel">Date field</span>
 						</label>
 						<label>
-							<input type="datetime-local" placeholder="Date&time field">
-							<span class="inputLabel">Date&time field</span>
-						</label>
-						<label>
 							<input type="file">
 							<span class="inputLabel">File input</span>
 						</label>
@@ -415,6 +411,148 @@
 				<br>
 				<div class="w12" style="background:rgba(0,0,0,0.1)">.w12</div>
 			</div>
+			<hr>
+			<h2>Success/Warning/Failure/Info</h2>
+			<div class="box-success shadow4">
+				<strong>box-success</strong>
+				<p>Good infos about stuff the user did</p>
+				<div class="text-right">
+					<button>
+						action
+					</button>
+				</div>
+			</div>
+			<div class="box-warning shadow4">
+				<strong>box-warning</strong>
+				<p>Be wary about other stuff</p>
+				<div class="text-right">
+					<button>
+						action
+					</button>
+				</div>
+			</div>
+			<div class="box-alert shadow4">
+				<strong>box-alert</strong>
+				<p>Infos about errors</p>
+				<div class="text-right">
+					<button>
+						action
+					</button>
+				</div>
+			</div>
+			<div class="box-info shadow4">
+				<strong>box-info</strong>
+				<p>Generic infos</p>
+				<div class="text-right">
+					<button>
+						action
+					</button>
+				</div>
+			</div>
+			<div class="p10">
+				<span class="text-success">.text-success</span>
+				<span class="text-warning">.text-warning</span>
+				<span class="text-alert">.text-alert</span>
+				<span class="text-info">.text-info</span>
+				<br>
+				<br>
+				<span class="tag-success">tag-success</span>
+				<span class="tag-warning">tag-warning</span>
+				<span class="tag-alert">tag-alert</span>
+				<span class="tag-info">tag-info</span>
+			</div>
+			<div class="p10">
+				<div class="p10 fill-success">
+					.fill-success
+				</div>
+				<div class="p10 fill-warning">
+					.fill-warning
+				</div>
+				<div class="p10 fill-alert">
+					.fill-alert
+				</div>
+				<div class="p10 fill-info">
+					.fill-info
+				</div>
+			</div>
+			<h2>Card element</h2>
+			<div class="p10">
+				<div class="card">
+					<div class="card_title">
+						Card title
+					</div>
+					<div class="card_content">
+						<img src="https://www.bing.com/th?id=OHR.CuttySark150_EN-US8574386630_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp">
+						<article>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis iaculis risus. Sed ante magna, pellentesque vel mi sed, malesuada efficitur magna. Nam a sem et sapien laoreet blandit ac nec turpis. Nullam ut ex a nisi imperdiet congue eu rutrum erat. Aenean laoreet lorem neque, sit amet cursus nisl molestie ac. Aliquam vehicula, justo ac tincidunt fermentum, turpis justo porttitor purus, quis mattis elit massa mollis lacus. Ut molestie tellus ac eros porta fringilla.
+						</article>
+					</div>
+				</div>
+			</div>
+			<h2>Dialog</h2>
+			<div class="text-center">
+				<button onclick="body.appendChild(getElementById('dialogT').content.cloneNode(true))">
+					open dialog
+				</button>
+				<template id="dialogT">
+					<div class="pwa_dialog">
+						<div class="pwa_dialog_topBar">
+							<div class="pwa_dialog_title">
+								Dialog title
+							</div>
+							<div class="pwa_dialog_topBtns">
+								<div class="pwa_dialog_topCross" onclick="let d=this.closest('.pwa_dialog');d.parentElement.removeChild(d)"></div>
+							</div>
+						</div>
+						<div class="pwa_dialog_body">
+							The dialog content
+						</div>
+					</div>
+				</template>
+			</div>
+			<hr>
+			<h2>Customize the colors</h2>
+			<label>
+				<input type="text" placeholder="--main-color" value="#0854C7" oninput="body.style.setProperty('--main-color',this.value)">
+				<span class="inputLabel">--main-color</span>
+				<small class="pull-right">Main color</small>
+			</label>
+			<label>
+				<input type="text" placeholder="--main-text-cl" value="#fff" oninput="body.style.setProperty('--main-text-cl',this.value)">
+				<span class="inputLabel">--main-text-cl</span>
+				<small class="pull-right">Text color in front of main color</small>
+			</label>
+			<label>
+				<input type="text" placeholder="--main-color-lighter" value="#3884f7" oninput="body.style.setProperty('--main-color-lighter',this.value)">
+				<span class="inputLabel">--main-color-lighter</span>
+				<small class="pull-right">Lighter shade of main color</small>
+			</label>
+			<label>
+				<input type="text" placeholder="--main-text-cl-darker" value="#ddd" oninput="body.style.setProperty('--main-text-cl-darker',this.value)">
+				<span class="inputLabel">--main-text-cl-darker</span>
+				<small class="pull-right">darker shade for the text in front of the main color</small>
+			</label>
+			<label>
+				<input type="text" placeholder="--button-greyedout" value="#bbb" oninput="body.style.setProperty('--button-greyedout',this.value)">
+				<span class="inputLabel">--button-greyedout</span>
+				<small class="pull-right">A shade of grey for some input elements</small>
+			</label>
+			<label>
+				<input type="text" placeholder="--background-base" value="#fff" oninput="body.style.setProperty('--background-base',this.value)">
+				<span class="inputLabel">--background-base</span>
+				<small class="pull-right">Body default bg color</small>
+			</label>
+			<label>
+				<input type="text" placeholder="--text-base" value="#080808" oninput="body.style.setProperty('--text-base',this.value)">
+				<span class="inputLabel">--text-base</span>
+				<small class="pull-right">Body default text color</small>
+			</label>
+			<label>
+				<input type="text" placeholder="--background-base-darker" value="#f9f9f9" oninput="body.style.setProperty('--background-base-darker',this.value)">
+				<span class="inputLabel">--background-base-darker</span>
+				<small class="pull-right">A darker shade of the body color</small>
+			</label>
+
 		</div>
 	</body>
 </html>

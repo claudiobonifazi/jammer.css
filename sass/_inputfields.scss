@@ -457,7 +457,7 @@ input[type="color"]{
 	input{
 		border-top-left-radius:0;
 	}
-	:first-child:not(button):not(input[type="button"]):not(input[type="reset"]):not(input[type="submit"]):not(.button):not(.inputLabel){
+	:first-child:not(button):not([type="button"]):not([type="reset"]):not([type="submit"]):not(.button):not(.inputLabel){
 		border-bottom: 2px solid rgba(0,0,0,0.1);
 		background: rgba(0,0,0,0.05);
 		height:2.5rem;
@@ -479,7 +479,7 @@ input[type="color"]{
 		border-top-left-radius:0;
 		border-bottom-left-radius:0;
 	}
-	&:focus-within :last-child:not(button):not(.inputLabel){
+	&:focus-within :first-child:not(button):not(.inputLabel){
 		border-bottom-color: var(--main-color);
 		color: var(--main-color);
 	}
@@ -492,7 +492,7 @@ input[type="color"]{
 	input{
 		border-top-right-radius: 0;
 	}
-	:last-child:not(button):not(input[type="button"]):not(input[type="reset"]):not(input[type="submit"]):not(.button):not(.inputLabel){
+	:last-child:not(button):not([type="button"]):not([type="reset"]):not([type="submit"]):not(.button):not(.inputLabel){
 		border-bottom: 2px solid rgba(0,0,0,0.1);
 		background: rgba(0,0,0,0.05);
 		height:2.5rem;

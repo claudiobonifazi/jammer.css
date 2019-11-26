@@ -34,7 +34,6 @@ body:not(.dark-mode) {
   --main-text-cl: #fff;
   --main-text-cl-darker: #ddd;
   --button-greyedout: #bbb;
-  --button-disabled-lighter: #ccc;
 }
 
 body.dark-mode {
@@ -54,7 +53,6 @@ body.dark-mode {
   --button-fg: #fff;
   --button-fg-darker: #ddd;
   --button-disabled: #bbb;
-  --button-disabled-lighter: #ccc;
 }
 
 body {
@@ -897,7 +895,7 @@ input[type=color] {
 .tagLeft input {
   border-top-left-radius: 0;
 }
-.tagLeft :first-child:not(button):not(input[type=button]):not(input[type=reset]):not(input[type=submit]):not(.button):not(.inputLabel) {
+.tagLeft :first-child:not(button):not([type=button]):not([type=reset]):not([type=submit]):not(.button):not(.inputLabel) {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   background: rgba(0, 0, 0, 0.05);
   height: 2.5rem;
@@ -919,7 +917,7 @@ input[type=color] {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-.tagLeft:focus-within :last-child:not(button):not(.inputLabel) {
+.tagLeft:focus-within :first-child:not(button):not(.inputLabel) {
   border-bottom-color: var(--main-color);
   color: var(--main-color);
 }
@@ -931,7 +929,7 @@ input[type=color] {
 .tagRight input {
   border-top-right-radius: 0;
 }
-.tagRight :last-child:not(button):not(input[type=button]):not(input[type=reset]):not(input[type=submit]):not(.button):not(.inputLabel) {
+.tagRight :last-child:not(button):not([type=button]):not([type=reset]):not([type=submit]):not(.button):not(.inputLabel) {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   background: rgba(0, 0, 0, 0.05);
   height: 2.5rem;
@@ -1015,6 +1013,14 @@ input[type=text] + .inputLabel + .showPwd::after {
 
 .text-right {
   text-align: right !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
 }
 
 .w1 {
@@ -1279,6 +1285,7 @@ input[type=text] + .inputLabel + .showPwd::after {
   width: 30px;
   font-size: 20px;
   font-family: monospace;
+  border-bottom-right-radius: 3px;
   font-weight: bold;
   margin-left: -1rem;
 }
@@ -1368,18 +1375,22 @@ input[type=text] + .inputLabel + .showPwd::after {
 
 .fill-info {
   background-color: var(--info);
+  color: var(--info-lighter);
 }
 
 .fill-success {
   background-color: var(--success);
+  color: var(--success-lighter);
 }
 
 .fill-warning {
   background-color: var(--warning);
+  color: var(--warning-lighter);
 }
 
 .fill-alert {
   background-color: var(--alert);
+  color: var(--alert-lighter);
 }
 
 .box-info button {
@@ -1407,6 +1418,14 @@ input[type=text] + .inputLabel + .showPwd::after {
   font-size: 75%;
   border-radius: 3px;
   margin: 0.25rem 0.1rem;
+  font-weight: bold;
+}
+
+.tag-info::before,
+.tag-success::before,
+.tag-warning::before,
+.tag-alert::before {
+  content: "#";
 }
 
 .tag-info {
@@ -1441,7 +1460,6 @@ input[type=text] + .inputLabel + .showPwd::after {
   display: grid;
   overflow: hidden;
 }
-
 .card .card_title {
   font-weight: 100;
   background: var(--main-color);
@@ -1449,7 +1467,7 @@ input[type=text] + .inputLabel + .showPwd::after {
   width: 100%;
   line-height: 1;
   padding: 10px;
-  border-radius: 2px;
+  border-radius: 0 0 2px 2px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
   font-size: 22px;
   text-align: center;
@@ -1457,10 +1475,19 @@ input[type=text] + .inputLabel + .showPwd::after {
   grid-row-start: 2;
   opacity: 0.85;
 }
-
 .card .card_content {
   padding: 0.5em;
   padding-bottom: 1.5em;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.card .card_content img:first-child {
+  border-radius: 3px 3px 0 0;
+}
+.card .card_content article {
+  font-style: italic;
+  margin-top: 0.75rem;
 }
 
 .pwa_dialog_backDrop {
@@ -1479,6 +1506,8 @@ input[type=text] + .inputLabel + .showPwd::after {
   z-index: 2000000001;
   left: 50%;
   top: 50%;
+  width: 85%;
+  max-height: 85%;
   transform: translate(-50%, -50%);
   border-radius: 3px;
   background: var(--background-base);
@@ -1497,6 +1526,7 @@ input[type=text] + .inputLabel + .showPwd::after {
   padding-left: 10px;
   text-transform: capitalize;
   font-weight: bold;
+  cursor: default;
 }
 
 .pwa_dialog_topCross {
@@ -1507,6 +1537,10 @@ input[type=text] + .inputLabel + .showPwd::after {
   line-height: 50px;
   background: var(--background-base-darker);
   border-bottom-left-radius: 20px;
+  cursor: pointer;
+}
+.pwa_dialog_topCross::after {
+  content: "×";
 }
 
 .pwa_dialog_topCross:active {
