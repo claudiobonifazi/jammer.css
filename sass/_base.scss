@@ -13,9 +13,10 @@ body{
 	font-size: 14px;
 	width:100%;
 	height:100%;
-	-webkit-font-smoothing: antialiased;
 	background: var(--background-base);
 	color: var(--text-base);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 *,
 ::before,
@@ -44,7 +45,7 @@ h5{font-size: 0.83rem;}
 h6{font-size: 0.67rem;}
 pre{font-family: monospace, monospace;font-size: 1rem;white-space:pre-wrap;}
 p,ul,ol,dl,address{line-height: 1.5;}
-code,kbd,samp{font-family: monospace, monospace;font-size: 1rem;}
+kbd,samp{font-family: monospace, monospace;font-size: 1rem;}
 sub,sup{font-size: 75%;line-height: 0;position: relative;vertical-align: baseline;}
 abbr[title]{border-bottom: none;text-decoration: underline;text-decoration: underline dotted;}
 b,strong{font-weight: bolder;}
@@ -57,7 +58,7 @@ a{
 	color: var(--main-color);
 	text-decoration: none
 }
-a:visited{color: var(--button-disabled);}
+a:visited{color: var(--button-greyedout);}
 a:hover,a:active{text-decoration: underline;}
 a:focus{text-decoration: none;}
 
@@ -81,23 +82,24 @@ table{
 		font-size: 115%;
 		font-weight:bold;
 		text-align:left;
-		background: var(--main-color);
+		background: var(--main-color-lighter);
 		color: var(--main-text-cl);
 		line-height: 1;
 		border-radius: 2px 2px 0 0;
 		padding: 0.5rem 0.25rem;
-		filter: saturate(0.5);
 	}
 	tr{
 		border-spacing: 0;
+
+		th,td{
+			padding: .75rem 0 .75rem .75rem;
+		}
+		th{
+			background: var(--background-base-darker);
+			text-align: left;
+		}
 	}
-	th,td{
-		padding: .75rem 0 .75rem .75rem;
-	}
-	th{
-		background: var(--background-base-darker);
-		text-align: left;
-	}
+
 	tbody>tr:nth-child(2n)>td{
 		background: var(--background-base-darker);
 
@@ -106,14 +108,15 @@ table{
 	td[contenteditable]:focus{
 		outline-color: var(--info);
 	}
-}
-table.pivot{
-	tbody{
-		tr{
-			td:first-child{
-				font-weight:bold;
-				background: var(--background-base-darker);
-				text-align: left;
+
+	&.pivot{
+		tbody{
+			tr{
+				td:first-child{
+					font-weight:bold;
+					background: var(--background-base-darker);
+					text-align: left;
+				}
 			}
 		}
 	}

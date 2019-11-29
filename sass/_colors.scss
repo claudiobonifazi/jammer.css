@@ -1,4 +1,4 @@
-body:not(.dark-mode){
+%baseColors{
 	--background-base: #fff;
 	--background-base-darker: #f9f9f9;
 	--text-base: #080808;
@@ -11,15 +11,8 @@ body:not(.dark-mode){
 	--warning-lighter: #fff3cd;
 	--alert: #a21c24;
 	--alert-lighter: #f8d7da;
-
-	--main-color: #0854C7;
-	--main-color-lighter: #3884f7;
-	--main-text-cl: #fff;
-	--main-text-cl-darker: #ddd;
-	--button-greyedout: #bbb;
 }
-
-body.dark-mode{
+@mixin darkModeColors(){
 	--background-base: #181818;
 	--background-base-darker: #0a0a0a;
 	--text-base: #fcfcfc;
@@ -31,16 +24,32 @@ body.dark-mode{
 	--warning: orange;
 	--warning-lighter: #fff3cd;
 	--alert: #f23c44;
-	--alert-lighter: #f8d7da;
+	--alert-lighter: #f8d7da;	
+}
 
-	--main-color: #065661;
-	--main-color-lighter: #7FC7AF;
-	--button-fg: #fff;
-	--button-fg-darker: #ddd;
-	--button-disabled: #bbb;
+%themeColors{
+	--main-color: #7824c7;
+	--main-color-lighter: #b05cff;
+	--main-text-cl: #fff;
+	--main-text-cl-darker: #ddd;
+	--button-greyedout: #bbb;	
 }
 
 body{
+	@extend %baseColors;
+
+	@extend %themeColors;
+
+	&.dark-mode{
+		@include darkModeColors();
+	}
+
 	/*- other variables -*/
 	--input-border-bottom: 2px;
+}
+
+@media( prefers-color-scheme: dark ){
+	body{
+		@include darkModeColors();
+	}
 }

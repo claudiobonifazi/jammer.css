@@ -1,22 +1,4 @@
-button::-moz-focus-inner,
-input[type="button"]::-moz-focus-inner,
-input[type="reset"]::-moz-focus-inner,
-input[type="submit"]::-moz-focus-inner{
-	border-style: none;
-	padding: 0;
-}
-button:-moz-focusring,
-input[type="button"]:-moz-focusring,
-input[type="reset"]:-moz-focusring,
-input[type="submit"]:-moz-focusring{
-	outline: 1px dotted ButtonText;
-}
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-.button/*,
-::-webkit-file-upload-button*/{
+%button{
 	-webkit-appearance: button;
 	font-family: inherit;
 	font-size: 100%;
@@ -32,76 +14,61 @@ input[type="submit"],
 	color: var(--main-text-cl);
 	font-weight:bold;
 	letter-spacing: 1px;
-	cursor: pointer;
-}
-/*::-webkit-file-upload-button{
-	line-height: 1.85
-}*/
-::-webkit-file-upload-button{
-	display:none;
-}
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-.button:focus,
-::-webkit-file-upload-button:focus{
-	outline: 1px solid var(--button-greyedout);
-	outline-offset: 1px;
-}
-button:not([disabled]):active,
-input[type="button"]:not([disabled]):active,
-input[type="reset"]:not([disabled]):active,
-input[type="submit"]:not([disabled]):active,
-.button:not([disabled]):active{
-	transform: translate(0,2px);
-}
-button.secondary,
-input[type="button"].secondary,
-input[type="reset"].secondary,
-input[type="submit"].secondary,
-.button.secondary{
-	background: var(--main-text-cl);
-	color: var(--main-color);
-	border: 1px solid var(--main-color);
-}
-button[disabled],
-input[type="button"][disabled],
-input[type="reset"][disabled],
-input[type="submit"][disabled],
-.button[disabled]{
-	filter: grayscale(0.75) opacity(0.5);
-	cursor: not-allowed;
-}
-button.main,
-input[type="button"].main,
-input[type="reset"].main,
-input[type="submit"].main,
-.button.main{
-	width: 100%;
+
+	&::-moz-focus-inner{
+		border-style: none;
+		padding: 0;
+	}
+	&:-moz-focusring{
+		outline: 1px dotted ButtonText;
+	}
+
+	&:focus{
+		outline: 1px solid var(--button-greyedout);
+		outline-offset: 1px;
+	}
+	&[disabled]{
+		cursor: not-allowed;
+		filter: grayscale(0.75) opacity(0.5);
+	}
+	&:not([disabled]){
+		cursor: pointer;
+
+		&:active{
+			transform: translate(0,2px);
+		}
+	}
+
+	&.secondary{
+		background: var(--main-text-cl);
+		color: var(--main-color);
+		border: 1px solid var(--main-color);
+	}
+	&.main{
+		width: 100%;
+	}
+	&.success{
+		background: var(--success);
+		color: var(--success-lighter);
+	}
+	&.warning{
+		background: var(--warning);
+		color: var(--warning-lighter);
+	}
+	&.alert{
+		background: var(--alert);
+		color: var(--alert-lighter);
+	}
 }
 
-button.success,
-input[type="button"].success,
-input[type="reset"].success,
-input[type="submit"].success,
-.button.success{
-	background: var(--success);
-	color: var(--success-lighter);
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button{
+	@extend %button;
 }
-button.warning,
-input[type="button"].warning,
-input[type="reset"].warning,
-input[type="submit"].warning,
-.button.warning{
-	background: var(--warning);
-	color: var(--warning-lighter);
-}
-button.alert,
-input[type="button"].alert,
-input[type="reset"].alert,
-input[type="submit"].alert,
-.button.alert{
-	background: var(--alert);
-	color: var(--alert-lighter);
+::-webkit-file-upload-button{
+	@extend %button;
+	line-height: 1.75
 }

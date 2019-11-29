@@ -7,7 +7,7 @@
 		<title>jammer.css example</title>
 	</head>
 	<body>
-		<div style="width:415px;height:725px;display:inline-block;overflow:auto">
+		<div style="width:415px;height:99%;max-height:725px;display:inline-block;overflow:auto">
 			<div class="app_header">
 				<div></div>
 				<div>
@@ -49,7 +49,7 @@
 							<span class="inputLabel">Email field</span>
 						</label>
 						<label class="tagLeft">
-							<div>📞</div>
+							<div>☎</div>
 							<input type="tel" placeholder="Phone field">
 							<span class="inputLabel">Phone field</span>
 						</label>
@@ -72,7 +72,8 @@
 							<span class="inputLabel">Search field</span>
 							<span class="emptyInput" onclick="this.parentElement.children[0].value=''"></span>
 						</label>
-						<label>
+						<label class="tagLeft">
+							<div style="font-size:inherit">https://</div>
 							<input type="url" placeholder="Url field">
 							<span class="inputLabel">Url field</span>
 						</label>
@@ -112,42 +113,46 @@
 							<textarea rows="5" placeholder="Textarea"></textarea>
 							<span class="inputLabel">Textarea</span>
 						</label>
+						<label>
+							<input type="file" class="dropArea">
+							<span class="inputLabel">File drag&drop area</span>
+						</label>
 					</div>
 					<div class="cols3">
 						<div>
 							<label>
 								<input type="radio" name="radio" checked>
 								<span class="radio"></span>
-								<span class="inputLabel">Radio opt</span>
+								<span class="inputLabel">Radio</span>
 							</label>
 							<label>
 								<input type="radio" name="radio">
 								<span class="radio"></span>
-								<span class="inputLabel">Radio opt</span>
+								<span class="inputLabel">Radio</span>
 							</label>
 						</div>
 						<div>
 							<label>
 								<input type="checkbox" checked>
 								<span class="check"></span>
-								<span class="inputLabel">Radio opt</span>
+								<span class="inputLabel">Check</span>
 							</label>
 							<label>
 								<input type="checkbox">
 								<span class="check"></span>
-								<span class="inputLabel">Radio opt</span>
+								<span class="inputLabel">Check</span>
 							</label>
 						</div>
 						<div>
 							<label>
 								<input type="checkbox" checked>
 								<span class="switch"></span>
-								<span class="inputLabel">Switch1</span>
+								<span class="inputLabel">Switch</span>
 							</label>
 							<label>
 								<input type="checkbox">
 								<span class="switch"></span>
-								<span class="inputLabel">Switch2</span>
+								<span class="inputLabel">Switch</span>
 							</label>
 						</div>
 					</div>
@@ -211,6 +216,11 @@
 					alert
 				</button>
 			</div>
+			<div class="p10">
+				<button disabled>
+					disabled
+				</button>
+			</div>
 			<div class="p10 tagRight">
 				<label>
 					<input type="text" placeholder="Input with button">
@@ -219,6 +229,15 @@
 				<button>
 					&rtrif;
 				</button>
+			</div>
+			<div class="p10 tagLeft">
+				<button>
+					&#9776; 
+				</button>
+				<label>
+					<input type="text" placeholder="Input with button before">
+					<span class="inputLabel">Input with button before</span>
+				</label>
 			</div>
 			<hr>
 			<h2>Tables</h2>
@@ -305,7 +324,17 @@
 					</tr>
 				</tbody>
 			</table>
-			<br>
+			<hr>
+			<h2>Code explanations</h2>
+			<div class="p10">
+				<code class="codeArea">
+					<div class="row"><span class="text-main">window</span>.doStuff = <span class="text-info">function</span>(){</div>
+					<div class="row">	<span class="comment">// doing random stuff</span></div>
+					<div class="row">	alert();</div>
+					<div class="row">	return <span style="color:var(--main-color)">this</span>;</div>
+					<div class="row">});</div>
+				</code>
+			</div>
 			<hr>
 			<h2>Column grid</h2>
 			<div class="p10">
@@ -454,12 +483,14 @@
 				<span class="text-warning">.text-warning</span>
 				<span class="text-alert">.text-alert</span>
 				<span class="text-info">.text-info</span>
+				<span class="text-main">.text-main</span>
 				<br>
 				<br>
 				<span class="tag-success">tag-success</span>
 				<span class="tag-warning">tag-warning</span>
 				<span class="tag-alert">tag-alert</span>
 				<span class="tag-info">tag-info</span>
+				<span class="tag-main">tag-main</span>
 			</div>
 			<div class="p10">
 				<div class="p10 fill-success">
@@ -473,6 +504,9 @@
 				</div>
 				<div class="p10 fill-info">
 					.fill-info
+				</div>
+				<div class="p10 fill-main">
+					.fill-main
 				</div>
 			</div>
 			<h2>Card element</h2>
@@ -512,47 +546,48 @@
 			</div>
 			<hr>
 			<h2>Customize the colors</h2>
-			<label>
-				<input type="text" placeholder="--main-color" value="#0854C7" oninput="body.style.setProperty('--main-color',this.value)">
-				<span class="inputLabel">--main-color</span>
-				<small class="pull-right">Main color</small>
-			</label>
-			<label>
-				<input type="text" placeholder="--main-text-cl" value="#fff" oninput="body.style.setProperty('--main-text-cl',this.value)">
-				<span class="inputLabel">--main-text-cl</span>
-				<small class="pull-right">Text color in front of main color</small>
-			</label>
-			<label>
-				<input type="text" placeholder="--main-color-lighter" value="#3884f7" oninput="body.style.setProperty('--main-color-lighter',this.value)">
-				<span class="inputLabel">--main-color-lighter</span>
-				<small class="pull-right">Lighter shade of main color</small>
-			</label>
-			<label>
-				<input type="text" placeholder="--main-text-cl-darker" value="#ddd" oninput="body.style.setProperty('--main-text-cl-darker',this.value)">
-				<span class="inputLabel">--main-text-cl-darker</span>
-				<small class="pull-right">darker shade for the text in front of the main color</small>
-			</label>
-			<label>
-				<input type="text" placeholder="--button-greyedout" value="#bbb" oninput="body.style.setProperty('--button-greyedout',this.value)">
-				<span class="inputLabel">--button-greyedout</span>
-				<small class="pull-right">A shade of grey for some input elements</small>
-			</label>
-			<label>
-				<input type="text" placeholder="--background-base" value="#fff" oninput="body.style.setProperty('--background-base',this.value)">
-				<span class="inputLabel">--background-base</span>
-				<small class="pull-right">Body default bg color</small>
-			</label>
-			<label>
-				<input type="text" placeholder="--text-base" value="#080808" oninput="body.style.setProperty('--text-base',this.value)">
-				<span class="inputLabel">--text-base</span>
-				<small class="pull-right">Body default text color</small>
-			</label>
-			<label>
-				<input type="text" placeholder="--background-base-darker" value="#f9f9f9" oninput="body.style.setProperty('--background-base-darker',this.value)">
-				<span class="inputLabel">--background-base-darker</span>
-				<small class="pull-right">A darker shade of the body color</small>
-			</label>
-
+			<div class="p10">
+				<label>
+					<input type="text" placeholder="--main-color" value="#7824c7" oninput="body.style.setProperty('--main-color',this.value)">
+					<span class="inputLabel">--main-color</span>
+					<small class="pull-right">Main color</small>
+				</label>
+				<label>
+					<input type="text" placeholder="--main-text-cl" value="#fff" oninput="body.style.setProperty('--main-text-cl',this.value)">
+					<span class="inputLabel">--main-text-cl</span>
+					<small class="pull-right">Text color in front of main color</small>
+				</label>
+				<label>
+					<input type="text" placeholder="--main-color-lighter" value="#b05cff" oninput="body.style.setProperty('--main-color-lighter',this.value)">
+					<span class="inputLabel">--main-color-lighter</span>
+					<small class="pull-right">Lighter shade of main color</small>
+				</label>
+				<label>
+					<input type="text" placeholder="--main-text-cl-darker" value="#ddd" oninput="body.style.setProperty('--main-text-cl-darker',this.value)">
+					<span class="inputLabel">--main-text-cl-darker</span>
+					<small class="pull-right">darker shade for the text in front of the main color</small>
+				</label>
+				<label>
+					<input type="text" placeholder="--button-greyedout" value="#bbb" oninput="body.style.setProperty('--button-greyedout',this.value)">
+					<span class="inputLabel">--button-greyedout</span>
+					<small class="pull-right">A shade of grey for some input elements</small>
+				</label>
+				<label>
+					<input type="text" placeholder="--background-base" value="#fff" oninput="body.style.setProperty('--background-base',this.value)">
+					<span class="inputLabel">--background-base</span>
+					<small class="pull-right">Body default bg color</small>
+				</label>
+				<label>
+					<input type="text" placeholder="--text-base" value="#080808" oninput="body.style.setProperty('--text-base',this.value)">
+					<span class="inputLabel">--text-base</span>
+					<small class="pull-right">Body default text color</small>
+				</label>
+				<label>
+					<input type="text" placeholder="--background-base-darker" value="#f9f9f9" oninput="body.style.setProperty('--background-base-darker',this.value)">
+					<span class="inputLabel">--background-base-darker</span>
+					<small class="pull-right">A darker shade of the body color</small>
+				</label>
+			</div>
 		</div>
 	</body>
 </html>
