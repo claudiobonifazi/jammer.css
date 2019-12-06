@@ -147,12 +147,14 @@
 							<label>
 								<input type="checkbox" checked>
 								<span class="switch"></span>
-								<span class="inputLabel">Switch</span>
+								<span class="inputLabel">Off</span>
+								<span class="inputLabel">On</span>
 							</label>
 							<label>
 								<input type="checkbox">
 								<span class="switch"></span>
-								<span class="inputLabel">Switch</span>
+								<span class="inputLabel">Off</span>
+								<span class="inputLabel">On</span>
 							</label>
 						</div>
 					</div>
@@ -186,42 +188,42 @@
 				</fieldset>
 			</form>
 			<h2>Buttons</h2>
-			<div class="p10">
+			<div class="p8">
 				<button>
 					standard
 				</button>
 			</div>
-			<div class="p10">
+			<div class="p8">
 				<button class="secondary">
 					secondary
 				</button>
 			</div>
-			<div class="p10">
+			<div class="p8">
 				<button class="main">
 					full width
 				</button>
 			</div>
-			<div class="p10">
+			<div class="p8">
 				<button class="success">
 					success
 				</button>
 			</div>
-			<div class="p10">
+			<div class="p8">
 				<button class="warning">
 					warning
 				</button>
 			</div>
-			<div class="p10">
+			<div class="p8">
 				<button class="alert">
 					alert
 				</button>
 			</div>
-			<div class="p10">
+			<div class="p8">
 				<button disabled>
 					disabled
 				</button>
 			</div>
-			<div class="p10 tagRight">
+			<div class="p8 tagRight">
 				<label>
 					<input type="text" placeholder="Input with button">
 					<span class="inputLabel">Input with button</span>
@@ -230,7 +232,7 @@
 					&rtrif;
 				</button>
 			</div>
-			<div class="p10 tagLeft">
+			<div class="p8 tagLeft">
 				<button>
 					&#9776; 
 				</button>
@@ -326,7 +328,7 @@
 			</table>
 			<hr>
 			<h2>Code explanations</h2>
-			<div class="p10">
+			<div class="p8">
 				<code class="codeArea">
 					<div class="row"><span class="text-main">window</span>.doStuff = <span class="text-info">function</span>(){</div>
 					<div class="row">	<span class="comment">// doing random stuff</span></div>
@@ -337,7 +339,7 @@
 			</div>
 			<hr>
 			<h2>Column grid</h2>
-			<div class="p10">
+			<div class="p8">
 				<div class="cols2" style="background:rgba(0,0,0,0.1)">
 					<div>
 						<small>.cols2</small> 
@@ -478,7 +480,7 @@
 					</button>
 				</div>
 			</div>
-			<div class="p10">
+			<div class="p8">
 				<span class="text-success">.text-success</span>
 				<span class="text-warning">.text-warning</span>
 				<span class="text-alert">.text-alert</span>
@@ -492,25 +494,25 @@
 				<span class="tag-info">tag-info</span>
 				<span class="tag-main">tag-main</span>
 			</div>
-			<div class="p10">
-				<div class="p10 fill-success">
+			<div class="p8">
+				<div class="p8 fill-success">
 					.fill-success
 				</div>
-				<div class="p10 fill-warning">
+				<div class="p8 fill-warning">
 					.fill-warning
 				</div>
-				<div class="p10 fill-alert">
+				<div class="p8 fill-alert">
 					.fill-alert
 				</div>
-				<div class="p10 fill-info">
+				<div class="p8 fill-info">
 					.fill-info
 				</div>
-				<div class="p10 fill-main">
+				<div class="p8 fill-main">
 					.fill-main
 				</div>
 			</div>
 			<h2>Card element</h2>
-			<div class="p10">
+			<div class="p8">
 				<div class="card">
 					<div class="card_title">
 						Card title
@@ -545,8 +547,17 @@
 				</template>
 			</div>
 			<hr>
+			<div class="p8">
+				<h2>8px grid utility</h2>
+				<div class="text-center">
+					<button onclick="body.classList.toggle('gridHelper')">
+						toggle 8px grid
+					</button>
+				</div>
+			</div>
+			<hr>
 			<h2>Customize the colors</h2>
-			<div class="p10">
+			<div class="p8">
 				<label>
 					<input type="text" placeholder="--main-color" value="#7824c7" oninput="body.style.setProperty('--main-color',this.value)">
 					<span class="inputLabel">--main-color</span>

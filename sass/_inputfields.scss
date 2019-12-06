@@ -215,6 +215,7 @@ input[type="checkbox"]{
 		height: 1.15rem;
 		width:  1.15rem;
 		border: 2px solid rgba(0,0,0,0.33);
+		border-radius:2px;
 		vertical-align: middle;
 		position: relative;
 
@@ -242,36 +243,54 @@ input[type="checkbox"]{
 		line-height:1;
 		height: 1rem;
 		width:  2rem;
-		outline: 2px solid var(--main-color);
 		background: var(--main-text-cl);
 		vertical-align: middle;
+		border-radius: 0.6rem;
+    	border: 0.1rem solid var(--main-color);
+		margin-left: 50%;
+		transform: translateX(-50%);
 
 		&::after{
 			display: inline-block;
 			content: "";
 			line-height: 1;
-			width: 0.7rem;
-			height:1rem;
+			width: 0.8rem;
+			height:0.8rem;
 			background: var(--main-color);
-			outline: 0.1rem solid var(--main-color-lighter);
+			border-radius:50%;
 			transition: 0.1s transform ease-out;
 		}
 
 		&+.inputLabel{
-			font-weight:500;
-			border-bottom:2px solid transparent;
-			transition: color 0.2s ease-out, border-bottom-color 0.2s ease-out;
+			position: absolute;
+			left: 0;
+			opacity:0.75;
+			transition: 0.2s left ease-out,
+						0.2s opacity ease-out;
+
+			&+.inputLabel{
+				position: absolute;
+				right: 0;
+				font-weight:500;
+				border-bottom:2px solid transparent;
+				transition: 0.2s right ease-out,
+							0.2s opacity ease-out,
+							color 0.2s ease-out, 
+							border-bottom-color 0.2s ease-out;
+			}
 		}
 	}
 	&:checked+.switch{
 		background-color:var(--main-color-lighter);
 
 		&::after{
-			transform: translate(1.3rem,0);
+			transform: translate(0.93rem,0);
 		}
 		&+.inputLabel{
-			color:var(--main-color);
-			border-bottom-color:var(--main-color)
+			&+.inputLabel{
+				color:var(--main-color);
+				border-bottom-color:var(--main-color)
+			}
 		}
 	}
 	&:checked+.check{
@@ -337,7 +356,12 @@ input[type="radio"]{
 		}
 	}
 	&:checked+.radio{
-		background: var(--main-color-lighter);
+		background: radial-gradient( 
+						var(--main-color-lighter), 
+						var(--main-color-lighter) 0.25rem, 
+						var(--main-color) 0.3rem, 
+						var(--main-color) 
+					);
 		border-color: var(--main-color);
 
 		&+.inputLabel{
@@ -647,4 +671,33 @@ input[type="text"]+.showPwd,
 input[type="text"]+.inputLabel+.showPwd{
 	background: var(--main-color);
 	color: var(--main-text-cl);
+}
+
+
+
+
+
+
+input[type="checkbox"]{
+
+
+	&+.switch{
+
+	}
+
+	&:checked+.switch{
+		&+.inputLabel{
+			left:50%;
+			opacity:0;
+		}
+	}
+	&:not(:checked)+.switch{
+		&+.inputLabel{
+			&+.inputLabel{
+				right:50%;
+				opacity:0;
+			}
+		}
+	}
+
 }
