@@ -282,6 +282,7 @@
 					</tr>
 				</tbody>
 			</table>
+			<br>
 			<table class="pivot w10 m1 shadow4">
 				<caption>
 					Pivot table
@@ -493,6 +494,7 @@
 				<span class="tag-alert">tag-alert</span>
 				<span class="tag-info">tag-info</span>
 				<span class="tag-main">tag-main</span>
+				<span class="number-tip">3</span>
 			</div>
 			<div class="p8">
 				<div class="p8 fill-success">
@@ -547,11 +549,42 @@
 				</template>
 			</div>
 			<hr>
-			<div class="p8">
-				<h2>8px grid utility</h2>
-				<div class="text-center">
-					<button onclick="body.classList.toggle('gridHelper')">
-						toggle 8px grid
+			<h2>Notifications</h2>
+			<div class="p10 text-center">
+				<button onclick="body.appendChild(getElementById('notifN').content.cloneNode(true))">
+					Show notification
+				</button>
+				<template id="notifN">
+					<div class="pwa_notif notif_top notif_horizCenter">
+						<div class="pwa_notif_head">
+							<div class="pwa_notif_title">
+								A notification for you!
+							</div>
+							<div class="pwa_notif_close" onclick="let not=this.closest('.pwa_notif');not.parentElement.removeChild(not)"></div>
+						</div>
+						<div class="pwa_notif_body">
+							A text about stuff and other stuff and blah blah
+						</div>
+					</div>
+				</template>
+			</div>
+			<hr>
+			<h2>Example chat area</h2>
+			<div class="p10">
+				<div class="p10" id="chatArea" style="height:30rem;background:rgba(0,0,0,0.05)">
+					<div class="message pull-left">
+						A message received
+					</div>
+					<div class="message pull-right fill-info">
+						A message sent
+					</div>
+				</div>
+				<div class="tagRight">
+					<label>
+						<input type="text" placeholder="Write something" id="chatInput">
+					</label>
+					<button onclick="let txt=document.getElementById('chatInput');let msg=document.createElement('div');msg.classList.add('message','pull-right','fill-info');msg.innerText=txt.value;document.getElementById('chatArea').appendChild(msg);txt.value='';txt.focus()">
+						&rtrif;
 					</button>
 				</div>
 			</div>
