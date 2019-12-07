@@ -471,3 +471,27 @@ body.dark-mode{
 		}
 	}
 }
+
+@keyframes jammer_spin{
+	to{ transform: rotate(-360deg); }
+}
+%rotating{
+	animation-name: jammer_spin;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: infinite;
+	animation-play-state: running;	
+}
+%spinner{
+	@extend %rotating;
+	display:inline-block;
+	height:1.25em;
+	width:1.25em;
+	border-radius: 50%;
+	background:transparent;
+}
+.spin1{
+	@extend %spinner;
+	border:0.15em solid var(--main-color);
+	border-top-color:transparent;
+}
