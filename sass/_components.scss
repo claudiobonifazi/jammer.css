@@ -542,11 +542,43 @@ body.dark-mode{
 		font-weight: bold;
 	}
 }
-
 .spin6{
 	@extend %spinner;
 	border:0.15em solid var(--main-color);
 	border-top-color:transparent;
 	border-bottom-color:transparent;
 	animation-timing-function:ease;
+}
+.spin7{
+	@extend %spinner;
+	border-width: 0.15em;
+	border-style: solid dotted solid dotted;
+	border-color: var(--main-color) var(--main-color-lighter) 
+				  var(--main-color) var(--main-color-lighter);
+}
+.spin8{
+	@extend %spinner;
+	overflow: visible;
+	animation-timing-function: ease;
+	background-image: conic-gradient( transparent, transparent 25%, var(--background-base) 100%), 
+					  radial-gradient( transparent, transparent 50%,var(--main-color) 52%, var(--main-color));
+
+	&::after{
+		content: '\2605';
+		position: absolute;
+		left: 50%;
+		top: 0;
+		width: 1em;
+		text-align: center;
+		font-size: 1.25em;
+		transform: translate(-50%,-50%);
+		color: var(--main-color-lighter);
+		text-shadow: 0 0 0.1em var(--main-color);
+	}
+}
+.spin9{
+	@extend %spinner;
+	animation-timing-function: linear;
+	background-image: conic-gradient(var(--main-color-lighter), var(--main-color),var(--main-color-lighter), var(--main-color)), 
+					  radial-gradient( transparent, transparent 50%,var(--main-color) 52%, var(--main-color));
 }

@@ -550,7 +550,7 @@
 			</div>
 			<hr>
 			<h2>Notifications</h2>
-			<div class="p10 text-center">
+			<div class="p8 text-center">
 				<button onclick="body.appendChild(getElementById('notifN').content.cloneNode(true))">
 					Show notification
 				</button>
@@ -577,8 +577,8 @@
 			</div>
 			<hr>
 			<h2>Example chat area</h2>
-			<div class="p10">
-				<div class="p10" id="chatArea" style="height:30rem;background:rgba(0,0,0,0.05)">
+			<div class="p8">
+				<div class="p8" id="chatArea" style="height:30rem;background:rgba(0,0,0,0.05)">
 					<div class="message pull-left">
 						A message received
 					</div>
@@ -587,24 +587,31 @@
 					</div>
 				</div>
 				<div class="tagRight">
-					<label>
+					<label style="padding-top:0">
 						<input type="text" placeholder="Write something" id="chatInput">
 					</label>
-					<button onclick="let txt=document.getElementById('chatInput');let msg=document.createElement('div');msg.classList.add('message','pull-right','fill-info');msg.innerText=txt.value;document.getElementById('chatArea').appendChild(msg);txt.value='';txt.focus()">
+					<button style="margin-top:0" onclick="let txt=document.getElementById('chatInput');let msg=document.createElement('div');msg.classList.add('message','pull-right','fill-info');msg.innerText=txt.value;document.getElementById('chatArea').appendChild(msg);txt.value='';txt.focus()">
 						&rtrif;
 					</button>
 				</div>
 			</div>
 			<hr>
-			<h2>Spin loaders</h2>
-			<div class="p8">
+			<h2>Loading animations</h2>
+			<div class="text-center">
+				Spin:
 				<span class="spin1"></span>
 				<span class="spin2"></span>
 				<span class="spin3"></span>
 				<span class="spin4"></span>
 				<span class="spin5"></span>
 				<span class="spin6"></span>
-			</div>	
+				<span class="spin7"></span>
+				<span class="spin8"></span>
+				<span class="spin9"></span>
+			</div>
+			<!--<div>
+				<progress min="0" max="100" value="70"></progress>
+			</div>-->
 			<hr>
 			<h2>Customize the colors</h2>
 			<div class="p8">

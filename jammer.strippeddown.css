@@ -278,6 +278,32 @@ form fieldset legend {
   text-indent: 1rem;
 }
 
+/*@keyframes jammer_progressbar{
+	to{}
+}
+progress,
+::-webkit-progress-bar{
+	-webkit-appearance: none;
+	appearance: none;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	display:block;
+	width: 100%;
+	height: 0.25rem;
+	background: var(--background-base);
+
+	&::-webkit-progress-value{
+		background:var(--main-color);
+	}
+	&::-moz-progress-bar{
+		background: var(--main-color);
+	}
+	&:not([value])::-webkit-progress-value,
+	&:not([value])::-moz-progress-bar{
+		width: 100% !important;
+	}
+}*/
 ::-webkit-file-upload-button, button,
 input[type=button],
 input[type=reset],

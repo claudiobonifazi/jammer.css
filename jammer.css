@@ -296,6 +296,32 @@ form fieldset legend {
   text-indent: 1rem;
 }
 
+/*@keyframes jammer_progressbar{
+	to{}
+}
+progress,
+::-webkit-progress-bar{
+	-webkit-appearance: none;
+	appearance: none;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	display:block;
+	width: 100%;
+	height: 0.25rem;
+	background: var(--background-base);
+
+	&::-webkit-progress-value{
+		background:var(--main-color);
+	}
+	&::-moz-progress-bar{
+		background: var(--main-color);
+	}
+	&:not([value])::-webkit-progress-value,
+	&:not([value])::-moz-progress-bar{
+		width: 100% !important;
+	}
+}*/
 ::-webkit-file-upload-button, button,
 input[type=button],
 input[type=reset],
@@ -1651,7 +1677,7 @@ body.dark-mode .pwa_dialog_backDrop {
     transform: rotate(-360deg);
   }
 }
-.spin6, .spin5, .spin4, .spin3, .spin2, .spin1 {
+.spin9, .spin8, .spin7, .spin6, .spin5, .spin4, .spin3, .spin2, .spin1 {
   animation-name: jammer_spin;
   animation-duration: 0.65s;
   animation-timing-function: ease-out;
@@ -1659,7 +1685,7 @@ body.dark-mode .pwa_dialog_backDrop {
   animation-play-state: running;
 }
 
-.spin6, .spin5, .spin4, .spin3, .spin2, .spin1 {
+.spin9, .spin8, .spin7, .spin6, .spin5, .spin4, .spin3, .spin2, .spin1 {
   display: inline-block;
   height: 1.25em;
   width: 1.25em;
@@ -1720,6 +1746,35 @@ body.dark-mode .pwa_dialog_backDrop {
   border-top-color: transparent;
   border-bottom-color: transparent;
   animation-timing-function: ease;
+}
+
+.spin7 {
+  border-width: 0.15em;
+  border-style: solid dotted solid dotted;
+  border-color: var(--main-color) var(--main-color-lighter) var(--main-color) var(--main-color-lighter);
+}
+
+.spin8 {
+  overflow: visible;
+  animation-timing-function: ease;
+  background-image: conic-gradient(transparent, transparent 25%, var(--background-base) 100%), radial-gradient(transparent, transparent 50%, var(--main-color) 52%, var(--main-color));
+}
+.spin8::after {
+  content: "★";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1em;
+  text-align: center;
+  font-size: 1.25em;
+  transform: translate(-50%, -50%);
+  color: var(--main-color-lighter);
+  text-shadow: 0 0 0.1em var(--main-color);
+}
+
+.spin9 {
+  animation-timing-function: linear;
+  background-image: conic-gradient(var(--main-color-lighter), var(--main-color), var(--main-color-lighter), var(--main-color)), radial-gradient(transparent, transparent 50%, var(--main-color) 52%, var(--main-color));
 }
 
 /*# sourceMappingURL=jammer.css.map */
