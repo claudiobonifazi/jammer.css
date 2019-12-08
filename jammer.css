@@ -1008,6 +1008,19 @@ input[type=checkbox]:not(:checked) + .switch + .inputLabel + .inputLabel {
   text-align: right !important;
 }
 
+.no-select {
+  user-select: none !important;
+}
+
+.full-select {
+  user-select: all !important;
+}
+
+.block-click {
+  user-select: none !important;
+  pointer-events: none !important;
+}
+
 .pull-left {
   float: left !important;
 }
@@ -1206,7 +1219,7 @@ input[type=checkbox]:not(:checked) + .switch + .inputLabel + .inputLabel {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.app_header {
+.app-header {
   position: sticky;
   z-index: 9999999;
   top: 0;
@@ -1218,17 +1231,17 @@ input[type=checkbox]:not(:checked) + .switch + .inputLabel + .inputLabel {
   grid-template-columns: 4rem auto 4rem;
   padding: 0 1rem;
 }
-.app_header * {
+.app-header * {
   overflow: hidden;
 }
-.app_header *.app-menu-btn {
+.app-header *.app-menu-btn {
   cursor: pointer;
   display: block;
   position: relative;
   width: 100%;
   height: 100%;
 }
-.app_header *.app-menu-btn::after {
+.app-header *.app-menu-btn::after {
   content: "";
   display: block;
   position: relative;
@@ -1237,10 +1250,10 @@ input[type=checkbox]:not(:checked) + .switch + .inputLabel + .inputLabel {
   background: var(--main-text-cl);
   clip-path: polygon(10% 30%, 90% 30%, 90% 35%, 10% 35%, 10% 50%, 90% 50%, 90% 55%, 10% 55%, 10% 70%, 90% 70%, 90% 75%, 10% 75%);
 }
-.app_header *.app-menu-btn:active::after {
+.app-header *.app-menu-btn:active::after {
   opacity: 0.5;
 }
-.app_header h1 {
+.app-header h1 {
   height: 100%;
   margin: 0;
   line-height: 200%;

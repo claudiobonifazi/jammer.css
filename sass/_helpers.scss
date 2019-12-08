@@ -2,6 +2,9 @@
 .text-left{ text-align:left !important; }
 .text-center{ text-align:center !important; }
 .text-right{ text-align:right !important; }
+.no-select{ user-select: none !important; }
+.full-select{ user-select: all !important; }
+.block-click{ user-select: none !important; pointer-events: none !important; }
 .pull-left{ float:left !important; }
 .pull-right{ float:right !important; }
 .w1{ width: 100% / 12 }
