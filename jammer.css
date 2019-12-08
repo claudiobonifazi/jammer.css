@@ -42,6 +42,7 @@ body {
 body {
   /*- other variables -*/
   --input-border-bottom: 2px;
+  --header-height: 3.5rem;
 }
 body.dark-mode {
   --background-base: #181818;
@@ -1210,7 +1211,7 @@ input[type=checkbox]:not(:checked) + .switch + .inputLabel + .inputLabel {
   z-index: 9999999;
   top: 0;
   width: 100%;
-  height: 4rem;
+  height: var(--header-height);
   background: var(--main-color);
   color: var(--main-text-cl);
   display: grid;
@@ -1243,6 +1244,11 @@ input[type=checkbox]:not(:checked) + .switch + .inputLabel + .inputLabel {
   height: 100%;
   margin: 0;
   line-height: 200%;
+}
+
+.app-body {
+  position: relative;
+  height: calc( 100vh - var(--header-height) );
 }
 
 .box-alert, .box-warning, .box-success, .box-info {

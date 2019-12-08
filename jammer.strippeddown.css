@@ -24,6 +24,7 @@ body {
 body {
   /*- other variables -*/
   --input-border-bottom: 2px;
+  --header-height: 3.5rem;
 }
 body.dark-mode {
   --background-base: #181818;
