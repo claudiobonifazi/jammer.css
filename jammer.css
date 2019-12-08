@@ -1239,6 +1239,11 @@ input[type=checkbox]:not(:checked) + .switch + .inputLabel + .inputLabel {
 .app_header *.app-menu-btn:active::after {
   opacity: 0.5;
 }
+.app_header h1 {
+  height: 100%;
+  margin: 0;
+  line-height: 200%;
+}
 
 .box-alert, .box-warning, .box-success, .box-info {
   display: block;
