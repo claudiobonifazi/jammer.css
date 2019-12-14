@@ -1219,6 +1219,80 @@ input[type=checkbox]:not(:checked) + .switch + .inputLabel + .inputLabel {
   color: rgba(0, 0, 0, 0.5);
 }
 
+@keyframes jammer_rotate {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+.spin1, .spin2, .spin3, .spin4, .spin5, .spin6, .spin7, .spin8, .spin9, .jammer_rotate {
+  animation-name: jammer_rotate;
+  animation-duration: 0.65s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+.jammer_spin {
+  animation-name: jammer_rotate;
+  animation-duration: 0.55s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+@keyframes jammer_bounce {
+  from {
+    transform: translate(0, 0) scale(1, 0.85);
+  }
+  to {
+    transform: translate(0, -150%) scale(1, 1);
+  }
+}
+.spin10::after, .jammer_bounce {
+  animation-name: jammer_bounce;
+  animation-duration: 0.333s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-play-state: running;
+}
+
+@keyframes jammer_bounceRotate {
+  0% {
+    transform: translate(0, 0) scale(1, 0.85) rotate(0);
+  }
+  50% {
+    transform: translate(0, -100%) scale(1, 1) rotate(-180deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1, 0.85) rotate(-360deg);
+  }
+}
+.spin12::after, .spin12::before, .jammer_bounce {
+  animation-name: jammer_bounceRotate;
+  animation-duration: 0.666s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+@keyframes jammer_slide {
+  0% {
+    transform: translate(-50%, 0);
+  }
+  100% {
+    transform: translate(50%, 0);
+  }
+}
+.spin11::after, .spin11::before, .jammer_slide {
+  animation-name: jammer_slide;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-play-state: running;
+}
+
 .app-header {
   position: sticky;
   z-index: 9999999;
@@ -1696,29 +1770,19 @@ body.dark-mode .pwa_dialog_backDrop {
   border-bottom-right-radius: 1rem;
 }
 
-@keyframes jammer_spin {
-  to {
-    transform: rotate(-360deg);
-  }
-}
-.spin9, .spin8, .spin7, .spin6, .spin5, .spin4, .spin3, .spin2, .spin1 {
-  animation-name: jammer_spin;
-  animation-duration: 0.65s;
-  animation-timing-function: ease-out;
-  animation-iteration-count: infinite;
-  animation-play-state: running;
-}
-
-.spin9, .spin8, .spin7, .spin6, .spin5, .spin4, .spin3, .spin2, .spin1 {
+.spin12, .spin11, .spin10, .spin9, .spin8, .spin7, .spin6, .spin5, .spin4, .spin3, .spin2, .spin1 {
   display: inline-block;
   height: 1.25em;
   width: 1.25em;
   vertical-align: middle;
-  border-radius: 50%;
   background: transparent;
   font-size: inherit;
   overflow: hidden;
   position: relative;
+}
+
+.spin9, .spin8, .spin7, .spin6, .spin5, .spin4, .spin3, .spin2, .spin1 {
+  border-radius: 50%;
 }
 
 .spin1 {
@@ -1802,32 +1866,62 @@ body.dark-mode .pwa_dialog_backDrop {
   background-image: conic-gradient(var(--main-color-lighter), var(--main-color), var(--main-color-lighter), var(--main-color)), radial-gradient(transparent, transparent 50%, var(--main-color) 52%, var(--main-color));
 }
 
-@keyframes spinBouncing {
-  to {
-    vertical-align: 0.25em;
-    height: 0.5em;
-  }
-}
-.spin10 {
-  display: inline-block;
-  width: 1.25em;
-  height: 1.25em;
-}
-
 .spin10::after {
   content: "";
   display: inline-block;
   width: 0.5em;
-  height: 0.45em;
+  height: 0.5em;
   border-radius: 50%;
   background: var(--main-color);
   vertical-align: -0.25em;
-  animation-name: spinBouncing;
-  animation-duration: 0.333s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
-  animation-direction: alternate-reverse;
-  animation-play-state: running;
+}
+
+.spin11 {
+  overflow: visible;
+}
+.spin11::after {
+  content: "";
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: var(--main-color);
+}
+.spin11::before {
+  animation-delay: 0.45s;
+  content: "";
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: var(--main-color-lighter);
+}
+
+.spin12 {
+  overflow: visible;
+}
+.spin12::after {
+  content: "★";
+  position: absolute;
+  bottom: 0;
+  width: 1em;
+  text-align: center;
+  font-size: 1em;
+  left: 0;
+  color: var(--main-color);
+  text-shadow: 0 0 0.1em var(--main-color);
+}
+.spin12::before {
+  animation-delay: 0.15s;
+  content: "★";
+  position: absolute;
+  bottom: 0;
+  width: 1em;
+  text-align: center;
+  font-size: 1em;
+  right: 0;
+  color: var(--main-color-lighter);
+  text-shadow: 0 0 0.1em var(--main-color);
 }
 
 button:not(.secondary):not([disabled]) .spin1,

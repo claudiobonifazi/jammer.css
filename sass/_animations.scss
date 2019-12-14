@@ -1,0 +1,72 @@
+@keyframes jammer_rotate{
+	to{ transform: rotate(-360deg); }
+}
+%rotating{
+	animation-name: jammer_rotate;
+	animation-duration: 0.65s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: infinite;
+	animation-play-state: running;	
+}
+.jammer_rotate{
+	@extend %rotating;
+}
+%spinning{
+	animation-name: jammer_rotate;
+	animation-duration: 0.55s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-play-state: running;		
+}
+.jammer_spin{
+	@extend %spinning;
+}
+
+
+@keyframes jammer_bounce{
+	from{ transform: translate(0,0) scale(1,0.85); }
+	to{ transform: translate(0,-150%) scale(1,1); }
+}
+%bouncing{
+	animation-name: jammer_bounce;
+	animation-duration: 0.333s;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+	animation-play-state: running;
+}
+.jammer_bounce{
+	@extend %bouncing;
+}
+
+@keyframes jammer_bounceRotate{
+	0%{ transform: translate(0,0) scale(1,0.85) rotate(0); }
+	50%{ transform: translate(0,-100%) scale(1,1) rotate(-180deg); }
+	100%{ transform: translate(0,0) scale(1,0.85) rotate(-360deg); }
+}
+%bounceRotating{
+	animation-name: jammer_bounceRotate;
+	animation-duration: 0.666s;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+}
+.jammer_bounce{
+	@extend %bounceRotating;
+}
+
+@keyframes jammer_slide{
+	0%{ transform: translate(-50%,0);  }
+	100%{ transform: translate(+50%,0);  }
+}
+%sliding{
+	animation-name: jammer_slide;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+	animation-play-state: running;
+}
+.jammer_slide{
+	@extend %sliding;
+}
