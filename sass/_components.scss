@@ -207,7 +207,8 @@
 				0 16px 16px rgba(0,0,0,0.11);
 	background: var(--background-base);
 	color: var(--text-base);
-	display:grid;
+	display:inline-grid;
+	max-width:300px;
 	overflow:hidden;
 
 	.card_title{
@@ -231,6 +232,7 @@
 		border-left: 1px solid rgba(0,0,0,0.1);
 		border-right: 1px solid rgba(0,0,0,0.1);
 		border-top: 1px solid rgba(0,0,0,0.1);
+		text-align: center;
 
 		img:first-child{
 			border-radius: 3px 3px 0 0;
@@ -315,6 +317,7 @@ body.dark-mode{
 	top: 50%;
 	width:85%;
 	max-height:85%;
+	max-width: 666px;
 	transform: translate( -50%, -50% );
 	border-radius: 3px;
 	background: var(--background-base);
@@ -591,6 +594,7 @@ body.dark-mode{
 
 .spin10{
 	@extend %loadAnim;
+	overflow:visible;
 
 	&::after{
 		@extend %bouncing;
@@ -694,5 +698,29 @@ input[type="submit"],
 		.spin10{
 
 		}
+	}
+}
+
+
+
+.pwa_loadBar{
+	display:block;
+	width:100%;
+	height: 4px;
+	background: var(--background-base);
+	position:relative;
+	overflow:hidden;
+
+	&::after{
+		@extend %blinking;
+		content: '';
+		display:inline-block;
+		height:4px;
+		width: calc( 100% * var(--value) / ( var(--max) - var(--min) ) );
+		background: var(--main-color);
+		position:absolute;
+		top:0;
+		left:0;
+		transition: 0.2s width ease;
 	}
 }

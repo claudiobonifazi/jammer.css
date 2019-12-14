@@ -58,9 +58,20 @@ a{
 	color: var(--main-color);
 	text-decoration: none
 }
-a:visited{color: var(--button-greyedout);}
+a:visited{color: var(--main-color-lighter);}
 a:hover,a:active{text-decoration: underline;}
 a:focus{text-decoration: none;}
+/*a[href^="mailto:"]{
+
+}
+a[download]::after{
+	
+}*/
+a[target="_blank"]::after{
+	content: "🗗";
+	transform: translate(0,-0.2rem);
+	display: inline-block;
+}
 
 hr{
 	box-sizing: content-box;

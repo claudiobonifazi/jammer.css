@@ -102,7 +102,8 @@
 							<span class="selectHint"></span>
 						</label>
 						<label>
-							<input type="color">
+							<input type="color" placeholder="Color input" onload="this.style.setProperty('--value',this.value)" onchange="this.style.setProperty('--value',this.value)">
+							<!--the color input requires a bit of a workaround to look good-->
 							<span class="inputLabel">Color input</span>
 						</label>
 						<label>
@@ -229,7 +230,7 @@
 					<span class="inputLabel">Input with button</span>
 				</label>
 				<button>
-					&rtrif;
+					send
 				</button>
 			</div>
 			<div class="p8 tagLeft">
@@ -514,13 +515,13 @@
 				</div>
 			</div>
 			<h2>Card element</h2>
-			<div class="p8">
+			<div class="text-center">
 				<div class="card">
 					<div class="card_title">
 						Card title
 					</div>
 					<div class="card_content">
-						<img src="https://www.bing.com/th?id=OHR.CuttySark150_EN-US8574386630_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp">
+						<img src="https://www.bing.com/th?id=OHR.CuttySark150_EN-US8574386630_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp" alt="A random image from Bing Photo" title="A random image from Bing Photo">
 						<article>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis iaculis risus. Sed ante magna, pellentesque vel mi sed, malesuada efficitur magna. Nam a sem et sapien laoreet blandit ac nec turpis. Nullam ut ex a nisi imperdiet congue eu rutrum erat. Aenean laoreet lorem neque, sit amet cursus nisl molestie ac. Aliquam vehicula, justo ac tincidunt fermentum, turpis justo porttitor purus, quis mattis elit massa mollis lacus. Ut molestie tellus ac eros porta fringilla.
 						</article>
@@ -533,13 +534,14 @@
 					open dialog
 				</button>
 				<template id="dialogT">
+					<div class="pwa_dialog_backDrop"></div>
 					<div class="pwa_dialog">
 						<div class="pwa_dialog_topBar">
 							<div class="pwa_dialog_title">
 								Dialog title
 							</div>
 							<div class="pwa_dialog_topBtns">
-								<div class="pwa_dialog_topCross" onclick="let d=this.closest('.pwa_dialog');d.parentElement.removeChild(d)"></div>
+								<div class="pwa_dialog_topCross" onclick="let d=document.querySelectorAll('.pwa_dialog,.pwa_dialog_backDrop');d.forEach(l=>l.parentElement.removeChild(l))"></div>
 							</div>
 						</div>
 						<div class="pwa_dialog_body">
@@ -555,7 +557,7 @@
 					Show notification
 				</button>
 				<template id="notifN">
-					<div class="pwa_notif notif_top notif_horizCenter">
+					<div class="pwa_notif notif_bottom notif_right">
 						<div class="pwa_notif_head">
 							<div class="pwa_notif_title">
 								A notification for you!
@@ -612,26 +614,26 @@
 				<span class="spin11"></span>
 				<span class="spin12"></span>
 			</div>
-			<!--<div>
-				<progress min="0" max="100" value="70"></progress>
-			</div>-->
+			<div class="p8">
+				<div class="pwa_loadBar" style="--min:0;--max:100;--value:70;"></div>
+			</div>
 			<hr>
 			<h2>Customize the colors</h2>
-			<div class="p8">
+			<div class="p8 cols2">
 				<label>
 					<input type="text" placeholder="--main-color" value="#7824c7" oninput="body.style.setProperty('--main-color',this.value)">
 					<span class="inputLabel">--main-color</span>
 					<small class="pull-right">Main color</small>
 				</label>
 				<label>
-					<input type="text" placeholder="--main-text-cl" value="#fff" oninput="body.style.setProperty('--main-text-cl',this.value)">
-					<span class="inputLabel">--main-text-cl</span>
-					<small class="pull-right">Text color in front of main color</small>
-				</label>
-				<label>
 					<input type="text" placeholder="--main-color-lighter" value="#b05cff" oninput="body.style.setProperty('--main-color-lighter',this.value)">
 					<span class="inputLabel">--main-color-lighter</span>
 					<small class="pull-right">Lighter shade of main color</small>
+				</label>
+				<label>
+					<input type="text" placeholder="--main-text-cl" value="#fff" oninput="body.style.setProperty('--main-text-cl',this.value)">
+					<span class="inputLabel">--main-text-cl</span>
+					<small class="pull-right">Text color in front of main color</small>
 				</label>
 				<label>
 					<input type="text" placeholder="--main-text-cl-darker" value="#ddd" oninput="body.style.setProperty('--main-text-cl-darker',this.value)">
@@ -658,6 +660,19 @@
 					<span class="inputLabel">--background-base-darker</span>
 					<small class="pull-right">A darker shade of the body color</small>
 				</label>
+			</div>
+			<hr>
+			<h2>Dark mode</h2>
+			<div class="text-center">
+				<button onclick="body.classList.toggle('dark-mode')">
+					switch to dark mode
+				</button>
+			</div>
+			<hr>
+			<div class="p8">
+				<a href="https://github.com/claudiobonifazi/jammer.css" target="_blank" title="Project page">
+					github/claudiobonifazi/jammer.css
+				</a>
 			</div>
 		</div>
 	</body>

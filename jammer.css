@@ -193,7 +193,7 @@ a {
 }
 
 a:visited {
-  color: var(--button-greyedout);
+  color: var(--main-color-lighter);
 }
 
 a:hover, a:active {
@@ -202,6 +202,18 @@ a:hover, a:active {
 
 a:focus {
   text-decoration: none;
+}
+
+/*a[href^="mailto:"]{
+
+}
+a[download]::after{
+
+}*/
+a[target=_blank]::after {
+  content: "🗗";
+  transform: translate(0, -0.2rem);
+  display: inline-block;
 }
 
 hr {
@@ -854,33 +866,37 @@ input[type=file].dropArea::-webkit-file-upload-button {
 }
 
 input[type=color] {
+  --value: #000000;
+  appearance: none;
   height: 2.5rem;
   padding: 0.35rem;
   cursor: pointer;
-  /*currently not supported*/
-  /*&::after{
-  	content: attr(value);
-      display: block;
-      height: 20px;
-      width: 20px;
-      position: absolute;
-      left: 0;
-      top: 8px;
-      z-index: 2;
-      color: var(--text-base);
-  	content: attr(value);
-  }*/
 }
-input[type=color]::-webkit-color-swatch, input[type=color]::-moz-color-swatch {
-  content: attr(value);
-  border-radius: 0.5rem;
-  height: 1.8rem;
-  display: inline-block;
-  float: left;
-  border: 2px solid var(--button-greyedout);
+input[type=color]::-webkit-color-swatch {
+  display: none;
 }
-input[type=color]:focus::-webkit-color-swatch, input[type=color]:focus::-moz-color-swatch {
+input[type=color]::before {
+  content: "";
+  background: var(--value);
+  position: absolute;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 50%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+input[type=color]::after {
+  content: attr(placeholder);
+  color: var(--value);
+  position: absolute;
+  left: 2.5rem;
+  opacity: 0.85;
+  top: 1.1rem;
+}
+input[type=color]:focus::-webkit-color-swatch {
   border-color: var(--main-color);
+}
+input[type=color]:focus::before {
+  color: var(--main-color);
 }
 
 .tagLeft {
@@ -1293,6 +1309,24 @@ input[type=checkbox]:not(:checked) + .switch + .inputLabel + .inputLabel {
   animation-play-state: running;
 }
 
+@keyframes jammer_blinking {
+  from {
+    background-position: center -50%;
+  }
+  to {
+    background-position: center 150%;
+  }
+}
+.pwa_loadBar::after, .jammer_blinking {
+  background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5) 50%, transparent) !important;
+  background-size: cover;
+  animation-name: jammer_blinking;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
 .app-header {
   position: sticky;
   z-index: 9999999;
@@ -1524,7 +1558,8 @@ input[type=checkbox]:not(:checked) + .switch + .inputLabel + .inputLabel {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11), 0 16px 16px rgba(0, 0, 0, 0.11);
   background: var(--background-base);
   color: var(--text-base);
-  display: grid;
+  display: inline-grid;
+  max-width: 300px;
   overflow: hidden;
 }
 .card .card_title {
@@ -1548,6 +1583,7 @@ input[type=checkbox]:not(:checked) + .switch + .inputLabel + .inputLabel {
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 .card .card_content img:first-child {
   border-radius: 3px 3px 0 0;
@@ -1623,6 +1659,7 @@ body.dark-mode .pwa_dialog_backDrop {
   top: 50%;
   width: 85%;
   max-height: 85%;
+  max-width: 666px;
   transform: translate(-50%, -50%);
   border-radius: 3px;
   background: var(--background-base);
@@ -1866,6 +1903,9 @@ body.dark-mode .pwa_dialog_backDrop {
   background-image: conic-gradient(var(--main-color-lighter), var(--main-color), var(--main-color-lighter), var(--main-color)), radial-gradient(transparent, transparent 50%, var(--main-color) 52%, var(--main-color));
 }
 
+.spin10 {
+  overflow: visible;
+}
 .spin10::after {
   content: "";
   display: inline-block;
@@ -1958,6 +1998,25 @@ input[type=reset]:not(.secondary):not([disabled]) .spin7,
 input[type=submit]:not(.secondary):not([disabled]) .spin7,
 .button:not(.secondary):not([disabled]) .spin7 {
   border-color: var(--main-text-cl) var(--main-color-lighter) var(--main-text-cl) var(--main-color-lighter);
+}
+.pwa_loadBar {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: var(--background-base);
+  position: relative;
+  overflow: hidden;
+}
+.pwa_loadBar::after {
+  content: "";
+  display: inline-block;
+  height: 4px;
+  width: calc( 100% * var(--value) / ( var(--max) - var(--min) ) );
+  background: var(--main-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.2s width ease;
 }
 
 /*# sourceMappingURL=jammer.css.map */
