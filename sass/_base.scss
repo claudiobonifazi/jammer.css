@@ -52,6 +52,14 @@ b,strong{font-weight: bolder;}
 small {font-size: 80%;}
 sub{bottom: -0.25rem;}
 sup{top: -0.5rem;}
+time{ font-family: monospace; font-size:1.05rem;white-space:nowrap; }
+blockquote{
+	font-style: italic;
+	display: block;
+	background: var(--background-base-darker);
+	border-left: 3px solid var(--main-color);
+	padding: 5px;
+}
 
 a{
 	background-color: transparent;

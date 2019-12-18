@@ -30,9 +30,17 @@
 				<strong>Strong text</strong>
 				<i>Italic text</i>
 				<small>small text</small>
+				<br>
 				<code>code</code>
 				<sup>sup</sup>
 				<sub>sub</sub>
+				<time>ti:me</time>
+			</article>
+			<article class="no-select">
+				unselectable text
+			</article>
+			<article class="full-select">
+				one-click full select text
 			</article>
 			<hr>
 			<h2>Input fields</h2>
@@ -593,7 +601,7 @@
 						<input type="text" placeholder="Write something" id="chatInput">
 					</label>
 					<button style="margin-top:0" onclick="let txt=document.getElementById('chatInput');let msg=document.createElement('div');msg.classList.add('message','pull-right','fill-info');msg.innerText=txt.value;document.getElementById('chatArea').appendChild(msg);txt.value='';txt.focus()">
-						&rtrif;
+						send
 					</button>
 				</div>
 			</div>
@@ -615,6 +623,7 @@
 				<span class="spin12"></span>
 			</div>
 			<div class="p8">
+				Loadbar:
 				<div class="pwa_loadBar" style="--min:0;--max:100;--value:70;"></div>
 			</div>
 			<hr>

@@ -74,18 +74,19 @@
 
 @keyframes jammer_blinking{
 	from{ 
-		background-position: center -50%;
+		background-position-x: -50%;
 	}
 	to{
-		background-position: center 150%;
+		background-position-x: 150%;
 	}
 }
 %blinking{
-	background-image: linear-gradient(90deg,transparent,rgba(255,255,255,0.5) 50%, transparent) !important;
-	background-size:cover;
+	background-image: radial-gradient( rgba(255,255,255,0.85), transparent 75% ) !important;
+	background-size: 25% 200% !important;
+	background-position-y: center;
+	background-repeat: no-repeat !important;
 	animation-name: jammer_blinking;
 	animation-duration: 1s;
-	animation-timing-function: ease-in-out;
 	animation-iteration-count: infinite;
 	animation-play-state: running;
 }

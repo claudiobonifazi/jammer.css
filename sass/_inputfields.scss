@@ -1,3 +1,9 @@
+body{
+	--main-color-forinput: var(--main-color);
+	&.dark-mode{
+		--main-color-forinput: var(--main-color-lighter);
+	}
+}
 %inputFields{
 	font-family: inherit;
 	font-size: 100%;
@@ -5,7 +11,9 @@
 	margin: 0;
 	overflow: auto;
 	border-color: transparent;
-	background: rgba(0,0,0,0.05);
+	/*background: rgba(0,0,0,0.05);*/
+	background: var(--background-base-darker);
+	color: var(--text-base);
 	padding: 0 1rem;
 	line-height: 2;
 	border-radius: 2px 2px 0 0;
@@ -14,14 +22,14 @@
 	border-width: 0 0 var(--input-border-bottom) 0;
 	border-style:solid;
 	border-color:rgba(0,0,0,0.1);
-	caret-color:var(--main-color);
+	caret-color:var(--main-color-forinput);
 	transition: 0.2s border-bottom-color;
 
 	&:focus{
 		outline: none;
 		
 		&:not([readonly]){
-			border-color: var(--main-color);
+			border-color: var(--main-color-forinput);
 
 			&::placeholder{
 				opacity: 0;
@@ -30,7 +38,7 @@
 				left: 0;
 				top: -0.5rem;
 				font-size: 80%;
-				color: var(--main-color);
+				color: var(--main-color-forinput);
 			}
 		}
 	}
@@ -62,7 +70,7 @@
 					left: 0;
 					top: -0.5rem;
 					font-size: 80%;
-					color: var(--main-color);
+					color: var(--main-color-forinput);
 				}
 			}
 		}
@@ -119,9 +127,6 @@ input{
 		height: 2.5rem;
 	}	
 }
-
-
-
 textarea{
 	@extend %inputFields;
 }
@@ -159,7 +164,7 @@ select{
 		margin-top: -2.057rem;
 		margin-right: 1.5rem;
 		position:relative;
-		z-index:-1;
+		z-index:0;
 		transition: 0.15s background-color ease-out;
 
 		&::after{
@@ -289,8 +294,8 @@ input[type="checkbox"]{
 		}
 		&+.inputLabel{
 			&+.inputLabel{
-				color:var(--main-color);
-				border-bottom-color:var(--main-color)
+				color:var(--main-color-forinput);
+				border-bottom-color:var(--main-color-forinput)
 			}
 		}
 	}
@@ -299,8 +304,8 @@ input[type="checkbox"]{
 		border-color: var(--main-color);
 
 		&+.inputLabel{
-			color:var(--main-color);
-			border-bottom-color:var(--main-color)
+			color:var(--main-color-forinput);
+			border-bottom-color:var(--main-color-forinput);
 		}
 	}
 	&:not(:checked){
@@ -366,8 +371,8 @@ input[type="radio"]{
 		border-color: var(--main-color);
 
 		&+.inputLabel{
-			color:var(--main-color);
-			border-bottom-color:var(--main-color)
+			color:var(--main-color-forinput);
+			border-bottom-color:var(--main-color-forinput);
 		}
 	}
 	&:not(:checked)+.radio{
@@ -389,8 +394,8 @@ input[type="radio"]{
 	position: relative;
 	width: 1rem;
 	height: 1.5rem;
-	background: var(--main-color);
-	border: 1px solid var(--main-color);
+	background: var(--main-color-forinput);
+	border: 1px solid var(--main-color-forinput);
 	border-radius: 2px;
 	cursor: pointer;	
 }
@@ -402,9 +407,8 @@ input[type="range"]{
 	width: 100%;
 	margin-top:1.25rem;
 	height: 1.25rem;
-	background: repeating-linear-gradient( 90deg, 
-						rgba(0,0,0,0.15), rgba(0,0,0,0.15) 10px, 
-						rgba(0,0,0,0.25) 10px, rgba(0,0,0,0.25) 11px );
+	background-color: var(--background-base-darker);
+	background-image: repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(0, 0, 0, 0.15) 10px, rgba(0, 0, 0, 0.15) 11px);
 	border-radius: 2px 2px 0 0;
 	opacity: 0.85;
 	cursor:pointer;
@@ -447,7 +451,7 @@ input[type="range"]{
 		left: 0;
 		top: 0;
 		font-size: 80%;
-		color: var(--main-color);
+		color: var(--main-color-forinput);
 	}
 }
 
@@ -563,10 +567,10 @@ input[type="color"]{
 	&:focus{
 		&::-webkit-color-swatch/*,
 		&:focus::-moz-color-swatch*/{
-			border-color: var(--main-color)
+			border-color: var(--main-color-forinput);
 		}
 		&::before{
-			color:var(--main-color);
+			color:var(--main-color-forinput);
 		}
 	}
 }
@@ -605,8 +609,8 @@ input[type="color"]{
 }
 .tagLeft:focus-within{
 	:first-child:not(button):not(.inputLabel){
-		border-bottom-color: var(--main-color) !important;
-		color: var(--main-color) !important;
+		border-bottom-color: var(--main-color-forinput) !important;
+		color: var(--main-color-forinput) !important;
 	}
 }
 
@@ -647,13 +651,13 @@ input[type="color"]{
 }
 .tagRight:focus-within{
 	*:last-child:not(button):not(.inputLabel){
-		border-bottom-color: var(--main-color) !important;
-		color: var(--main-color) !important;
+		border-bottom-color: var(--main-color-forinput) !important;
+		color: var(--main-color-forinput) !important;
 	}
 }
 
 input[type="password"]{
-	color: var(--main-color);
+	color: var(--main-color-forinput);
 
 	&::placeholder{
 		color:var(--text-base);
@@ -681,7 +685,7 @@ input+.inputLabel+.showPwd{
 }
 input[type="text"]+.showPwd,
 input[type="text"]+.inputLabel+.showPwd{
-	background: var(--main-color);
+	background: var(--main-color-forinput);
 	color: var(--main-text-cl);
 }
 
@@ -712,4 +716,13 @@ input[type="checkbox"]{
 		}
 	}
 
+}
+
+[contenteditable]{
+
+	&:active,
+	&:focus{
+		outline: 1px solid var(--main-color-forinput) !important;
+		box-shadow: 0 0 5px var(--main-color-forinput);
+	}
 }
