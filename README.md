@@ -1,6 +1,11 @@
 # jammer.css
 
 A CSS framework designed to be as lightweight as possible while being a complete tool for the developing of PWAs.
+The principles behind it are:
+1- tidy markup: one html tag does one thing, period. I hate having to add 3-5 tags around an element just for a pointless graphic effect
+2- as slim as possible: everything is in a css file < 50kb, withouth icon libraries or other side stuff. You link a file and are ready to go
+3- plug in and go: whenever you have to start a new project, you link jammer.min.css and you have got a general page structure, a lot of default styling and a lot of prestyled components, saving a lot of time down the road
+4- modern: it makes use of the most recent css implementations in a reasonable way
 
 ## Getting Started
 
