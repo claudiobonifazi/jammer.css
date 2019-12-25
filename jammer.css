@@ -1399,7 +1399,9 @@ input[type=checkbox]:not(:checked) + .switch + .inputLabel + .inputLabel {
 
 .app-body {
   position: relative;
-  height: calc( 100vh - var(--header-height) );
+  min-height: calc( 100vh - var(--header-height) );
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .box-alert, .box-warning, .box-success, .box-info {

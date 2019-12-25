@@ -48,7 +48,9 @@
 }
 .app-body{
 	position:relative;
-	height: calc( 100vh - var(--header-height) );
+	min-height: calc( 100vh - var(--header-height) );
+	overflow-x:hidden;
+	overflow-y: auto;
 }
 
 %infoboxes{
