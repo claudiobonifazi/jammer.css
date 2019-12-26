@@ -396,19 +396,21 @@ input[type="radio"]{
 	display: block;
 	position: relative;
 	width: 1rem;
-	height: 1.5rem;
+	height: calc( 2.5rem - 2px );
 	background: var(--main-color-forinput);
 	border: 1px solid var(--main-color-forinput);
-	border-radius: 2px;
-	cursor: pointer;	
+	margin:0;
+	cursor: pointer;
+	clip-path: polygon( 0 20%, 49% 1%, 51% 1%, 100% 20%,
+						100% 100%, 0 100% );
 }
 
 input[type="range"]{
 	@extend %inputFields;
 	-webkit-appearance: none !important;
 	appearance: none !important;
-	padding-left:0;
-	padding-right:0;
+	padding:0;
+	height: 2.5rem;
 
 	&:hover{
 		opacity: 1;
@@ -436,13 +438,23 @@ input[type="range"]{
 	}
 	&::before,
 	&::after{
-		color: var(--main-color-lighter);
-		line-height: 1.25rem;
+		background:rgba(0,0,0,0.1);
+		color: var(--background-base);
+		line-height: 2.5rem;
+		height: 100%;
+		display:inline-block;
 		font-size: 0.8rem;
 		opacity: 0.85;
 		text-align:center;
 		padding: 0 8px;
 		font-weight:bold;
+		transition: 0.2s background-color ease-out,
+					0.2s color ease-out;
+	}
+	&:focus::before,
+	&:focus::after{
+		background: var(--main-color);
+		color: var(--main-text-cl);
 	}
 }
 
