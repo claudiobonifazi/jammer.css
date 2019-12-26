@@ -41,8 +41,9 @@ body {
 
 body {
   /*- other variables -*/
+  --base-font-size:14px;
   --input-border-bottom: 2px;
-  --header-height: 3.5rem;
+  --header-height: 48px;
 }
 body.dark-mode {
   --background-base: #181818;
@@ -74,7 +75,7 @@ body.dark-mode {
   }
 }
 :root {
-  line-height: 1.15;
+  line-height: 1.2;
   -webkit-text-size-adjust: 100%;
   width: 100%;
   height: 100%;
@@ -85,7 +86,7 @@ body.dark-mode {
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  font-size: var(--base-font-size);
   width: 100%;
   height: 100%;
   background: var(--background-base);
@@ -467,7 +468,7 @@ body.dark-mode {
   --main-color-forinput: var(--main-color-lighter);
 }
 
-select, textarea, input[type=text], input[type=number], input[type=date], input[type=datetime-local], input[type=email], input[type=url], input[type=password], input[type=search], input[type=tel], input[type=file], input[type=color] {
+input[type=range], select, textarea, input[type=text], input[type=number], input[type=date], input[type=datetime-local], input[type=email], input[type=url], input[type=password], input[type=search], input[type=tel], input[type=file], input[type=color] {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -488,26 +489,26 @@ select, textarea, input[type=text], input[type=number], input[type=date], input[
   caret-color: var(--main-color-forinput);
   transition: 0.2s border-bottom-color;
 }
-select:focus, textarea:focus, input[type=text]:focus, input[type=number]:focus, input[type=date]:focus, input[type=datetime-local]:focus, input[type=email]:focus, input[type=url]:focus, input[type=password]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=file]:focus, input[type=color]:focus {
+input[type=range]:focus, select:focus, textarea:focus, input[type=text]:focus, input[type=number]:focus, input[type=date]:focus, input[type=datetime-local]:focus, input[type=email]:focus, input[type=url]:focus, input[type=password]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=file]:focus, input[type=color]:focus {
   outline: none;
 }
-select:focus:not([readonly]), textarea:focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=search]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=file]:focus:not([readonly]), input[type=color]:focus:not([readonly]) {
+input[type=range]:focus:not([readonly]), select:focus:not([readonly]), textarea:focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=search]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=file]:focus:not([readonly]), input[type=color]:focus:not([readonly]) {
   border-color: var(--main-color-forinput);
 }
-select:focus:not([readonly])::placeholder, textarea:focus:not([readonly])::placeholder, input[type=text]:focus:not([readonly])::placeholder, input[type=number]:focus:not([readonly])::placeholder, input[type=date]:focus:not([readonly])::placeholder, input[type=datetime-local]:focus:not([readonly])::placeholder, input[type=email]:focus:not([readonly])::placeholder, input[type=url]:focus:not([readonly])::placeholder, input[type=password]:focus:not([readonly])::placeholder, input[type=search]:focus:not([readonly])::placeholder, input[type=tel]:focus:not([readonly])::placeholder, input[type=file]:focus:not([readonly])::placeholder, input[type=color]:focus:not([readonly])::placeholder {
+input[type=range]:focus:not([readonly])::placeholder, select:focus:not([readonly])::placeholder, textarea:focus:not([readonly])::placeholder, input[type=text]:focus:not([readonly])::placeholder, input[type=number]:focus:not([readonly])::placeholder, input[type=date]:focus:not([readonly])::placeholder, input[type=datetime-local]:focus:not([readonly])::placeholder, input[type=email]:focus:not([readonly])::placeholder, input[type=url]:focus:not([readonly])::placeholder, input[type=password]:focus:not([readonly])::placeholder, input[type=search]:focus:not([readonly])::placeholder, input[type=tel]:focus:not([readonly])::placeholder, input[type=file]:focus:not([readonly])::placeholder, input[type=color]:focus:not([readonly])::placeholder {
   opacity: 0;
 }
-select:focus:not([readonly]) + .inputLabel, textarea:focus:not([readonly]) + .inputLabel, input[type=text]:focus:not([readonly]) + .inputLabel, input[type=number]:focus:not([readonly]) + .inputLabel, input[type=date]:focus:not([readonly]) + .inputLabel, input[type=datetime-local]:focus:not([readonly]) + .inputLabel, input[type=email]:focus:not([readonly]) + .inputLabel, input[type=url]:focus:not([readonly]) + .inputLabel, input[type=password]:focus:not([readonly]) + .inputLabel, input[type=search]:focus:not([readonly]) + .inputLabel, input[type=tel]:focus:not([readonly]) + .inputLabel, input[type=file]:focus:not([readonly]) + .inputLabel, input[type=color]:focus:not([readonly]) + .inputLabel {
+input[type=range]:focus:not([readonly]) + .inputLabel, select:focus:not([readonly]) + .inputLabel, textarea:focus:not([readonly]) + .inputLabel, input[type=text]:focus:not([readonly]) + .inputLabel, input[type=number]:focus:not([readonly]) + .inputLabel, input[type=date]:focus:not([readonly]) + .inputLabel, input[type=datetime-local]:focus:not([readonly]) + .inputLabel, input[type=email]:focus:not([readonly]) + .inputLabel, input[type=url]:focus:not([readonly]) + .inputLabel, input[type=password]:focus:not([readonly]) + .inputLabel, input[type=search]:focus:not([readonly]) + .inputLabel, input[type=tel]:focus:not([readonly]) + .inputLabel, input[type=file]:focus:not([readonly]) + .inputLabel, input[type=color]:focus:not([readonly]) + .inputLabel {
   left: 0;
   top: -0.5rem;
   font-size: 80%;
   color: var(--main-color-forinput);
 }
-select::placeholder, textarea::placeholder, input[type=text]::placeholder, input[type=number]::placeholder, input[type=date]::placeholder, input[type=datetime-local]::placeholder, input[type=email]::placeholder, input[type=url]::placeholder, input[type=password]::placeholder, input[type=search]::placeholder, input[type=tel]::placeholder, input[type=file]::placeholder, input[type=color]::placeholder {
+input[type=range]::placeholder, select::placeholder, textarea::placeholder, input[type=text]::placeholder, input[type=number]::placeholder, input[type=date]::placeholder, input[type=datetime-local]::placeholder, input[type=email]::placeholder, input[type=url]::placeholder, input[type=password]::placeholder, input[type=search]::placeholder, input[type=tel]::placeholder, input[type=file]::placeholder, input[type=color]::placeholder {
   font-weight: 500;
   transition: 0.2s all;
 }
-select + .inputLabel, textarea + .inputLabel, input[type=text] + .inputLabel, input[type=number] + .inputLabel, input[type=date] + .inputLabel, input[type=datetime-local] + .inputLabel, input[type=email] + .inputLabel, input[type=url] + .inputLabel, input[type=password] + .inputLabel, input[type=search] + .inputLabel, input[type=tel] + .inputLabel, input[type=file] + .inputLabel, input[type=color] + .inputLabel {
+input[type=range] + .inputLabel, select + .inputLabel, textarea + .inputLabel, input[type=text] + .inputLabel, input[type=number] + .inputLabel, input[type=date] + .inputLabel, input[type=datetime-local] + .inputLabel, input[type=email] + .inputLabel, input[type=url] + .inputLabel, input[type=password] + .inputLabel, input[type=search] + .inputLabel, input[type=tel] + .inputLabel, input[type=file] + .inputLabel, input[type=color] + .inputLabel {
   position: absolute;
   left: 1rem;
   top: 1rem;
@@ -515,10 +516,10 @@ select + .inputLabel, textarea + .inputLabel, input[type=text] + .inputLabel, in
   font-weight: 500;
   transition: 0.2s all;
 }
-select:not(:focus):not([readonly]):placeholder-shown + .inputLabel, textarea:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=text]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=number]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=date]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=datetime-local]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=email]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=url]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=password]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=search]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=tel]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=file]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=color]:not(:focus):not([readonly]):placeholder-shown + .inputLabel {
+input[type=range]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, select:not(:focus):not([readonly]):placeholder-shown + .inputLabel, textarea:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=text]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=number]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=date]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=datetime-local]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=email]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=url]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=password]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=search]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=tel]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=file]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=color]:not(:focus):not([readonly]):placeholder-shown + .inputLabel {
   opacity: 0;
 }
-select:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, textarea:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=text]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=number]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=date]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=datetime-local]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=email]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=url]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=password]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=search]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=tel]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=file]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=color]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel {
+input[type=range]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, select:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, textarea:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=text]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=number]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=date]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=datetime-local]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=email]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=url]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=password]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=search]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=tel]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=file]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=color]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel {
   left: 0;
   top: -0.5rem;
   font-size: 80%;
@@ -594,6 +595,7 @@ select + .selectHint, select + .inputLabel + .selectHint {
   margin-right: 1.5rem;
   position: relative;
   z-index: 0;
+  pointer-events: none;
   transition: 0.15s background-color ease-out;
 }
 select + .selectHint::after, select + .inputLabel + .selectHint::after {
@@ -774,38 +776,8 @@ input[type=range]::-webkit-slider-thumb {
 input[type=range] {
   -webkit-appearance: none !important;
   appearance: none !important;
-  outline: none;
-  width: 100%;
-  margin-top: 1.25rem;
-  height: 1.25rem;
-  background-color: var(--background-base-darker);
-  background-image: repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(0, 0, 0, 0.15) 10px, rgba(0, 0, 0, 0.15) 11px);
-  border-radius: 2px 2px 0 0;
-  opacity: 0.85;
-  cursor: pointer;
-  transition: opacity 0.2s ease-out;
-  border-color: transparent transparent var(--main-color-lighter) transparent;
-  border-style: solid;
-  border-width: 0 0 2px 0;
-  /* still not supported */
-  /*&::before{
-  	color: var(--text-base);
-  	margin-left: 0.5rem;
-  	float:left;
-  	z-index:2;
-  	content: attr(min);
-  }
-  &::after{
-  	color: var(--text-base);
-  	margin-right:0.5rem;
-  	float:right;
-  	z-index:2;
-  	content: attr(max);
-  }*/
-  /*&::-moz-range-thumb{
-  	-moz-appearance: none;
-  	@extend %rangeThumb;
-  }*/
+  padding-left: 0;
+  padding-right: 0;
 }
 input[type=range]:hover {
   opacity: 1;
@@ -821,6 +793,21 @@ input[type=range] + .inputLabel {
   top: 0;
   font-size: 80%;
   color: var(--main-color-forinput);
+}
+input[type=range]::before {
+  content: attr(min);
+}
+input[type=range]::after {
+  content: attr(max);
+}
+input[type=range]::before, input[type=range]::after {
+  color: var(--main-color-lighter);
+  line-height: 1.25rem;
+  font-size: 0.8rem;
+  opacity: 0.85;
+  text-align: center;
+  padding: 0 8px;
+  font-weight: bold;
 }
 
 input[type=number]:not(.no-buttons)::-webkit-inner-spin-button, input[type=number]:not(.no-buttons)::-webkit-outer-spin-button {
@@ -1367,7 +1354,7 @@ input[type=checkbox]:not(:checked) + .switch + .inputLabel + .inputLabel {
   color: var(--main-text-cl);
   display: grid;
   grid-template-columns: 4rem auto 4rem;
-  padding: 0 1rem;
+  padding: 0;
 }
 .app-header * {
   overflow: hidden;
@@ -1386,15 +1373,18 @@ input[type=checkbox]:not(:checked) + .switch + .inputLabel + .inputLabel {
   width: 100%;
   height: 100%;
   background: var(--main-text-cl);
-  clip-path: polygon(10% 30%, 90% 30%, 90% 35%, 10% 35%, 10% 50%, 90% 50%, 90% 55%, 10% 55%, 10% 70%, 90% 70%, 90% 75%, 10% 75%);
+  clip-path: polygon(20% 30%, 80% 30%, 80% 35%, 20% 35%, 20% 50%, 80% 50%, 80% 55%, 20% 55%, 20% 70%, 80% 70%, 80% 75%, 20% 75%);
 }
 .app-header *.app-menu-btn:active::after {
   opacity: 0.5;
 }
 .app-header h1 {
-  height: 100%;
+  height: var(--header-height);
   margin: 0;
-  line-height: 200%;
+  line-height: var(--header-height);
+  font-size: 1.75rem;
+  vertical-align: middle;
+  user-select: none;
 }
 
 .app-body {
