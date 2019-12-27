@@ -684,5 +684,15 @@
 				</a>
 			</div>
 		</div>
+
+
+		<script>
+			// change the browser header color on mobile
+			let mainColor = getComputedStyle(document.body).getPropertyValue('--main-color');
+			let headColor = document.createElement('meta');
+			headColor.name = 'theme-color';
+			headColor.content = mainColor;
+			document.head.appendChild( headColor );
+		</script>
 	</body>
 </html>
