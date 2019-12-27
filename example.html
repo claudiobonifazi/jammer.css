@@ -19,7 +19,7 @@
 					<span class="app-menu-btn"></span>
 				</div>
 			</div>
-			<article>
+			<div class="p8">
 				<h1>h1 header</h1>
 				<h2>h2 header</h2>
 				<h3>h3 header</h3>
@@ -35,18 +35,18 @@
 				<sup>sup</sup>
 				<sub>sub</sub>
 				<time>ti:me</time>
-			</article>
-			<article class="no-select">
-				unselectable text
-			</article>
-			<article class="full-select">
-				one-click full select text
-			</article>
+				<div class="no-select">
+					unselectable text
+				</div>
+				<div class="full-select">
+					one-click full select text
+				</div>
+			</div>
 			<hr>
-			<h2>Input fields</h2>
 			<form>
 				<fieldset>
-					<div>
+					<legend>Input fields</legend>
+
 						<label>
 							<input type="text" placeholder="Text field">
 							<span class="inputLabel">Text field</span>
@@ -126,7 +126,7 @@
 							<input type="file" class="dropArea">
 							<span class="inputLabel">File drag&drop area</span>
 						</label>
-					</div>
+
 					<div class="cols3">
 						<div>
 							<label>
@@ -174,11 +174,11 @@
 				<fieldset>
 					<legend>Example Login form</legend>
 					<label>
-						<input type="text" placeholder="Username" required>
+						<input type="text" placeholder="Username" required autocomplete="username">
 						<span class="inputLabel">Username</span>
 					</label>
 					<label>
-						<input type="password" placeholder="Password" required>
+						<input type="password" placeholder="Password" required autocomplete="current-password">
 						<span class="inputLabel">Password</span>
 					</label>
 					<div class="text-right">

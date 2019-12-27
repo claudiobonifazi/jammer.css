@@ -75,6 +75,15 @@ body{
 			}
 		}
 	}
+
+	&:-webkit-autofill,
+	&:-webkit-autofill:hover, 
+	&:-webkit-autofill:focus{
+		border-color: var(--main-color);
+		-webkit-text-fill-color: var(--main-text-cl);
+		-webkit-box-shadow: 0 0 0px 1000px var(--main-color-lighter) inset;
+		transition: background-color 5000s ease-in-out 0s;
+	}
 }
 
 %inputFieldHelper{
@@ -112,6 +121,7 @@ body{
 
 input{
 
+	&:not([type]),
 	&[type="text"],
 	&[type="number"],
 	&[type="date"],
@@ -134,15 +144,15 @@ textarea{
 select{
 	@extend %inputFields;
 
-	-moz-appearance: none;
 	-webkit-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
 	cursor: pointer;
 	height: 2.5rem;
 
 	option{
-		-moz-appearance: none;
 		-webkit-appearance: none;
+		-moz-appearance: none;
 		appearance: none;
 
 		&:checked{
@@ -234,6 +244,8 @@ input[type="checkbox"]{
 			width: 0.7rem;
 			border-left: 0.2rem solid var(--main-text-cl);
 			border-bottom: 0.2rem solid var(--main-text-cl);
+			-webkit-transform: rotate(-45deg);
+			-ms-transform: rotate(-45deg);
 			transform: rotate(-45deg);
 			top: 0.15rem;
 			left:0.1rem;
@@ -251,11 +263,13 @@ input[type="checkbox"]{
 		line-height:1;
 		height: 1rem;
 		width:  2rem;
-		background: var(--main-text-cl);
+		background: var(--background-base-darker);
 		vertical-align: middle;
 		border-radius: 0.6rem;
     	border: 0.1rem solid var(--main-color);
 		margin-left: 50%;
+		-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
 		transform: translateX(-50%);
 
 		&::after{
@@ -292,6 +306,8 @@ input[type="checkbox"]{
 		background-color:var(--main-color-lighter);
 
 		&::after{
+			-webkit-transform: translate(0.93rem,0);
+			-ms-transform: translate(0.93rem,0);
 			transform: translate(0.93rem,0);
 		}
 		&+.inputLabel{
@@ -408,6 +424,7 @@ input[type="radio"]{
 input[type="range"]{
 	@extend %inputFields;
 	-webkit-appearance: none !important;
+	-moz-appearance: none !important;
 	appearance: none !important;
 	padding:0;
 	height: 2.5rem;
@@ -452,7 +469,9 @@ input[type="range"]{
 					0.2s color ease-out;
 	}
 	&:focus::before,
-	&:focus::after{
+	&:focus::after,
+	&:active::before,
+	&:active::after{
 		background: var(--main-color);
 		color: var(--main-text-cl);
 	}
@@ -581,6 +600,7 @@ input[type="color"]{
 
 
 .tagLeft{
+	display: ms-grid;
 	display: grid;
 	grid-template-columns: min-content auto;
 
@@ -618,6 +638,7 @@ input[type="color"]{
 }
 
 .tagRight{
+	display: ms-grid;
 	display: grid;
 	grid-template-columns: auto min-content;
 
@@ -729,3 +750,6 @@ input[type="checkbox"]{
 		box-shadow: 0 0 5px var(--main-color-forinput);
 	}
 }
+
+
+

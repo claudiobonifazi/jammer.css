@@ -1,4 +1,9 @@
 @charset "UTF-8";
+/*!
+ * Name: jammer.css
+ * Url: https://github.com/claudiobonifazi/jammer.css
+ * License: any usage is free without omitting attribution
+ */
 body {
   --background-base: #fff;
   --background-base-darker: #f3f3f3;
@@ -61,6 +66,7 @@ body.dark-mode {
   -webkit-text-size-adjust: 100%;
   width: 100%;
   height: 100%;
+  -ms-text-spacing: trim-start allow-end trim-adjacent ideograph-alpha ideograph-numeric;
   text-spacing: trim-start allow-end trim-adjacent ideograph-alpha ideograph-numeric;
   line-sizing: normal;
 }
@@ -80,8 +86,15 @@ body {
 *,
 ::before,
 ::after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-transform: none;
+}
+
+::-moz-selection {
+  background: var(--main-color);
+  color: var(--main-text-cl);
+  opacity: 0.85;
 }
 
 ::selection {
@@ -92,7 +105,10 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   * {
+    -webkit-animation-duration: 0.001s !important;
     animation-duration: 0.001s !important;
+    -webkit-transition-duration: 0.001s !important;
+    -o-transition-duration: 0.001s !important;
     transition-duration: 0.001s !important;
   }
 }
@@ -150,6 +166,7 @@ sub, sup {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
 }
 
@@ -209,6 +226,8 @@ a[download]::after{
 }*/
 a[target=_blank]::after {
   content: "🗗";
+  -webkit-transform: translate(0, -0.2rem);
+  -ms-transform: translate(0, -0.2rem);
   transform: translate(0, -0.2rem);
   display: inline-block;
 }
@@ -220,7 +239,9 @@ hr {
   border: 0.5px solid rgba(0, 0, 0, 0.1);
 }
 
-img, video, canvas, audio, iframe, embed, object, main, details {
+img, video, canvas, audio,
+iframe, embed, object,
+main, details {
   display: block;
   vertical-align: middle;
 }
@@ -288,10 +309,11 @@ form {
 form fieldset {
   padding: 0.35rem 0.75rem 0.625rem;
   border-color: transparent;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 form fieldset legend {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: inherit;
   display: table;
@@ -338,6 +360,8 @@ input[type=reset],
 input[type=submit],
 .button {
   -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
   font-family: inherit;
   font-size: 100%;
   margin: 0;
@@ -396,6 +420,8 @@ input[type=button]:not([disabled]):active,
 input[type=reset]:not([disabled]):active,
 input[type=submit]:not([disabled]):active,
 .button:not([disabled]):active {
+  -webkit-transform: translate(0, 2px);
+  -ms-transform: translate(0, 2px);
   transform: translate(0, 2px);
 }
 .secondary::-webkit-file-upload-button, button.secondary,
@@ -403,7 +429,7 @@ input.secondary[type=button],
 input.secondary[type=reset],
 input.secondary[type=submit],
 .secondary.button {
-  background: var(--main-text-cl);
+  background: var(--background-base-darker);
   color: var(--main-color);
   border: 1px solid var(--main-color);
 }
@@ -450,7 +476,7 @@ body.dark-mode {
   --main-color-forinput: var(--main-color-lighter);
 }
 
-input[type=range], select, textarea, input[type=text], input[type=number], input[type=date], input[type=datetime-local], input[type=email], input[type=url], input[type=password], input[type=search], input[type=tel], input[type=file], input[type=color] {
+input[type=range], select, textarea, input:not([type]), input[type=text], input[type=number], input[type=date], input[type=datetime-local], input[type=email], input[type=url], input[type=password], input[type=search], input[type=tel], input[type=file], input[type=color] {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -471,26 +497,26 @@ input[type=range], select, textarea, input[type=text], input[type=number], input
   caret-color: var(--main-color-forinput);
   transition: 0.2s border-bottom-color;
 }
-input[type=range]:focus, select:focus, textarea:focus, input[type=text]:focus, input[type=number]:focus, input[type=date]:focus, input[type=datetime-local]:focus, input[type=email]:focus, input[type=url]:focus, input[type=password]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=file]:focus, input[type=color]:focus {
+input[type=range]:focus, select:focus, textarea:focus, input:focus:not([type]), input[type=text]:focus, input[type=number]:focus, input[type=date]:focus, input[type=datetime-local]:focus, input[type=email]:focus, input[type=url]:focus, input[type=password]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=file]:focus, input[type=color]:focus {
   outline: none;
 }
-input[type=range]:focus:not([readonly]), select:focus:not([readonly]), textarea:focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=search]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=file]:focus:not([readonly]), input[type=color]:focus:not([readonly]) {
+input[type=range]:focus:not([readonly]), select:focus:not([readonly]), textarea:focus:not([readonly]), input:focus:not([readonly]):not([type]), input[type=text]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=search]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=file]:focus:not([readonly]), input[type=color]:focus:not([readonly]) {
   border-color: var(--main-color-forinput);
 }
-input[type=range]:focus:not([readonly])::placeholder, select:focus:not([readonly])::placeholder, textarea:focus:not([readonly])::placeholder, input[type=text]:focus:not([readonly])::placeholder, input[type=number]:focus:not([readonly])::placeholder, input[type=date]:focus:not([readonly])::placeholder, input[type=datetime-local]:focus:not([readonly])::placeholder, input[type=email]:focus:not([readonly])::placeholder, input[type=url]:focus:not([readonly])::placeholder, input[type=password]:focus:not([readonly])::placeholder, input[type=search]:focus:not([readonly])::placeholder, input[type=tel]:focus:not([readonly])::placeholder, input[type=file]:focus:not([readonly])::placeholder, input[type=color]:focus:not([readonly])::placeholder {
+input[type=range]:focus:not([readonly])::placeholder, select:focus:not([readonly])::placeholder, textarea:focus:not([readonly])::placeholder, input:focus:not([readonly]):not([type])::placeholder, input[type=text]:focus:not([readonly])::placeholder, input[type=number]:focus:not([readonly])::placeholder, input[type=date]:focus:not([readonly])::placeholder, input[type=datetime-local]:focus:not([readonly])::placeholder, input[type=email]:focus:not([readonly])::placeholder, input[type=url]:focus:not([readonly])::placeholder, input[type=password]:focus:not([readonly])::placeholder, input[type=search]:focus:not([readonly])::placeholder, input[type=tel]:focus:not([readonly])::placeholder, input[type=file]:focus:not([readonly])::placeholder, input[type=color]:focus:not([readonly])::placeholder {
   opacity: 0;
 }
-input[type=range]:focus:not([readonly]) + .inputLabel, select:focus:not([readonly]) + .inputLabel, textarea:focus:not([readonly]) + .inputLabel, input[type=text]:focus:not([readonly]) + .inputLabel, input[type=number]:focus:not([readonly]) + .inputLabel, input[type=date]:focus:not([readonly]) + .inputLabel, input[type=datetime-local]:focus:not([readonly]) + .inputLabel, input[type=email]:focus:not([readonly]) + .inputLabel, input[type=url]:focus:not([readonly]) + .inputLabel, input[type=password]:focus:not([readonly]) + .inputLabel, input[type=search]:focus:not([readonly]) + .inputLabel, input[type=tel]:focus:not([readonly]) + .inputLabel, input[type=file]:focus:not([readonly]) + .inputLabel, input[type=color]:focus:not([readonly]) + .inputLabel {
+input[type=range]:focus:not([readonly]) + .inputLabel, select:focus:not([readonly]) + .inputLabel, textarea:focus:not([readonly]) + .inputLabel, input:focus:not([readonly]):not([type]) + .inputLabel, input[type=text]:focus:not([readonly]) + .inputLabel, input[type=number]:focus:not([readonly]) + .inputLabel, input[type=date]:focus:not([readonly]) + .inputLabel, input[type=datetime-local]:focus:not([readonly]) + .inputLabel, input[type=email]:focus:not([readonly]) + .inputLabel, input[type=url]:focus:not([readonly]) + .inputLabel, input[type=password]:focus:not([readonly]) + .inputLabel, input[type=search]:focus:not([readonly]) + .inputLabel, input[type=tel]:focus:not([readonly]) + .inputLabel, input[type=file]:focus:not([readonly]) + .inputLabel, input[type=color]:focus:not([readonly]) + .inputLabel {
   left: 0;
   top: -0.5rem;
   font-size: 80%;
   color: var(--main-color-forinput);
 }
-input[type=range]::placeholder, select::placeholder, textarea::placeholder, input[type=text]::placeholder, input[type=number]::placeholder, input[type=date]::placeholder, input[type=datetime-local]::placeholder, input[type=email]::placeholder, input[type=url]::placeholder, input[type=password]::placeholder, input[type=search]::placeholder, input[type=tel]::placeholder, input[type=file]::placeholder, input[type=color]::placeholder {
+input[type=range]::placeholder, select::placeholder, textarea::placeholder, input:not([type])::placeholder, input[type=text]::placeholder, input[type=number]::placeholder, input[type=date]::placeholder, input[type=datetime-local]::placeholder, input[type=email]::placeholder, input[type=url]::placeholder, input[type=password]::placeholder, input[type=search]::placeholder, input[type=tel]::placeholder, input[type=file]::placeholder, input[type=color]::placeholder {
   font-weight: 500;
   transition: 0.2s all;
 }
-input[type=range] + .inputLabel, select + .inputLabel, textarea + .inputLabel, input[type=text] + .inputLabel, input[type=number] + .inputLabel, input[type=date] + .inputLabel, input[type=datetime-local] + .inputLabel, input[type=email] + .inputLabel, input[type=url] + .inputLabel, input[type=password] + .inputLabel, input[type=search] + .inputLabel, input[type=tel] + .inputLabel, input[type=file] + .inputLabel, input[type=color] + .inputLabel {
+input[type=range] + .inputLabel, select + .inputLabel, textarea + .inputLabel, input:not([type]) + .inputLabel, input[type=text] + .inputLabel, input[type=number] + .inputLabel, input[type=date] + .inputLabel, input[type=datetime-local] + .inputLabel, input[type=email] + .inputLabel, input[type=url] + .inputLabel, input[type=password] + .inputLabel, input[type=search] + .inputLabel, input[type=tel] + .inputLabel, input[type=file] + .inputLabel, input[type=color] + .inputLabel {
   position: absolute;
   left: 1rem;
   top: 1rem;
@@ -498,14 +524,20 @@ input[type=range] + .inputLabel, select + .inputLabel, textarea + .inputLabel, i
   font-weight: 500;
   transition: 0.2s all;
 }
-input[type=range]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, select:not(:focus):not([readonly]):placeholder-shown + .inputLabel, textarea:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=text]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=number]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=date]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=datetime-local]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=email]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=url]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=password]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=search]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=tel]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=file]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=color]:not(:focus):not([readonly]):placeholder-shown + .inputLabel {
+input[type=range]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, select:not(:focus):not([readonly]):placeholder-shown + .inputLabel, textarea:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input:not(:focus):not([readonly]):placeholder-shown:not([type]) + .inputLabel, input[type=text]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=number]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=date]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=datetime-local]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=email]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=url]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=password]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=search]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=tel]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=file]:not(:focus):not([readonly]):placeholder-shown + .inputLabel, input[type=color]:not(:focus):not([readonly]):placeholder-shown + .inputLabel {
   opacity: 0;
 }
-input[type=range]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, select:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, textarea:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=text]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=number]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=date]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=datetime-local]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=email]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=url]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=password]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=search]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=tel]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=file]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=color]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel {
+input[type=range]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, select:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, textarea:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input:not(:focus):not([readonly]):not(:placeholder-shown):not([type]) + .inputLabel, input[type=text]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=number]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=date]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=datetime-local]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=email]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=url]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=password]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=search]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=tel]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=file]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel, input[type=color]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLabel {
   left: 0;
   top: -0.5rem;
   font-size: 80%;
   color: var(--main-color-forinput);
+}
+input[type=range]:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill, input:-webkit-autofill:not([type]), input[type=text]:-webkit-autofill, input[type=number]:-webkit-autofill, input[type=date]:-webkit-autofill, input[type=datetime-local]:-webkit-autofill, input[type=email]:-webkit-autofill, input[type=url]:-webkit-autofill, input[type=password]:-webkit-autofill, input[type=search]:-webkit-autofill, input[type=tel]:-webkit-autofill, input[type=file]:-webkit-autofill, input[type=color]:-webkit-autofill {
+  border-color: var(--main-color);
+  -webkit-text-fill-color: var(--main-text-cl);
+  -webkit-box-shadow: 0 0 0px 1000px var(--main-color-lighter) inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 input + .showPwd,
@@ -544,20 +576,20 @@ input[type=radio], input[type=checkbox] {
   opacity: 0.001;
 }
 
-input[type=text], input[type=number], input[type=date], input[type=datetime-local], input[type=email], input[type=url], input[type=password], input[type=search], input[type=tel], input[type=file], input[type=color] {
+input:not([type]), input[type=text], input[type=number], input[type=date], input[type=datetime-local], input[type=email], input[type=url], input[type=password], input[type=search], input[type=tel], input[type=file], input[type=color] {
   height: 2.5rem;
 }
 
 select {
-  -moz-appearance: none;
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   cursor: pointer;
   height: 2.5rem;
 }
 select option {
-  -moz-appearance: none;
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 select option:checked {
@@ -625,6 +657,8 @@ input[type=checkbox] + .check::after {
   width: 0.7rem;
   border-left: 0.2rem solid var(--main-text-cl);
   border-bottom: 0.2rem solid var(--main-text-cl);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
   top: 0.15rem;
   left: 0.1rem;
@@ -640,11 +674,13 @@ input[type=checkbox] + .switch {
   line-height: 1;
   height: 1rem;
   width: 2rem;
-  background: var(--main-text-cl);
+  background: var(--background-base-darker);
   vertical-align: middle;
   border-radius: 0.6rem;
   border: 0.1rem solid var(--main-color);
   margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 input[type=checkbox] + .switch::after {
@@ -674,6 +710,8 @@ input[type=checkbox]:checked + .switch {
   background-color: var(--main-color-lighter);
 }
 input[type=checkbox]:checked + .switch::after {
+  -webkit-transform: translate(0.93rem, 0);
+  -ms-transform: translate(0.93rem, 0);
   transform: translate(0.93rem, 0);
 }
 input[type=checkbox]:checked + .switch + .inputLabel + .inputLabel {
@@ -758,6 +796,7 @@ input[type=range]::-webkit-slider-thumb {
 
 input[type=range] {
   -webkit-appearance: none !important;
+  -moz-appearance: none !important;
   appearance: none !important;
   padding: 0;
   height: 2.5rem;
@@ -796,7 +835,7 @@ input[type=range]::before, input[type=range]::after {
   font-weight: bold;
   transition: 0.2s background-color ease-out, 0.2s color ease-out;
 }
-input[type=range]:focus::before, input[type=range]:focus::after {
+input[type=range]:focus::before, input[type=range]:focus::after, input[type=range]:active::before, input[type=range]:active::after {
   background: var(--main-color);
   color: var(--main-text-cl);
 }
@@ -902,6 +941,7 @@ input[type=color]:focus::before {
 }
 
 .tagLeft {
+  display: ms-grid;
   display: grid;
   grid-template-columns: min-content auto;
 }
@@ -937,6 +977,7 @@ input[type=color]:focus::before {
 }
 
 .tagRight {
+  display: ms-grid;
   display: grid;
   grid-template-columns: auto min-content;
 }

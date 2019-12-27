@@ -1,5 +1,7 @@
 %button{
 	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
 	font-family: inherit;
 	font-size: 100%;
 	margin: 0;
@@ -35,12 +37,14 @@
 		cursor: pointer;
 
 		&:active{
+			-webkit-transform: translate(0,2px);
+			-ms-transform: translate(0,2px);
 			transform: translate(0,2px);
 		}
 	}
 
 	&.secondary{
-		background: var(--main-text-cl);
+		background: var(--background-base-darker);
 		color: var(--main-color);
 		border: 1px solid var(--main-color);
 	}
