@@ -269,6 +269,9 @@ code{
 .codeArea{
 	@extend %code;
 	display:block;
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y:hidden;
 	background: var(--background-base-darker);
 	border-left: 3px solid var(--main-color);
 	counter-reset: codeArea;
@@ -289,10 +292,11 @@ code{
 		width: 1rem;
 		display: inline-block;
 		height: 1.15rem;
+		vertical-align: bottom;
 		background:rgba(0,0,0,0.05);
 		text-align: center;
 		line-height: 1.15rem;
-		font-size: 10px;
+		font-size: 0.625rem;
 		font-weight: bold;
 		color: rgba(0,0,0,0.5);
 	}

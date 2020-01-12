@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<div style="width:100%;max-width:415px;height:99%;max-height:725px;display:inline-block;overflow:auto">
-			<div class="app-header">
+			<header class="app-header">
 				<div></div>
 				<div>
 					<h1 class="text-center">
@@ -18,8 +18,8 @@
 				<div>
 					<span class="app-menu-btn"></span>
 				</div>
-			</div>
-			<div class="p8">
+			</header>
+			<main class="p8">
 				<h1>h1 header</h1>
 				<h2>h2 header</h2>
 				<h3>h3 header</h3>
@@ -41,650 +41,650 @@
 				<div class="full-select">
 					one-click full select text
 				</div>
-			</div>
-			<hr>
-			<form>
-				<fieldset>
-					<legend>Input fields</legend>
+				<hr>
+				<form>
+					<fieldset>
+						<legend>Input fields</legend>
 
-						<label>
-							<input type="text" placeholder="Text field">
-							<span class="inputLabel">Text field</span>
-						</label>
-						<label class="tagLeft">
-							<div>@</div>
-							<input type="email" placeholder="Email field">
-							<span class="inputLabel">Email field</span>
-						</label>
-						<label class="tagLeft">
-							<div>☎</div>
-							<input type="tel" placeholder="Phone field">
-							<span class="inputLabel">Phone field</span>
-						</label>
-						<label>
-							<input type="number" placeholder="Number field">
-							<span class="inputLabel">Number field</span>
-						</label>
-						<label class="tagRight">
-							<input type="number" class="no-buttons" placeholder="Number field without spin buttons">
-							<span class="inputLabel">Number field without spin buttons</span>
-							<div>#</div>
-						</label>
-						<label>
-							<input type="password" placeholder="Password field">
-							<span class="inputLabel">Password field</span>
-							<span class="showPwd" onclick="let f=this.parentElement.querySelector('input');f.type=f.type=='text'?'password':'text'"></span>
-						</label>
-						<label>
-							<input type="search" placeholder="Search field">
-							<span class="inputLabel">Search field</span>
-							<span class="emptyInput" onclick="this.parentElement.children[0].value=''"></span>
-						</label>
-						<label class="tagLeft">
-							<div style="font-size:inherit">https://</div>
-							<input type="url" placeholder="Url field">
-							<span class="inputLabel">Url field</span>
-						</label>
-						<label>
-							<input type="date" placeholder="Date field">
-							<span class="inputLabel">Date field</span>
-						</label>
-						<label>
-							<input type="file">
-							<span class="inputLabel">File input</span>
-						</label>
-						<label>
-							<select>
-								<optgroup label="Opt. group 1">
-									<option>Option 1</option>
-									<option>Option 2</option>
-									<option>Option 3</option>
-								</optgroup>
-								<optgroup label="Opt. group 2">
-									<option>Option 4</option>
-									<option>Option 5</option>
-									<option>Option 6</option>
-								</optgroup>
-							</select>
-							<span class="inputLabel">select field</span>
-							<span class="selectHint"></span>
-						</label>
-						<label>
-							<input type="color" placeholder="Color input" onload="this.style.setProperty('--value',this.value)" onchange="this.style.setProperty('--value',this.value)">
-							<!--the color input requires a bit of a workaround to look good-->
-							<span class="inputLabel">Color input</span>
-						</label>
-						<label>
-							<input type="range" placeholder="slider field" min="0" max="100" value="70">
-							<span class="inputLabel">Slider field</span>
-						</label>
-						<label>
-							<textarea rows="5" placeholder="Textarea"></textarea>
-							<span class="inputLabel">Textarea</span>
-						</label>
-						<label>
-							<input type="file" class="dropArea">
-							<span class="inputLabel">File drag&drop area</span>
-						</label>
+							<label>
+								<input type="text" placeholder="Text field">
+								<span class="inputLabel">Text field</span>
+							</label>
+							<label class="tagLeft">
+								<div>@</div>
+								<input type="email" placeholder="Email field">
+								<span class="inputLabel">Email field</span>
+							</label>
+							<label class="tagLeft">
+								<div>☎</div>
+								<input type="tel" placeholder="Phone field">
+								<span class="inputLabel">Phone field</span>
+							</label>
+							<label>
+								<input type="number" placeholder="Number field">
+								<span class="inputLabel">Number field</span>
+							</label>
+							<label class="tagRight">
+								<input type="number" class="no-buttons" placeholder="Number field without spin buttons">
+								<span class="inputLabel">Number field without spin buttons</span>
+								<div>#</div>
+							</label>
+							<label>
+								<input type="password" placeholder="Password field">
+								<span class="inputLabel">Password field</span>
+								<span class="showPwd" onclick="let f=this.parentElement.querySelector('input');f.type=f.type=='text'?'password':'text'"></span>
+							</label>
+							<label>
+								<input type="search" placeholder="Search field">
+								<span class="inputLabel">Search field</span>
+								<span class="emptyInput" onclick="this.parentElement.children[0].value=''"></span>
+							</label>
+							<label class="tagLeft">
+								<div style="font-size:inherit">https://</div>
+								<input type="url" placeholder="Url field">
+								<span class="inputLabel">Url field</span>
+							</label>
+							<label>
+								<input type="date" placeholder="Date field">
+								<span class="inputLabel">Date field</span>
+							</label>
+							<label>
+								<input type="file">
+								<span class="inputLabel">File input</span>
+							</label>
+							<label>
+								<select>
+									<optgroup label="Opt. group 1">
+										<option>Option 1</option>
+										<option>Option 2</option>
+										<option>Option 3</option>
+									</optgroup>
+									<optgroup label="Opt. group 2">
+										<option>Option 4</option>
+										<option>Option 5</option>
+										<option>Option 6</option>
+									</optgroup>
+								</select>
+								<span class="inputLabel">select field</span>
+								<span class="selectHint"></span>
+							</label>
+							<label>
+								<input type="color" placeholder="Color input" onload="this.style.setProperty('--value',this.value)" onchange="this.style.setProperty('--value',this.value)">
+								<!--the color input requires a bit of a workaround to look good-->
+								<span class="inputLabel">Color input</span>
+							</label>
+							<label>
+								<input type="range" placeholder="slider field" min="0" max="100" value="70">
+								<span class="inputLabel">Slider field</span>
+							</label>
+							<label>
+								<textarea rows="5" placeholder="Textarea"></textarea>
+								<span class="inputLabel">Textarea</span>
+							</label>
+							<label>
+								<input type="file" class="dropArea">
+								<span class="inputLabel">File drag&drop area</span>
+							</label>
 
-					<div class="cols3">
-						<div>
-							<label>
-								<input type="radio" name="radio" checked>
-								<span class="radio"></span>
-								<span class="inputLabel">Radio</span>
-							</label>
-							<label>
-								<input type="radio" name="radio">
-								<span class="radio"></span>
-								<span class="inputLabel">Radio</span>
-							</label>
-						</div>
-						<div>
-							<label>
-								<input type="checkbox" checked>
-								<span class="check"></span>
-								<span class="inputLabel">Check</span>
-							</label>
-							<label>
-								<input type="checkbox">
-								<span class="check"></span>
-								<span class="inputLabel">Check</span>
-							</label>
-						</div>
-						<div>
-							<label>
-								<input type="checkbox" checked>
-								<span class="switch"></span>
-								<span class="inputLabel">Off</span>
-								<span class="inputLabel">On</span>
-							</label>
-							<label>
-								<input type="checkbox">
-								<span class="switch"></span>
-								<span class="inputLabel">Off</span>
-								<span class="inputLabel">On</span>
-							</label>
-						</div>
-					</div>
-				</fieldset>
-			</form>
-			<hr>
-			<form class="w10 m1 shadow6">
-				<fieldset>
-					<legend>Example Login form</legend>
-					<label>
-						<input type="text" placeholder="Username" required autocomplete="username">
-						<span class="inputLabel">Username</span>
-					</label>
-					<label>
-						<input type="password" placeholder="Password" required autocomplete="current-password">
-						<span class="inputLabel">Password</span>
-					</label>
-					<div class="text-right">
-						<a href="#">
-							forgot password
-						</a>
-					</div>
-					<div class="cols2">
-						<button>
-							login
-						</button>
-						<a class="button secondary">
-							back
-						</a>
-					</div>
-				</fieldset>
-			</form>
-			<h2>Buttons</h2>
-			<div class="p8">
-				<button>
-					standard
-				</button>
-			</div>
-			<div class="p8">
-				<button class="secondary">
-					secondary
-				</button>
-			</div>
-			<div class="p8">
-				<button class="main">
-					full width
-				</button>
-			</div>
-			<div class="p8">
-				<button class="success">
-					success
-				</button>
-			</div>
-			<div class="p8">
-				<button class="warning">
-					warning
-				</button>
-			</div>
-			<div class="p8">
-				<button class="alert">
-					alert
-				</button>
-			</div>
-			<div class="p8">
-				<button disabled>
-					disabled
-				</button>
-			</div>
-			<div class="p8 tagRight">
-				<label>
-					<input type="text" placeholder="Input with button">
-					<span class="inputLabel">Input with button</span>
-				</label>
-				<button>
-					send
-				</button>
-			</div>
-			<div class="p8 tagLeft">
-				<button>
-					&#9776; 
-				</button>
-				<label>
-					<input type="text" placeholder="Input with button before">
-					<span class="inputLabel">Input with button before</span>
-				</label>
-			</div>
-			<hr>
-			<h2>Tables</h2>
-			<table class="w10 m1 shadow4">
-				<caption>
-					Normal table
-				</caption>
-				<thead>
-					<tr>
-						<th>Col1</th>
-						<th>Col2</th>
-						<th>Col3</th>
-						<th>Col4</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td contenteditable="true">data1</td>
-						<td contenteditable="true">data2</td>
-						<td contenteditable="true">data3</td>
-						<td contenteditable="true">data4</td>
-					</tr>
-					<tr>
-						<td contenteditable="true">data1</td>
-						<td contenteditable="true">data2</td>
-						<td contenteditable="true">data3</td>
-						<td contenteditable="true">data4</td>
-					</tr>
-					<tr>
-						<td contenteditable="true">data1</td>
-						<td contenteditable="true">data2</td>
-						<td contenteditable="true">data3</td>
-						<td contenteditable="true">data4</td>
-					</tr>
-					<tr>
-						<td contenteditable="true">data1</td>
-						<td contenteditable="true">data2</td>
-						<td contenteditable="true">data3</td>
-						<td contenteditable="true">data4</td>
-					</tr>
-				</tbody>
-			</table>
-			<br>
-			<table class="pivot w10 m1 shadow4">
-				<caption>
-					Pivot table
-				</caption>
-				<thead>
-					<tr>
-						<th></th>
-						<th>Col1</th>
-						<th>Col2</th>
-						<th>Col3</th>
-						<th>Col4</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Row1</td>
-						<td contenteditable="true">data1</td>
-						<td contenteditable="true">data2</td>
-						<td contenteditable="true">data3</td>
-						<td contenteditable="true">data4</td>
-					</tr>
-					<tr>
-						<td>Row2</td>
-						<td contenteditable="true">data1</td>
-						<td contenteditable="true">data2</td>
-						<td contenteditable="true">data3</td>
-						<td contenteditable="true">data4</td>
-					</tr>
-					<tr>
-						<td>Row3</td>
-						<td contenteditable="true">data1</td>
-						<td contenteditable="true">data2</td>
-						<td contenteditable="true">data3</td>
-						<td contenteditable="true">data4</td>
-					</tr>
-					<tr>
-						<td>Row4</td>
-						<td contenteditable="true">data1</td>
-						<td contenteditable="true">data2</td>
-						<td contenteditable="true">data3</td>
-						<td contenteditable="true">data4</td>
-					</tr>
-				</tbody>
-			</table>
-			<hr>
-			<h2>Code explanations</h2>
-			<div class="p8">
-				<code class="codeArea">
-					<div class="row"><span class="text-main">window</span>.doStuff = <span class="text-info">function</span>(){</div>
-					<div class="row">	<span class="comment">// doing random stuff</span></div>
-					<div class="row">	alert();</div>
-					<div class="row">	return <span style="color:var(--main-color)">this</span>;</div>
-					<div class="row">});</div>
-				</code>
-			</div>
-			<hr>
-			<h2>Column grid</h2>
-			<div class="p8">
-				<div class="cols2" style="background:rgba(0,0,0,0.1)">
-					<div>
-						<small>.cols2</small> 
-					</div>
-					<div>
-						<small>.cols2</small>
-					</div>
-				</div>
-				<br>
-				<div class="cols3" style="background:rgba(0,0,0,0.1)">
-					<div>
-						<small>.cols3</small> 
-					</div>
-					<div>
-						<small>.cols3</small>
-					</div>
-					<div>
-						<small>.cols3</small>
-					</div>
-				</div>
-				<br>
-				<div class="cols4" style="background:rgba(0,0,0,0.1)">
-					<div>
-						<small>.cols4</small> 
-					</div>
-					<div>
-						<small>.cols4</small>
-					</div>
-					<div>
-						<small>.cols4</small>
-					</div>
-					<div>
-						<small>.cols4</small>
-					</div>
-				</div>
-				<br>
-				<div class="cols5" style="background:rgba(0,0,0,0.1)">
-					<div>
-						<small>.cols5</small> 
-					</div>
-					<div>
-						<small>.cols5</small>
-					</div>
-					<div>
-						<small>.cols5</small>
-					</div>
-					<div>
-						<small>.cols5</small>
-					</div>
-					<div>
-						<small>.cols5</small>
-					</div>
-				</div>
-				<br>
-				<div class="cols6" style="background:rgba(0,0,0,0.1)">
-					<div>
-						<small>.cols6</small> 
-					</div>
-					<div>
-						<small>.cols6</small>
-					</div>
-					<div>
-						<small>.cols6</small>
-					</div>
-					<div>
-						<small>.cols6</small>
-					</div>
-					<div>
-						<small>.cols6</small>
-					</div>
-					<div>
-						<small>.cols6</small>
-					</div>
-				</div>
-			</div>
-			<hr>
-			<h2>Grid system</h2>
-			<div>
-				<div class="m11 w1" style="background:rgba(0,0,0,0.1)">.w1</div>
-				<br>
-				<div class="m10 w2" style="background:rgba(0,0,0,0.1)">.w2</div>
-				<br>
-				<div class="m9 w3" style="background:rgba(0,0,0,0.1)">.w3</div>
-				<br>
-				<div class="m8 w4" style="background:rgba(0,0,0,0.1)">.w4</div>
-				<br>
-				<div class="m7 w5" style="background:rgba(0,0,0,0.1)">.w5</div>
-				<br>
-				<div class="m6 w6" style="background:rgba(0,0,0,0.1)">.w6</div>
-				<br>
-				<div class="m5 w7" style="background:rgba(0,0,0,0.1)">.w7</div>
-				<br>
-				<div class="m4 w8" style="background:rgba(0,0,0,0.1)">.w8</div>
-				<br>
-				<div class="m3 w9" style="background:rgba(0,0,0,0.1)">.w9</div>
-				<br>
-				<div class="m2 w10" style="background:rgba(0,0,0,0.1)">.w10</div>
-				<br>
-				<div class="m1 w11" style="background:rgba(0,0,0,0.1)">.w11</div>
-				<br>
-				<div class="w12" style="background:rgba(0,0,0,0.1)">.w12</div>
-			</div>
-			<hr>
-			<h2>Success/Warning/Failure/Info</h2>
-			<div class="box-success shadow4">
-				<strong>box-success</strong>
-				<p>Good infos about stuff the user did</p>
-				<div class="text-right">
-					<button>
-						action
-					</button>
-				</div>
-			</div>
-			<div class="box-warning shadow4">
-				<strong>box-warning</strong>
-				<p>Be wary about other stuff</p>
-				<div class="text-right">
-					<button>
-						action
-					</button>
-				</div>
-			</div>
-			<div class="box-alert shadow4">
-				<strong>box-alert</strong>
-				<p>Infos about errors</p>
-				<div class="text-right">
-					<button>
-						action
-					</button>
-				</div>
-			</div>
-			<div class="box-info shadow4">
-				<strong>box-info</strong>
-				<p>Generic infos</p>
-				<div class="text-right">
-					<button>
-						action
-					</button>
-				</div>
-			</div>
-			<div class="p8">
-				<span class="text-success">.text-success</span>
-				<span class="text-warning">.text-warning</span>
-				<span class="text-alert">.text-alert</span>
-				<span class="text-info">.text-info</span>
-				<span class="text-main">.text-main</span>
-				<br>
-				<br>
-				<span class="tag-success">tag-success</span>
-				<span class="tag-warning">tag-warning</span>
-				<span class="tag-alert">tag-alert</span>
-				<span class="tag-info">tag-info</span>
-				<span class="tag-main">tag-main</span>
-				<span class="number-tip">3</span>
-			</div>
-			<div class="p8">
-				<div class="p8 fill-success">
-					.fill-success
-				</div>
-				<div class="p8 fill-warning">
-					.fill-warning
-				</div>
-				<div class="p8 fill-alert">
-					.fill-alert
-				</div>
-				<div class="p8 fill-info">
-					.fill-info
-				</div>
-				<div class="p8 fill-main">
-					.fill-main
-				</div>
-			</div>
-			<h2>Card element</h2>
-			<div class="text-center">
-				<div class="card">
-					<div class="card_title">
-						Card title
-					</div>
-					<div class="card_content">
-						<img src="https://www.bing.com/th?id=OHR.CuttySark150_EN-US8574386630_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp" alt="A random image from Bing Photo" title="A random image from Bing Photo">
-						<article>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis iaculis risus. Sed ante magna, pellentesque vel mi sed, malesuada efficitur magna. Nam a sem et sapien laoreet blandit ac nec turpis. Nullam ut ex a nisi imperdiet congue eu rutrum erat. Aenean laoreet lorem neque, sit amet cursus nisl molestie ac. Aliquam vehicula, justo ac tincidunt fermentum, turpis justo porttitor purus, quis mattis elit massa mollis lacus. Ut molestie tellus ac eros porta fringilla.
-						</article>
-					</div>
-				</div>
-			</div>
-			<h2>Dialog</h2>
-			<div class="text-center">
-				<button onclick="body.appendChild(getElementById('dialogT').content.cloneNode(true))">
-					open dialog
-				</button>
-				<template id="dialogT">
-					<div class="pwa_dialog_backDrop"></div>
-					<div class="pwa_dialog">
-						<div class="pwa_dialog_topBar">
-							<div class="pwa_dialog_title">
-								Dialog title
+						<div class="cols3">
+							<div>
+								<label>
+									<input type="radio" name="radio" checked>
+									<span class="radio"></span>
+									<span class="inputLabel">Radio</span>
+								</label>
+								<label>
+									<input type="radio" name="radio">
+									<span class="radio"></span>
+									<span class="inputLabel">Radio</span>
+								</label>
 							</div>
-							<div class="pwa_dialog_topBtns">
-								<div class="pwa_dialog_topCross" onclick="let d=document.querySelectorAll('.pwa_dialog,.pwa_dialog_backDrop');d.forEach(l=>l.parentElement.removeChild(l))"></div>
+							<div>
+								<label>
+									<input type="checkbox" checked>
+									<span class="check"></span>
+									<span class="inputLabel">Check</span>
+								</label>
+								<label>
+									<input type="checkbox">
+									<span class="check"></span>
+									<span class="inputLabel">Check</span>
+								</label>
+							</div>
+							<div>
+								<label>
+									<input type="checkbox" checked>
+									<span class="switch"></span>
+									<span class="inputLabel">Off</span>
+									<span class="inputLabel">On</span>
+								</label>
+								<label>
+									<input type="checkbox">
+									<span class="switch"></span>
+									<span class="inputLabel">Off</span>
+									<span class="inputLabel">On</span>
+								</label>
 							</div>
 						</div>
-						<div class="pwa_dialog_body">
-							The dialog content
+					</fieldset>
+				</form>
+				<hr>
+				<form class="w10 m1 shadow6">
+					<fieldset>
+						<legend>Example Login form</legend>
+						<label>
+							<input type="text" placeholder="Username" required autocomplete="username">
+							<span class="inputLabel">Username</span>
+						</label>
+						<label>
+							<input type="password" placeholder="Password" required autocomplete="current-password">
+							<span class="inputLabel">Password</span>
+						</label>
+						<div class="text-right">
+							<a href="#">
+								forgot password
+							</a>
 						</div>
-					</div>
-				</template>
-			</div>
-			<hr>
-			<h2>Notifications</h2>
-			<div class="p8 text-center">
-				<button onclick="body.appendChild(getElementById('notifN').content.cloneNode(true))">
-					Show notification
-				</button>
-				<template id="notifN">
-					<div class="pwa_notif notif_bottom notif_right">
-						<div class="pwa_notif_head">
-							<div class="pwa_notif_title">
-								A notification for you!
-							</div>
-							<div class="pwa_notif_close" onclick="let not=this.closest('.pwa_notif');not.parentElement.removeChild(not)"></div>
+						<div class="cols2">
+							<button>
+								login
+							</button>
+							<a class="button secondary">
+								back
+							</a>
 						</div>
-						<div class="pwa_notif_body">
-							A text about stuff and other stuff and blah blah
-						</div>
-					</div>
-				</template>
-			</div>
-			<hr>
-			<h2>8px-grid utility</h2>
-			<div class="text-center">
-				<button onclick="body.classList.toggle('gridHelper')">
-					show grid
-				</button>
-			</div>
-			<hr>
-			<h2>Example chat area</h2>
-			<div class="p8">
-				<div class="p8" id="chatArea" style="height:30rem;background:rgba(0,0,0,0.05)">
-					<div class="message pull-left">
-						A message received
-					</div>
-					<div class="message pull-right fill-info">
-						A message sent
-					</div>
+					</fieldset>
+				</form>
+				<h2>Buttons</h2>
+				<div class="p8">
+					<button>
+						standard
+					</button>
+				</div>
+				<div class="p8">
+					<button class="secondary">
+						secondary
+					</button>
+				</div>
+				<div class="p8">
+					<button class="main">
+						full width
+					</button>
+				</div>
+				<div class="p8">
+					<button class="success">
+						success
+					</button>
+				</div>
+				<div class="p8">
+					<button class="warning">
+						warning
+					</button>
+				</div>
+				<div class="p8">
+					<button class="alert">
+						alert
+					</button>
+				</div>
+				<div class="p8">
+					<button disabled>
+						disabled
+					</button>
 				</div>
 				<div class="tagRight">
-					<label style="padding-top:0">
-						<input type="text" placeholder="Write something" id="chatInput">
+					<label>
+						<input type="text" placeholder="Input with button">
+						<span class="inputLabel">Input with button</span>
 					</label>
-					<button style="margin-top:0" onclick="let txt=document.getElementById('chatInput');let msg=document.createElement('div');msg.classList.add('message','pull-right','fill-info');msg.innerText=txt.value;document.getElementById('chatArea').appendChild(msg);txt.value='';txt.focus()">
+					<button>
 						send
 					</button>
 				</div>
+				<div class="tagLeft">
+					<button>
+						&#9776; 
+					</button>
+					<label>
+						<input type="text" placeholder="Input with button before">
+						<span class="inputLabel">Input with button before</span>
+					</label>
+				</div>
+				<hr>
+				<h2>Tables</h2>
+				<table class="shadow4">
+					<caption>
+						Normal table
+					</caption>
+					<thead>
+						<tr>
+							<th>Col1</th>
+							<th>Col2</th>
+							<th>Col3</th>
+							<th>Col4</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td contenteditable="true">data1</td>
+							<td contenteditable="true">data2</td>
+							<td contenteditable="true">data3</td>
+							<td contenteditable="true">data4</td>
+						</tr>
+						<tr>
+							<td contenteditable="true">data1</td>
+							<td contenteditable="true">data2</td>
+							<td contenteditable="true">data3</td>
+							<td contenteditable="true">data4</td>
+						</tr>
+						<tr>
+							<td contenteditable="true">data1</td>
+							<td contenteditable="true">data2</td>
+							<td contenteditable="true">data3</td>
+							<td contenteditable="true">data4</td>
+						</tr>
+						<tr>
+							<td contenteditable="true">data1</td>
+							<td contenteditable="true">data2</td>
+							<td contenteditable="true">data3</td>
+							<td contenteditable="true">data4</td>
+						</tr>
+					</tbody>
+				</table>
+				<br>
+				<table class="pivot shadow4">
+					<caption>
+						Pivot table
+					</caption>
+					<thead>
+						<tr>
+							<th></th>
+							<th>Col1</th>
+							<th>Col2</th>
+							<th>Col3</th>
+							<th>Col4</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Row1</td>
+							<td contenteditable="true">data1</td>
+							<td contenteditable="true">data2</td>
+							<td contenteditable="true">data3</td>
+							<td contenteditable="true">data4</td>
+						</tr>
+						<tr>
+							<td>Row2</td>
+							<td contenteditable="true">data1</td>
+							<td contenteditable="true">data2</td>
+							<td contenteditable="true">data3</td>
+							<td contenteditable="true">data4</td>
+						</tr>
+						<tr>
+							<td>Row3</td>
+							<td contenteditable="true">data1</td>
+							<td contenteditable="true">data2</td>
+							<td contenteditable="true">data3</td>
+							<td contenteditable="true">data4</td>
+						</tr>
+						<tr>
+							<td>Row4</td>
+							<td contenteditable="true">data1</td>
+							<td contenteditable="true">data2</td>
+							<td contenteditable="true">data3</td>
+							<td contenteditable="true">data4</td>
+						</tr>
+					</tbody>
+				</table>
+				<hr>
+				<h2>Code explanations</h2>
+				<div class="p8">
+					<code class="codeArea">
+						<div class="row"><span class="text-main">window</span>.doStuff = <span class="text-info">function</span>(){</div>
+						<div class="row">	<span class="comment">// doing random stuff</span></div>
+						<div class="row">	alert();</div>
+						<div class="row">	return <span class="text-main">this</span>;</div>
+						<div class="row">});</div>
+					</code>
+				</div>
+				<hr>
+				<div class="p8">
+				<h2>Column grid</h2>
+				<div class="p8">
+					<div class="cols2" style="background:rgba(0,0,0,0.1)">
+						<div>
+							<small>.cols2</small> 
+						</div>
+						<div>
+							<small>.cols2</small>
+						</div>
+					</div>
+					<br>
+					<div class="cols3" style="background:rgba(0,0,0,0.1)">
+						<div>
+							<small>.cols3</small> 
+						</div>
+						<div>
+							<small>.cols3</small>
+						</div>
+						<div>
+							<small>.cols3</small>
+						</div>
+					</div>
+					<br>
+					<div class="cols4" style="background:rgba(0,0,0,0.1)">
+						<div>
+							<small>.cols4</small> 
+						</div>
+						<div>
+							<small>.cols4</small>
+						</div>
+						<div>
+							<small>.cols4</small>
+						</div>
+						<div>
+							<small>.cols4</small>
+						</div>
+					</div>
+					<br>
+					<div class="cols5" style="background:rgba(0,0,0,0.1)">
+						<div>
+							<small>.cols5</small> 
+						</div>
+						<div>
+							<small>.cols5</small>
+						</div>
+						<div>
+							<small>.cols5</small>
+						</div>
+						<div>
+							<small>.cols5</small>
+						</div>
+						<div>
+							<small>.cols5</small>
+						</div>
+					</div>
+					<br>
+					<div class="cols6" style="background:rgba(0,0,0,0.1)">
+						<div>
+							<small>.cols6</small> 
+						</div>
+						<div>
+							<small>.cols6</small>
+						</div>
+						<div>
+							<small>.cols6</small>
+						</div>
+						<div>
+							<small>.cols6</small>
+						</div>
+						<div>
+							<small>.cols6</small>
+						</div>
+						<div>
+							<small>.cols6</small>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<h2>Grid system</h2>
+				<div>
+					<div class="m11 w1" style="background:rgba(0,0,0,0.1)">.w1</div>
+					<br>
+					<div class="m10 w2" style="background:rgba(0,0,0,0.1)">.w2</div>
+					<br>
+					<div class="m9 w3" style="background:rgba(0,0,0,0.1)">.w3</div>
+					<br>
+					<div class="m8 w4" style="background:rgba(0,0,0,0.1)">.w4</div>
+					<br>
+					<div class="m7 w5" style="background:rgba(0,0,0,0.1)">.w5</div>
+					<br>
+					<div class="m6 w6" style="background:rgba(0,0,0,0.1)">.w6</div>
+					<br>
+					<div class="m5 w7" style="background:rgba(0,0,0,0.1)">.w7</div>
+					<br>
+					<div class="m4 w8" style="background:rgba(0,0,0,0.1)">.w8</div>
+					<br>
+					<div class="m3 w9" style="background:rgba(0,0,0,0.1)">.w9</div>
+					<br>
+					<div class="m2 w10" style="background:rgba(0,0,0,0.1)">.w10</div>
+					<br>
+					<div class="m1 w11" style="background:rgba(0,0,0,0.1)">.w11</div>
+					<br>
+					<div class="w12" style="background:rgba(0,0,0,0.1)">.w12</div>
+				</div>
+				<hr>
+				<h2>Success/Warning/Failure/Info</h2>
+				<div class="box-success shadow4">
+					<strong>box-success</strong>
+					<p>Good infos about stuff the user did</p>
+					<div class="text-right">
+						<button>
+							action
+						</button>
+					</div>
+				</div>
+				<div class="box-warning shadow4">
+					<strong>box-warning</strong>
+					<p>Be wary about other stuff</p>
+					<div class="text-right">
+						<button>
+							action
+						</button>
+					</div>
+				</div>
+				<div class="box-alert shadow4">
+					<strong>box-alert</strong>
+					<p>Infos about errors</p>
+					<div class="text-right">
+						<button>
+							action
+						</button>
+					</div>
+				</div>
+				<div class="box-info shadow4">
+					<strong>box-info</strong>
+					<p>Generic infos</p>
+					<div class="text-right">
+						<button>
+							action
+						</button>
+					</div>
+				</div>
+				<div class="p8">
+					<span class="text-success">.text-success</span>
+					<span class="text-warning">.text-warning</span>
+					<span class="text-alert">.text-alert</span>
+					<span class="text-info">.text-info</span>
+					<span class="text-main">.text-main</span>
+					<br>
+					<br>
+					<span class="tag-success">tag-success</span>
+					<span class="tag-warning">tag-warning</span>
+					<span class="tag-alert">tag-alert</span>
+					<span class="tag-info">tag-info</span>
+					<span class="tag-main">tag-main</span>
+					<span class="number-tip">3</span>
+				</div>
+				<div class="p8">
+					<div class="p8 fill-success">
+						.fill-success
+					</div>
+					<div class="p8 fill-warning">
+						.fill-warning
+					</div>
+					<div class="p8 fill-alert">
+						.fill-alert
+					</div>
+					<div class="p8 fill-info">
+						.fill-info
+					</div>
+					<div class="p8 fill-main">
+						.fill-main
+					</div>
+				</div>
+				<h2>Card element</h2>
+				<div class="text-center">
+					<div class="card">
+						<div class="card_title">
+							Card title
+						</div>
+						<div class="card_content">
+							<img src="https://www.bing.com/th?id=OHR.CuttySark150_EN-US8574386630_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp" alt="A random image from Bing Photo" title="A random image from Bing Photo">
+							<article>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis iaculis risus. Sed ante magna, pellentesque vel mi sed, malesuada efficitur magna. Nam a sem et sapien laoreet blandit ac nec turpis. Nullam ut ex a nisi imperdiet congue eu rutrum erat. Aenean laoreet lorem neque, sit amet cursus nisl molestie ac. Aliquam vehicula, justo ac tincidunt fermentum, turpis justo porttitor purus, quis mattis elit massa mollis lacus. Ut molestie tellus ac eros porta fringilla.
+							</article>
+						</div>
+					</div>
+				</div>
+				<h2>Dialog</h2>
+				<div class="text-center">
+					<button onclick="body.appendChild(getElementById('dialogT').content.cloneNode(true))">
+						open dialog
+					</button>
+					<template id="dialogT">
+						<div class="pwa_dialog_backDrop"></div>
+						<div class="pwa_dialog">
+							<div class="pwa_dialog_topBar">
+								<div class="pwa_dialog_title">
+									Dialog title
+								</div>
+								<div class="pwa_dialog_topBtns">
+									<div class="pwa_dialog_topCross" onclick="let d=document.querySelectorAll('.pwa_dialog,.pwa_dialog_backDrop');d.forEach(l=>l.parentElement.removeChild(l))"></div>
+								</div>
+							</div>
+							<div class="pwa_dialog_body">
+								The dialog content
+							</div>
+						</div>
+					</template>
+				</div>
+				<hr>
+				<h2>Notifications</h2>
+				<div class="p8 text-center">
+					<button onclick="body.appendChild(getElementById('notifN').content.cloneNode(true))">
+						Show notification
+					</button>
+					<template id="notifN">
+						<div class="pwa_notif notif_bottom notif_right">
+							<div class="pwa_notif_head">
+								<div class="pwa_notif_title">
+									A notification for you!
+								</div>
+								<div class="pwa_notif_close" onclick="let not=this.closest('.pwa_notif');not.parentElement.removeChild(not)"></div>
+							</div>
+							<div class="pwa_notif_body">
+								A text about stuff and other stuff and blah blah
+							</div>
+						</div>
+					</template>
+				</div>
+				<hr>
+				<h2>8px-grid utility</h2>
+				<div class="text-center">
+					<button onclick="body.classList.toggle('gridHelper')">
+						show grid
+					</button>
+				</div>
+				<hr>
+				<h2>Example chat area</h2>
+				<div class="p8">
+					<div class="p8" id="chatArea" style="height:30rem;background:rgba(0,0,0,0.05)">
+						<div class="message pull-left">
+							A message received
+						</div>
+						<div class="message pull-right fill-info">
+							A message sent
+						</div>
+					</div>
+					<div class="tagRight">
+						<label style="padding-top:0">
+							<input type="text" placeholder="Write something" id="chatInput">
+						</label>
+						<button style="margin-top:0" onclick="let txt=document.getElementById('chatInput');let msg=document.createElement('div');msg.classList.add('message','pull-right','fill-info');msg.innerText=txt.value;document.getElementById('chatArea').appendChild(msg);txt.value='';txt.focus()">
+							send
+						</button>
+					</div>
+				</div>
+				<hr>
+				<h2>Loading animations</h2>
+				<div class="text-center">
+					Spin:
+					<span class="spin1"></span>
+					<span class="spin2"></span>
+					<span class="spin3"></span>
+					<span class="spin4"></span>
+					<span class="spin5"></span>
+					<span class="spin6"></span>
+					<span class="spin7"></span>
+					<span class="spin8"></span>
+					<span class="spin9"></span>
+					<span class="spin10"></span>
+					<span class="spin11"></span>
+					<span class="spin12"></span>
+				</div>
+				<div class="p8">
+					Loadbar:
+					<div class="pwa_loadBar" style="--min:0;--max:100;--value:70;"></div>
+				</div>
+				<hr>
+				<h2>Customize the colors</h2>
+				<div class="p8 cols2">
+					<label>
+						<input type="text" placeholder="--main-color" value="#7824c7" oninput="body.style.setProperty('--main-color',this.value)">
+						<span class="inputLabel">--main-color</span>
+						<small class="pull-right">Main color</small>
+					</label>
+					<label>
+						<input type="text" placeholder="--main-color-lighter" value="#b05cff" oninput="body.style.setProperty('--main-color-lighter',this.value)">
+						<span class="inputLabel">--main-color-lighter</span>
+						<small class="pull-right">Lighter shade of main color</small>
+					</label>
+					<label>
+						<input type="text" placeholder="--main-text-cl" value="#fff" oninput="body.style.setProperty('--main-text-cl',this.value)">
+						<span class="inputLabel">--main-text-cl</span>
+						<small class="pull-right">Text color in front of main color</small>
+					</label>
+					<label>
+						<input type="text" placeholder="--main-text-cl-darker" value="#ddd" oninput="body.style.setProperty('--main-text-cl-darker',this.value)">
+						<span class="inputLabel">--main-text-cl-darker</span>
+						<small class="pull-right">darker shade for the text in front of the main color</small>
+					</label>
+					<label>
+						<input type="text" placeholder="--button-greyedout" value="#bbb" oninput="body.style.setProperty('--button-greyedout',this.value)">
+						<span class="inputLabel">--button-greyedout</span>
+						<small class="pull-right">A shade of grey for some input elements</small>
+					</label>
+					<label>
+						<input type="text" placeholder="--background-base" value="#fff" oninput="body.style.setProperty('--background-base',this.value)">
+						<span class="inputLabel">--background-base</span>
+						<small class="pull-right">Body default bg color</small>
+					</label>
+					<label>
+						<input type="text" placeholder="--text-base" value="#080808" oninput="body.style.setProperty('--text-base',this.value)">
+						<span class="inputLabel">--text-base</span>
+						<small class="pull-right">Body default text color</small>
+					</label>
+					<label>
+						<input type="text" placeholder="--background-base-darker" value="#f9f9f9" oninput="body.style.setProperty('--background-base-darker',this.value)">
+						<span class="inputLabel">--background-base-darker</span>
+						<small class="pull-right">A darker shade of the body color</small>
+					</label>
+				</div>
+				<hr>
+				<h2>Dark mode</h2>
+				<div class="text-center">
+					<button onclick="body.classList.toggle('dark-mode')">
+						switch to dark mode
+					</button>
+				</div>
+				<hr>
+				<div class="p8">
+					<a href="https://github.com/claudiobonifazi/jammer.css" target="_blank" title="Project page">
+						github/claudiobonifazi/jammer.css
+					</a>
+				</div>
 			</div>
-			<hr>
-			<h2>Loading animations</h2>
-			<div class="text-center">
-				Spin:
-				<span class="spin1"></span>
-				<span class="spin2"></span>
-				<span class="spin3"></span>
-				<span class="spin4"></span>
-				<span class="spin5"></span>
-				<span class="spin6"></span>
-				<span class="spin7"></span>
-				<span class="spin8"></span>
-				<span class="spin9"></span>
-				<span class="spin10"></span>
-				<span class="spin11"></span>
-				<span class="spin12"></span>
-			</div>
-			<div class="p8">
-				Loadbar:
-				<div class="pwa_loadBar" style="--min:0;--max:100;--value:70;"></div>
-			</div>
-			<hr>
-			<h2>Customize the colors</h2>
-			<div class="p8 cols2">
-				<label>
-					<input type="text" placeholder="--main-color" value="#7824c7" oninput="body.style.setProperty('--main-color',this.value)">
-					<span class="inputLabel">--main-color</span>
-					<small class="pull-right">Main color</small>
-				</label>
-				<label>
-					<input type="text" placeholder="--main-color-lighter" value="#b05cff" oninput="body.style.setProperty('--main-color-lighter',this.value)">
-					<span class="inputLabel">--main-color-lighter</span>
-					<small class="pull-right">Lighter shade of main color</small>
-				</label>
-				<label>
-					<input type="text" placeholder="--main-text-cl" value="#fff" oninput="body.style.setProperty('--main-text-cl',this.value)">
-					<span class="inputLabel">--main-text-cl</span>
-					<small class="pull-right">Text color in front of main color</small>
-				</label>
-				<label>
-					<input type="text" placeholder="--main-text-cl-darker" value="#ddd" oninput="body.style.setProperty('--main-text-cl-darker',this.value)">
-					<span class="inputLabel">--main-text-cl-darker</span>
-					<small class="pull-right">darker shade for the text in front of the main color</small>
-				</label>
-				<label>
-					<input type="text" placeholder="--button-greyedout" value="#bbb" oninput="body.style.setProperty('--button-greyedout',this.value)">
-					<span class="inputLabel">--button-greyedout</span>
-					<small class="pull-right">A shade of grey for some input elements</small>
-				</label>
-				<label>
-					<input type="text" placeholder="--background-base" value="#fff" oninput="body.style.setProperty('--background-base',this.value)">
-					<span class="inputLabel">--background-base</span>
-					<small class="pull-right">Body default bg color</small>
-				</label>
-				<label>
-					<input type="text" placeholder="--text-base" value="#080808" oninput="body.style.setProperty('--text-base',this.value)">
-					<span class="inputLabel">--text-base</span>
-					<small class="pull-right">Body default text color</small>
-				</label>
-				<label>
-					<input type="text" placeholder="--background-base-darker" value="#f9f9f9" oninput="body.style.setProperty('--background-base-darker',this.value)">
-					<span class="inputLabel">--background-base-darker</span>
-					<small class="pull-right">A darker shade of the body color</small>
-				</label>
-			</div>
-			<hr>
-			<h2>Dark mode</h2>
-			<div class="text-center">
-				<button onclick="body.classList.toggle('dark-mode')">
-					switch to dark mode
-				</button>
-			</div>
-			<hr>
-			<div class="p8">
-				<a href="https://github.com/claudiobonifazi/jammer.css" target="_blank" title="Project page">
-					github/claudiobonifazi/jammer.css
-				</a>
-			</div>
-		</div>
-
+		</main>
 
 		<script>
 			// change the browser header color on mobile

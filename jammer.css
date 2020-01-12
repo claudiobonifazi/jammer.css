@@ -4,24 +4,6 @@
  * Url: https://github.com/claudiobonifazi/jammer.css
  * License: any usage is free without omitting attribution
  */
-/* latin-ext */
-@font-face {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFW50bbck.woff2) format("woff2");
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
 body {
   --background-base: #fff;
   --background-base-darker: #f3f3f3;
@@ -44,12 +26,6 @@ body {
   --button-greyedout: #bbb;
 }
 
-body {
-  /*- other variables -*/
-  --base-font-size:14px;
-  --input-border-bottom: 2px;
-  --header-height: 48px;
-}
 body.dark-mode {
   --background-base: #181818;
   --background-base-darker: #121212;
@@ -79,8 +55,18 @@ body.dark-mode {
     --alert-lighter: #f8d7da;
   }
 }
+body {
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 1.6;
+}
+
+body {
+  --header-height: 48px;
+}
+
 :root {
-  line-height: 1.2;
   -webkit-text-size-adjust: 100%;
   width: 100%;
   height: 100%;
@@ -91,14 +77,13 @@ body.dark-mode {
 
 body {
   margin: 0;
-  font-family: "Open Sans", sans-serif;
-  font-size: var(--base-font-size);
   width: 100%;
   height: 100%;
   background: var(--background-base);
   color: var(--text-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
 }
 
 *,
@@ -167,6 +152,14 @@ pre {
 
 p, ul, ol, dl, address {
   line-height: 1.5;
+}
+
+ul {
+  list-style: circle inside;
+}
+
+ol {
+  list-style: decimal inside;
 }
 
 kbd, samp {
@@ -285,6 +278,11 @@ template {
   display: none;
 }
 
+table {
+  border-spacing: 0;
+  width: 100%;
+  contain: layout;
+}
 table caption {
   font-size: 115%;
   font-weight: bold;
@@ -323,6 +321,7 @@ form {
   padding: 0;
   border: 0;
   outline: 0;
+  contain: layout;
 }
 form fieldset {
   padding: 0.35rem 0.75rem 0.625rem;
@@ -346,33 +345,7 @@ form fieldset legend {
   text-indent: 1rem;
 }
 
-/*@keyframes jammer_progressbar{
-	to{}
-}
-progress,
-::-webkit-progress-bar{
-	-webkit-appearance: none;
-	appearance: none;
-	border: 0;
-	margin: 0;
-	padding: 0;
-	display:block;
-	width: 100%;
-	height: 0.25rem;
-	background: var(--background-base);
-
-	&::-webkit-progress-value{
-		background:var(--main-color);
-	}
-	&::-moz-progress-bar{
-		background: var(--main-color);
-	}
-	&:not([value])::-webkit-progress-value,
-	&:not([value])::-moz-progress-bar{
-		width: 100% !important;
-	}
-}*/
-::-webkit-file-upload-button, button,
+input[type=file]::-webkit-file-upload-button, button,
 input[type=button],
 input[type=reset],
 input[type=submit],
@@ -394,6 +367,7 @@ input[type=submit],
   color: var(--main-text-cl);
   font-weight: bold;
   letter-spacing: 1px;
+  contain: layout;
 }
 button::-moz-focus-inner,
 input[type=button]::-moz-focus-inner,
@@ -403,14 +377,14 @@ input[type=submit]::-moz-focus-inner,
   border-style: none;
   padding: 0;
 }
-:-moz-focusring::-webkit-file-upload-button, button:-moz-focusring,
+input[type=file]:-moz-focusring::-webkit-file-upload-button, button:-moz-focusring,
 input[type=button]:-moz-focusring,
 input[type=reset]:-moz-focusring,
 input[type=submit]:-moz-focusring,
 .button:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
-:focus::-webkit-file-upload-button, button:focus,
+input[type=file]:focus::-webkit-file-upload-button, button:focus,
 input[type=button]:focus,
 input[type=reset]:focus,
 input[type=submit]:focus,
@@ -418,7 +392,7 @@ input[type=submit]:focus,
   outline: 1px solid var(--button-greyedout);
   outline-offset: 1px;
 }
-[disabled]::-webkit-file-upload-button, button[disabled],
+input[disabled][type=file]::-webkit-file-upload-button, button[disabled],
 input[disabled][type=button],
 input[disabled][type=reset],
 input[disabled][type=submit],
@@ -426,14 +400,14 @@ input[disabled][type=submit],
   cursor: not-allowed;
   filter: grayscale(0.75) opacity(0.5);
 }
-:not([disabled])::-webkit-file-upload-button, button:not([disabled]),
+input[type=file]:not([disabled])::-webkit-file-upload-button, button:not([disabled]),
 input[type=button]:not([disabled]),
 input[type=reset]:not([disabled]),
 input[type=submit]:not([disabled]),
 .button:not([disabled]) {
   cursor: pointer;
 }
-:not([disabled]):active::-webkit-file-upload-button, button:not([disabled]):active,
+input[type=file]:not([disabled]):active::-webkit-file-upload-button, button:not([disabled]):active,
 input[type=button]:not([disabled]):active,
 input[type=reset]:not([disabled]):active,
 input[type=submit]:not([disabled]):active,
@@ -442,7 +416,7 @@ input[type=submit]:not([disabled]):active,
   -ms-transform: translate(0, 2px);
   transform: translate(0, 2px);
 }
-.secondary::-webkit-file-upload-button, button.secondary,
+input.secondary[type=file]::-webkit-file-upload-button, button.secondary,
 input.secondary[type=button],
 input.secondary[type=reset],
 input.secondary[type=submit],
@@ -451,14 +425,14 @@ input.secondary[type=submit],
   color: var(--main-color);
   border: 1px solid var(--main-color);
 }
-.main::-webkit-file-upload-button, button.main,
+input.main[type=file]::-webkit-file-upload-button, button.main,
 input.main[type=button],
 input.main[type=reset],
 input.main[type=submit],
 .main.button {
   width: 100%;
 }
-.success::-webkit-file-upload-button, button.success,
+input.success[type=file]::-webkit-file-upload-button, button.success,
 input.success[type=button],
 input.success[type=reset],
 input.success[type=submit],
@@ -466,7 +440,7 @@ input.success[type=submit],
   background: var(--success);
   color: var(--success-lighter);
 }
-.warning::-webkit-file-upload-button, button.warning,
+input.warning[type=file]::-webkit-file-upload-button, button.warning,
 input.warning[type=button],
 input.warning[type=reset],
 input.warning[type=submit],
@@ -474,7 +448,7 @@ input.warning[type=submit],
   background: var(--warning);
   color: var(--warning-lighter);
 }
-.alert::-webkit-file-upload-button, button.alert,
+input.alert[type=file]::-webkit-file-upload-button, button.alert,
 input.alert[type=button],
 input.alert[type=reset],
 input.alert[type=submit],
@@ -483,8 +457,8 @@ input.alert[type=submit],
   color: var(--alert-lighter);
 }
 
-::-webkit-file-upload-button {
-  line-height: 1.75;
+input[type=file]::-webkit-file-upload-button {
+  height: 100%;
 }
 
 body {
@@ -509,7 +483,7 @@ input[type=range], select, textarea, input:not([type]), input[type=text], input[
   border-radius: 2px 2px 0 0;
   width: 100%;
   box-sizing: border-box;
-  border-width: 0 0 var(--input-border-bottom) 0;
+  border-width: 0 0 2px 0;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.1);
   caret-color: var(--main-color-forinput);
@@ -529,6 +503,7 @@ input[type=range]:focus:not([readonly]) + .inputLabel, select:focus:not([readonl
   top: -0.5rem;
   font-size: 80%;
   color: var(--main-color-forinput);
+  white-space: nowrap;
 }
 input[type=range]::placeholder, select::placeholder, textarea::placeholder, input:not([type])::placeholder, input[type=text]::placeholder, input[type=number]::placeholder, input[type=date]::placeholder, input[type=datetime-local]::placeholder, input[type=email]::placeholder, input[type=url]::placeholder, input[type=password]::placeholder, input[type=search]::placeholder, input[type=tel]::placeholder, input[type=file]::placeholder, input[type=color]::placeholder {
   font-weight: 500;
@@ -550,6 +525,7 @@ input[type=range]:not(:focus):not([readonly]):not(:placeholder-shown) + .inputLa
   top: -0.5rem;
   font-size: 80%;
   color: var(--main-color-forinput);
+  white-space: nowrap;
 }
 input[type=range]:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill, input:-webkit-autofill:not([type]), input[type=text]:-webkit-autofill, input[type=number]:-webkit-autofill, input[type=date]:-webkit-autofill, input[type=datetime-local]:-webkit-autofill, input[type=email]:-webkit-autofill, input[type=url]:-webkit-autofill, input[type=password]:-webkit-autofill, input[type=search]:-webkit-autofill, input[type=tel]:-webkit-autofill, input[type=file]:-webkit-autofill, input[type=color]:-webkit-autofill {
   border-color: var(--main-color);
@@ -841,8 +817,8 @@ input[type=range]::after {
   content: attr(max);
 }
 input[type=range]::before, input[type=range]::after {
-  background: rgba(0, 0, 0, 0.1);
-  color: var(--background-base);
+  background: var(--main-color-lighter);
+  color: var(--main-text-cl);
   line-height: 2.5rem;
   height: 100%;
   display: inline-block;
@@ -855,7 +831,6 @@ input[type=range]::before, input[type=range]::after {
 }
 input[type=range]:focus::before, input[type=range]:focus::after, input[type=range]:active::before, input[type=range]:active::after {
   background: var(--main-color);
-  color: var(--main-text-cl);
 }
 
 input[type=number]:not(.no-buttons)::-webkit-inner-spin-button, input[type=number]:not(.no-buttons)::-webkit-outer-spin-button {
@@ -914,6 +889,8 @@ input[type=file] {
   font-weight: 500;
   cursor: pointer;
   padding-left: 0;
+  padding-right: 0;
+  overflow: hidden;
 }
 input[type=file].dropArea {
   height: 12.5rem;
@@ -987,6 +964,7 @@ input[type=color]:focus::before {
   height: 2.5rem;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  line-height: 1;
 }
 
 .tagLeft:focus-within :first-child:not(button):not(.inputLabel) {
@@ -1014,6 +992,7 @@ input[type=color]:focus::before {
   height: 2.5rem;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  line-height: 1;
 }
 .tagRight > :last-child:not(input):not(button):not(.button):not(.inputLabel) {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
@@ -1109,6 +1088,13 @@ input[type=checkbox]:not(:checked) + .switch + .inputLabel + .inputLabel {
 
 .pull-right {
   float: right !important;
+}
+
+.full-width {
+  display: block !important;
+  clear: both !important;
+  width: 100% !important;
+  position: relative !important;
 }
 
 .w1 {
@@ -1673,6 +1659,9 @@ code {
 
 .codeArea {
   display: block;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
   background: var(--background-base-darker);
   border-left: 3px solid var(--main-color);
   counter-reset: codeArea;
@@ -1692,10 +1681,11 @@ code {
   width: 1rem;
   display: inline-block;
   height: 1.15rem;
+  vertical-align: bottom;
   background: rgba(0, 0, 0, 0.05);
   text-align: center;
   line-height: 1.15rem;
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.5);
 }

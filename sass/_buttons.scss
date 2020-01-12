@@ -16,6 +16,7 @@
 	color: var(--main-text-cl);
 	font-weight:bold;
 	letter-spacing: 1px;
+	contain: layout;
 
 	&::-moz-focus-inner{
 		border-style: none;
@@ -72,7 +73,8 @@ input[type="submit"],
 .button{
 	@extend %button;
 }
-::-webkit-file-upload-button{
+input[type="file"]::-webkit-file-upload-button{
 	@extend %button;
-	line-height: 1.75
+	height: 100%;
+	
 }

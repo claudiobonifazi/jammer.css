@@ -19,7 +19,7 @@ body{
 	border-radius: 2px 2px 0 0;
 	width: 100%;
 	box-sizing: border-box;
-	border-width: 0 0 var(--input-border-bottom) 0;
+	border-width: 0 0 2px 0;
 	border-style:solid;
 	border-color:rgba(0,0,0,0.1);
 	caret-color:var(--main-color-forinput);
@@ -39,6 +39,7 @@ body{
 				top: -0.5rem;
 				font-size: 80%;
 				color: var(--main-color-forinput);
+				white-space: nowrap;
 			}
 		}
 	}
@@ -71,6 +72,7 @@ body{
 					top: -0.5rem;
 					font-size: 80%;
 					color: var(--main-color-forinput);
+					white-space: nowrap
 				}
 			}
 		}
@@ -455,8 +457,8 @@ input[type="range"]{
 	}
 	&::before,
 	&::after{
-		background:rgba(0,0,0,0.1);
-		color: var(--background-base);
+		background: var(--main-color-lighter);
+		color: var(--main-text-cl);
 		line-height: 2.5rem;
 		height: 100%;
 		display:inline-block;
@@ -473,7 +475,6 @@ input[type="range"]{
 	&:active::before,
 	&:active::after{
 		background: var(--main-color);
-		color: var(--main-text-cl);
 	}
 }
 
@@ -542,6 +543,8 @@ input[type="file"]{
 	font-weight:500;
 	cursor:pointer;
 	padding-left:0;
+	padding-right:0;
+	overflow:hidden;
 
 	&.dropArea{
 		height: 12.5rem;
@@ -628,6 +631,7 @@ input[type="color"]{
 		height:2.5rem;
 		border-top-right-radius:0;
 		border-bottom-right-radius:0;
+		line-height: 1
 	}
 }
 .tagLeft:focus-within{
@@ -659,6 +663,7 @@ input[type="color"]{
 		height:2.5rem;
 		border-top-left-radius:0;
 		border-bottom-left-radius:0;
+		line-height: 1
 	}
 	>:last-child:not(input):not(button):not(.button):not(.inputLabel){
 		border-bottom: 2px solid rgba(0,0,0,0.1);

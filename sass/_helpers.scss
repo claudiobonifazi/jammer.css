@@ -7,6 +7,7 @@
 .block-click{ user-select: none !important; pointer-events: none !important; }
 .pull-left{ float:left !important; }
 .pull-right{ float:right !important; }
+.full-width{ display: block !important; clear: both !important; width: 100% !important; position: relative !important; }
 .w1{ width: 100% / 12 }
 .w2{ width: 100% / 6 }
 .w3{ width: 25% }
